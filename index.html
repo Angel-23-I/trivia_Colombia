@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trivia Colombia — ¿Cuánto sabes de Colombia? Juego de 10 preguntas de geografía, historia, cultura, deportes y ciencia." />
+  <title>Trivia Colombia — ¿Cuánto sabes de Colombia?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Saltar al contenido</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <button class="brand" data-nav="inicio" aria-label="Trivia Colombia — ir al inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="32" height="32" role="img" aria-label="Logo Trivia Colombia">
+            <rect x="1" y="1" width="38" height="38" rx="10" fill="#FFBE2E"/>
+            <path d="M1 26h38v3a10 10 0 0 1-10 10H11A10 10 0 0 1 1 29v-3z" fill="#E5484D"/>
+            <path d="M1 22h38v5H1z" fill="#1F5CFF"/>
+            <path d="M22.5 8 14 22h6l-1.5 9L27 17h-6l1.5-9z" fill="#101E3C"/>
+          </svg>
+        </span>
+        <span class="brand-text"><strong>TRIVIA</strong><small>COLOMBIA</small></span>
+      </button>
+      <div class="topbar-actions">
+        <div class="score-pill" id="scorePill" hidden>
+          <span aria-hidden="true">⚡</span>
+          <strong id="scorePillValue">0</strong><span class="muted">puntos</span>
+        </div>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false" title="Cambiar tema">🌙</button>
+        <div class="user-chip" id="userChip" hidden>
+          <span class="user-avatar" aria-hidden="true">👤</span>
+          <span id="userChipName">jugador</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="container" tabindex="-1">
+    <p id="storageWarning" class="alert alert-warning" hidden role="status"></p>
+
+    <!-- ============ INICIO ============ -->
+    <section class="screen is-active" id="screen-inicio" data-screen="inicio" aria-labelledby="inicio-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="flag-dots" aria-hidden="true"></span> PON A PRUEBA LO QUE SABES</p>
+          <h1 id="inicio-title">¿Cuánto sabes de <span class="accent-blue">Colombia?</span></h1>
+          <p class="lead">Recorre su historia, cultura y lugares increíbles. Responde, suma puntos y llega a lo más alto.</p>
+          <form id="startForm" class="card start-card" novalidate>
+            <label class="field-label" for="playerName">¿Cómo te llamas?</label>
+            <div class="start-row">
+              <div class="input-wrap">
+                <span aria-hidden="true">👤</span>
+                <input id="playerName" name="playerName" type="text" maxlength="24" autocomplete="nickname"
+                  placeholder="Escribe tu nombre" aria-describedby="nameError" required />
+              </div>
+              <button class="btn btn-primary" type="submit">Empezar a jugar <span aria-hidden="true">›</span></button>
+            </div>
+            <p class="field-error" id="nameError" role="alert" hidden>Escribe tu nombre para continuar (sin espacios vacíos).</p>
+          </form>
+          <button class="link-btn" data-nav="instrucciones">ⓘ ¿Cómo se juega?</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="co-circle">
+            <svg viewBox="0 0 200 220" class="co-map" role="img" aria-label="Mapa estilizado de Colombia">
+              <path d="M110 10 150 25l5 40 20 30-25 30 10 35-25 50-30-55-25-15-5-40-25-25 20-40 40-25z" fill="#FFBE2E"/>
+              <path d="M80 125l-5 30 30 15 45 5 10-35-40-20-40 5z" fill="#1F5CFF"/>
+              <path d="M85 170l20 50 30-45-50-5z" fill="#E5484D"/>
+              <circle cx="110" cy="115" r="24" fill="#fff"/>
+              <text x="110" y="121" text-anchor="middle" font-size="16" font-weight="800" fill="#1F5CFF">CO</text>
+            </svg>
+            <div class="float-card float-record">🏆 <span><small>Récord local</small><strong id="heroBestPts">— pts</strong></span></div>
+            <div class="float-card float-meta">👥 <span><small>Tu próxima meta</small><strong>Top 10</strong></span></div>
+          </div>
+          <div class="best-card" id="bestCard">
+            <span class="best-icon">👑</span>
+            <span class="best-text"><small>MEJOR PUNTUACIÓN LOCAL</small><strong id="bestCardName">Sin partidas aún</strong></span>
+            <strong class="best-pts" id="bestCardPts">—</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTRUCCIONES ============ -->
+    <section class="screen" id="screen-instrucciones" data-screen="instrucciones" aria-labelledby="inst-title" hidden>
+      <button class="back-link" data-nav="inicio">‹ Volver al inicio</button>
+      <p class="eyebrow">ANTES DE EMPEZAR</p>
+      <div class="title-row">
+        <span class="title-icon">ⓘ</span>
+        <div><h2 id="inst-title">¿Cómo se juega?</h2>
+        <p class="muted">Todo lo que necesitas para convertirte en experto de Colombia.</p></div>
+      </div>
+      <div class="grid-4">
+        <article class="card rule-card"><span class="rule-num">01</span><span class="rule-ico blue">◎</span><h3>10 preguntas</h3><p>Completa una partida corta y dinámica.</p></article>
+        <article class="card rule-card"><span class="rule-num">02</span><span class="rule-ico yellow">◷</span><h3>20 segundos</h3><p>Responde antes de que termine el tiempo.</p></article>
+        <article class="card rule-card"><span class="rule-num">03</span><span class="rule-ico green">✦</span><h3>Suma puntos</h3><p>La rapidez y las rachas aumentan tu puntaje.</p></article>
+        <article class="card rule-card"><span class="rule-num">04</span><span class="rule-ico red">◷</span><h3>Usa comodines</h3><p>Tienes un 50/50 y tiempo extra por partida.</p></article>
+      </div>
+      <div class="card scoring-card">
+        <h3>Puntuación</h3>
+        <ul>
+          <li><span>Base por acierto</span><strong>+100</strong></li>
+          <li><span>Rapidez (+5 por segundo restante, máx. +100)</span><strong>+0…100</strong></li>
+          <li><span>Racha de 3 aciertos seguidos</span><strong>+50</strong></li>
+          <li><span>Comodín usado (c/u)</span><strong>−30</strong></li>
+          <li><span>Multiplicador Fácil / Medio / Difícil</span><strong>×1 / ×1.5 / ×2</strong></li>
+        </ul>
+        <p class="formula">Puntos = max(0, [(100 + rapidez + racha) × multiplicador − penalización])</p>
+      </div>
+      <div class="dark-banner">
+        <span class="banner-ico">⚡</span>
+        <div><strong>Consejo de experto</strong><p>Responde varias preguntas correctas seguidas para activar una racha. ¡Cada 3 seguidas suman +50!</p></div>
+        <div class="streak-demo"><small>RACHA</small><strong>× 3</strong></div>
+      </div>
+      <div class="actions-end">
+        <button class="btn btn-ghost" data-nav="inicio">Volver al inicio</button>
+        <button class="btn btn-primary" data-nav="config">Configurar partida <span aria-hidden="true">›</span></button>
+      </div>
+    </section>
+
+    <!-- ============ CONFIGURACIÓN ============ -->
+    <section class="screen" id="screen-config" data-screen="config" aria-labelledby="cfg-title" hidden>
+      <button class="back-link" data-nav="inicio">‹ Volver al inicio</button>
+      <p class="eyebrow">PERSONALIZA TU RETO</p>
+      <div class="title-row space">
+        <div><h2 id="cfg-title">Configura tu partida</h2>
+        <p class="muted">Elige los temas que más te gustan y qué tan difícil será el desafío.</p></div>
+        <ol class="steps" aria-label="Pasos"><li class="on">1 Configuración</li><li>2 ¡A jugar!</li></ol>
+      </div>
+      <h3 class="step-title"><span class="step-n">1</span> Elige una categoría <small>Puedes mezclar todos los temas o enfocarte en uno.</small></h3>
+      <div class="grid-cats" role="group" aria-label="Categorías" id="catGroup">
+        <button class="cat-card is-selected" data-cat="todas" aria-pressed="true"><span class="cat-ico yellow">▦</span><strong>Todas las categorías</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="geografia" aria-pressed="false"><span class="cat-ico blue">🗺</span><strong>Geografía</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="historia" aria-pressed="false"><span class="cat-ico red">🏛</span><strong>Historia</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="cultura" aria-pressed="false"><span class="cat-ico purple">♪</span><strong>Cultura y tradiciones</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="deportes" aria-pressed="false"><span class="cat-ico green">🏆</span><strong>Deportes</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="ciencia" aria-pressed="false"><span class="cat-ico teal">❧</span><strong>Ciencia y naturaleza</strong><span class="check">✓</span></button>
+      </div>
+      <p class="field-error" id="catError" role="alert" hidden>Elige al menos una categoría.</p>
+      <h3 class="step-title"><span class="step-n">2</span> Selecciona la dificultad <small>Podrás cambiarla en tu próxima partida.</small></h3>
+      <div class="grid-diff" role="radiogroup" aria-label="Dificultad" id="diffGroup">
+        <button class="diff-card" data-diff="facil" role="radio" aria-checked="false"><span class="diff-ico green">▂</span><span><strong>Fácil</strong><small>Para empezar con calma · ×1</small></span><span class="check">✓</span></button>
+        <button class="diff-card is-selected" data-diff="medio" role="radio" aria-checked="true"><span class="diff-ico yellow">▃</span><span><strong>Medio</strong><small>Un reto equilibrado · ×1.5</small></span><span class="check">✓</span></button>
+        <button class="diff-card" data-diff="dificil" role="radio" aria-checked="false"><span class="diff-ico red">▅</span><span><strong>Difícil</strong><small>Solo para expertos · ×2</small></span><span class="check">✓</span></button>
+      </div>
+      <div class="dark-banner summary-bar">
+        <div><small>TU PARTIDA</small><strong id="configSummary">Todas las categorías · Medio</strong></div>
+        <div class="summary-end"><span>◎ <strong id="configCount">10</strong> preguntas</span>
+        <button class="btn btn-primary" id="btnStartGame" type="button">Comenzar partida ▷</button></div>
+      </div>
+      <p class="field-error" id="configError" role="alert" hidden></p>
+    </section>
+
+    <!-- ============ JUEGO (placeholder funcional Fase 1; lógica en Fase 3) ============ -->
+    <section class="screen" id="screen-juego" data-screen="juego" aria-labelledby="game-q" hidden>
+      <div class="game-top">
+        <button class="back-link" data-nav="inicio" id="btnQuit">✕ Salir</button>
+        <div class="progress-wrap"><div class="progress-meta"><small id="qCounter">Pregunta 1 de 10</small><small id="qPct">10% completado</small></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1" id="qProgress"><span style="width:10%"></span></div></div>
+        <div class="pts-mini"><small>PUNTOS</small><strong id="gamePts">0</strong></div>
+      </div>
+      <div class="game-grid">
+        <div class="game-side">
+          <div class="timer-ring" role="timer" aria-live="off" aria-label="Tiempo restante"><strong id="timerNum">20</strong><small>SEGUNDOS</small></div>
+          <div class="card streak-card">⚡ RACHA<strong id="streakNum">× 0</strong><small>Acierta para sumar</small></div>
+        </div>
+        <article class="card q-card">
+          <div class="q-meta"><span class="badge" id="qCat">GEOGRAFÍA</span><small id="qDiff">DIFICULTAD MEDIA</small></div>
+          <h2 id="game-q">Pregunta de ejemplo (la lógica llega en Fase 3)</h2>
+          <div class="opts" id="optsGroup" role="group" aria-label="Opciones de respuesta">
+            <button class="opt" data-opt="0"><span class="opt-key">A</span> Río Amazonas</button>
+            <button class="opt" data-opt="1"><span class="opt-key">B</span> Río Magdalena</button>
+            <button class="opt" data-opt="2"><span class="opt-key">C</span> Río Cauca</button>
+            <button class="opt" data-opt="3"><span class="opt-key">D</span> Río Orinoco</button>
+          </div>
+          <div class="q-foot"><small>COMODINES</small>
+            <div><button class="btn btn-small" id="btn5050" type="button">50-50 <small>Descartar dos</small></button>
+            <button class="btn btn-small" id="btnExtra" type="button">◷ +10 segundos</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FEEDBACK (placeholder; lógica Fase 3) ============ -->
+    <section class="screen screen-narrow" id="screen-feedback" data-screen="feedback" aria-labelledby="fb-title" hidden>
+      <div class="fb-icon ok" id="fbIcon">✓</div>
+      <p class="eyebrow center" id="fbKicker">¡MUY BIEN!</p>
+      <h2 class="center" id="fb-title">Respuesta correcta</h2>
+      <p class="muted center" id="fbSub">Tu conocimiento de Colombia está creciendo.</p>
+      <div class="card fb-card">
+        <div class="fb-pts"><small>PUNTOS OBTENIDOS</small><strong id="fbPts">+0</strong><small id="fbNote">Bono por rapidez incluido</small></div>
+        <div class="fb-cols"><div><small>TU RESPUESTA</small><p class="ok-text" id="fbMine">✓ —</p></div>
+        <div><small>RESPUESTA CORRECTA</small><p class="ok-text" id="fbRight">✓ —</p></div></div>
+        <div class="know"><span>✦</span><div><strong>¿Sabías que…?</strong><p id="fbWhy">Explicación breve (Fase 3).</p></div></div>
+        <button class="btn btn-primary btn-block" id="btnNext" type="button">Siguiente pregunta ›</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULTADOS (placeholder; lógica Fase 4) ============ -->
+    <section class="screen" id="screen-resultados" data-screen="resultados" aria-labelledby="res-title" hidden>
+      <div class="dark-banner hero-res">
+        <span class="trophy">🏆</span>
+        <small>PARTIDA COMPLETADA</small>
+        <h2 id="res-title">¡Gran partida!</h2>
+        <p class="muted-light">Demostraste cuánto sabes de Colombia. Este es tu resultado:</p>
+        <small>PUNTUACIÓN TOTAL</small>
+        <strong class="big-score" id="resScore">0</strong><small>puntos</small>
+      </div>
+      <div class="grid-4 stats">
+        <div class="card stat"><span class="stat-ico green">✓</span><div><small>ACIERTOS</small><strong id="resOk">0<small>/10</small></strong></div></div>
+        <div class="card stat"><span class="stat-ico red">✕</span><div><small>ERRORES</small><strong id="resBad">0<small>/10</small></strong></div></div>
+        <div class="card stat"><span class="stat-ico blue">◷</span><div><small>TIEMPO TOTAL</small><strong id="resTime">00:00</strong></div></div>
+        <div class="card stat"><span class="stat-ico yellow">🏆</span><div><small>MEJOR CATEGORÍA</small><strong id="resBest">—</strong></div></div>
+      </div>
+      <h3 class="review-title"><span>REPASA Y APRENDE</span>Preguntas para mejorar</h3>
+      <div id="reviewList" class="review-list"></div>
+      <div class="actions-end">
+        <button class="btn btn-ghost" data-nav="config">Jugar de nuevo ↻</button>
+        <button class="btn btn-primary" data-nav="ranking">Ver ranking 🏆</button>
+      </div>
+    </section>
+
+    <!-- ============ RANKING (placeholder; lógica Fase 4) ============ -->
+    <section class="screen" id="screen-ranking" data-screen="ranking" aria-labelledby="rank-title" hidden>
+      <button class="back-link" data-nav="resultados">‹ Volver a resultados</button>
+      <p class="eyebrow">TU PROGRESO</p>
+      <div class="title-row space"><div><h2 id="rank-title">Ranking y estadísticas</h2>
+        <p class="muted">Cada partida te acerca un poco más al primer lugar.</p></div>
+        <button class="btn btn-primary" data-nav="config">Nueva partida ▷</button></div>
+      <div class="grid-3">
+        <div class="card stat"><span class="stat-ico blue">▷</span><div><small>PARTIDAS JUGADAS</small><strong id="stGames">0</strong></div></div>
+        <div class="card stat"><span class="stat-ico green">◎</span><div><small>PORCENTAJE DE ACIERTOS</small><strong id="stAcc">—</strong></div></div>
+        <div class="card stat"><span class="stat-ico yellow">🏆</span><div><small>MEJOR CATEGORÍA</small><strong id="stBest">—</strong></div></div>
+      </div>
+      <div class="rank-grid">
+        <div class="card"><h3>Desempeño por categoría</h3><div id="barsCat" class="bars"></div></div>
+        <div class="card"><h3>Por dificultad</h3><div id="barsDiff" class="hbars"></div></div>
+      </div>
+      <div class="card table-card">
+        <div class="table-head"><h3>🏆 Mejores puntuaciones <small>Top 10 de este dispositivo</small></h3>
+        <button class="link-danger" id="btnClearRank" type="button">🗑 Borrar ranking</button></div>
+        <div class="table-wrap"><table id="rankTable">
+          <thead><tr><th>POS.</th><th>JUGADOR</th><th>PUNTUACIÓN</th><th>CATEGORÍA</th><th>DIFICULTAD</th><th>FECHA</th></tr></thead>
+          <tbody><tr><td colspan="6" class="muted">Sin partidas registradas (Fase 4).</td></tr></tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <small>Hecho para aprender y disfrutar de Colombia</small>
+    <small>Trivia Colombia · 2025</small>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

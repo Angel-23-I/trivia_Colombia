@@ -1,0 +1,41 @@
+/* Trivia Colombia — responsive */
+@media (max-width:1024px){
+  .grid-cats{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .rank-grid{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-art{order:-1}
+  .float-record{left:0} .float-meta{right:0}
+  .game-grid{grid-template-columns:1fr}
+  .game-side{display:flex;gap:12px;align-items:center;justify-content:center}
+  .streak-card{flex:1;margin-top:0}
+  .timer-ring{width:110px;height:110px;margin:0}
+  .opts{grid-template-columns:1fr}
+  .grid-diff{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .game-top{grid-template-columns:70px 1fr 70px;gap:10px}
+  .actions-end{flex-direction:column-reverse}
+  .actions-end .btn{width:100%}
+}
+@media (max-width:480px){
+  .container{padding:0 14px}
+  .screen{padding:18px 0 30px}
+  .start-row{flex-direction:column}
+  .start-row .btn{width:100%}
+  .grid-cats{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:1fr}
+  .q-card h2{font-size:18px}
+  .opt{min-height:56px;font-size:15px} /* táctil cómodo */
+  .q-foot{flex-direction:column;gap:10px;align-items:stretch}
+  .dark-banner{flex-direction:column;align-items:flex-start}
+  .streak-demo{border-left:0;padding-left:0;margin-left:0}
+  .summary-end{width:100%;flex-direction:column;align-items:stretch}
+  .summary-end .btn{width:100%}
+  .footer{flex-direction:column;gap:4px;text-align:center}
+  .co-circle{width:min(280px,86vw)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
