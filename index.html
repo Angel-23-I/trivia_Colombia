@@ -160,7 +160,7 @@
     <!-- ============ JUEGO (placeholder funcional Fase 1; lógica en Fase 3) ============ -->
     <section class="screen" id="screen-juego" data-screen="juego" aria-labelledby="game-q" hidden>
       <div class="game-top">
-        <button class="back-link" data-nav="inicio" id="btnQuit">✕ Salir</button>
+        <button class="back-link" type="button" id="btnQuit">✕ Salir</button>
         <div class="progress-wrap"><div class="progress-meta"><small id="qCounter">Pregunta 1 de 10</small><small id="qPct">10% completado</small></div>
           <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1" id="qProgress"><span style="width:10%"></span></div></div>
         <div class="pts-mini"><small>PUNTOS</small><strong id="gamePts">0</strong></div>
@@ -211,6 +211,7 @@
         <p class="muted-light">Demostraste cuánto sabes de Colombia. Este es tu resultado:</p>
         <small>PUNTUACIÓN TOTAL</small>
         <strong class="big-score" id="resScore">0</strong><small>puntos</small>
+        <p class="muted-light" id="resPct"></p>
       </div>
       <div class="grid-4 stats">
         <div class="card stat"><span class="stat-ico green">✓</span><div><small>ACIERTOS</small><strong id="resOk">0<small>/10</small></strong></div></div>
