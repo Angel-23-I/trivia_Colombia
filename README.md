@@ -50,7 +50,7 @@ trivia-colombia/
 ├── js/
 │   ├── app.js            # router SPA, partida, ranking, perfil (UI)
 │   ├── ui.js             # navegación, toast, validación
-│   ├── preguntas.js      # banco: 150 preguntas canónicas
+│   ├── preguntas.js      # banco: 225 preguntas canónicas
 │   ├── juego.js          # selección, racha, comodines, resumen (sin DOM)
 │   ├── puntuacion.js     # ÚNICA función central de puntos (§7)
 │   ├── temporizador.js   # 1 interval por pregunta, +10 s, tiempo real

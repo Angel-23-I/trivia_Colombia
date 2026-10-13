@@ -2,9 +2,10 @@
 // Se guarda en localStorage (tc_perfil_v1). Sin storage, el perfil vive solo
 // en memoria durante la sesión. No contiene información sensible.
 import { KEYS } from './almacenamiento.js';
+import { AVATARES } from './iconos.js';
 
-export const ICONOS = ['👤', '🦜', '🐆', '🦋', '🐢', '🌻', '☕', '⚽', '🎭', '🐬'];
-export const ICONO_DEFAULT = '👤';
+export const ICONOS = AVATARES.map((a) => a.id);
+export const ICONO_DEFAULT = 'viajero';
 
 export function perfilVacio() {
   return { nombre: '', icono: ICONO_DEFAULT };
@@ -16,8 +17,8 @@ export function nombreValido(raw) {
   return nombre.length >= 2 && nombre.length <= 24 ? nombre : '';
 }
 
-export function iconoValido(icono) {
-  return ICONOS.includes(icono) ? icono : ICONO_DEFAULT;
+export function iconoValido(id) {
+  return ICONOS.includes(id) ? id : ICONO_DEFAULT;
 }
 
 export function cargarPerfil() {

@@ -2,7 +2,8 @@
 // Flujo: inicio → config → juego (10 preguntas, 20 s, racha, comodines) →
 // feedback → resultados (guardado único) → ranking y estadísticas.
 import { $, $$, showScreen, toast, validateName } from './ui.js';
-import { ICONOS, cargarPerfil, guardarPerfil, nombreValido } from './perfil.js';
+import { cargarPerfil, guardarPerfil, nombreValido } from './perfil.js';
+import { icon, avatar, AVATARES } from './iconos.js';
 import {
   KEYS, storageOK, guardarPartida, cargarRanking, cargarHistorial,
   cargarBest, borrarDatos,
@@ -20,7 +21,7 @@ export const state = {
   categorias: ['todas'],
   dificultad: 'medio',
   tema: 'light',
-  perfil: { nombre: '', icono: '👤' },
+  perfil: { nombre: '', icono: 'viajero' },
   partida: null,
   timer: null,
   gen: 0, // generación UI: invalida timeouts/timers de preguntas anteriores
@@ -49,7 +50,7 @@ function applyTheme(t) {
   state.tema = t;
   document.documentElement.dataset.theme = t;
   const btn = $('#themeToggle');
-  if (btn) { btn.textContent = t === 'light' ? '🌙' : '☀️'; btn.setAttribute('aria-pressed', String(t === 'dark')); }
+  if (btn) { btn.innerHTML = t === 'light' ? icon('moon') : icon('sun'); btn.setAttribute('aria-pressed', String(t === 'dark')); }
   try { localStorage.setItem(KEYS.theme, t); } catch { /* sin persistencia */ }
 }
 
@@ -330,7 +331,7 @@ function renderResultados(r) {
     head.className = 'muted';
     head.textContent = r.falladas.length
       ? `${r.falladas.length} para repasar · ${r.porcentaje}% de aciertos`
-      : '¡Perfección! No fallaste ninguna. 🎉';
+      : '¡Perfección! No fallaste ninguna.';
     list.append(head);
     r.falladas.forEach((f) => {
       const q = f.pregunta;
@@ -554,19 +555,19 @@ function bindRanking() {
     if (!clearArmed) {
       // Confirmación explícita en dos pasos (sin diálogos nativos).
       clearArmed = true;
-      btn.dataset.label = btn.textContent;
+      btn.dataset.labelHtml = btn.innerHTML;
       btn.textContent = '¿Seguro? Clic de nuevo para borrar todo';
       clearTimeout(clearTimer);
       clearTimer = setTimeout(() => {
         clearArmed = false;
-        btn.textContent = btn.dataset.label || '🗑 Borrar ranking';
+        btn.innerHTML = btn.dataset.labelHtml || `${icon('trash', 14)} Borrar ranking`;
       }, 4000);
       toast('Se borrarán ranking, estadísticas y mejor puntuación.');
       return;
     }
     clearTimeout(clearTimer);
     clearArmed = false;
-    btn.textContent = btn.dataset.label || '🗑 Borrar ranking';
+    btn.innerHTML = btn.dataset.labelHtml || `${icon('trash', 14)} Borrar ranking`;
     if (borrarDatos()) {
       resetBestCard();
       renderRanking();
@@ -579,7 +580,7 @@ function bindRanking() {
 
 /* ---------- perfil ---------- */
 
-let modalIcono = '👤';
+let modalIcono = 'viajero';
 let ultimoFoco = null;
 
 function pintarChip() {
@@ -590,7 +591,7 @@ function pintarChip() {
   const n = $('#userChipName');
   if (n) n.textContent = nombre;
   const ic = $('#userChipIcon');
-  if (ic) ic.textContent = state.perfil.icono || '👤';
+  if (ic) ic.innerHTML = avatar(state.perfil.icono);
 }
 
 function pintarRecientes() {
@@ -625,31 +626,32 @@ function pintarIconos() {
   const grid = $('#profileIconGrid');
   if (!grid) return;
   grid.innerHTML = '';
-  ICONOS.forEach((icono) => {
+  AVATARES.forEach((a) => {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'icon-opt';
-    b.textContent = icono;
+    b.dataset.id = a.id;
+    b.innerHTML = avatar(a.id, 26);
     b.setAttribute('role', 'radio');
-    b.setAttribute('aria-checked', String(icono === modalIcono));
-    b.setAttribute('aria-label', `Elegir icono ${icono}`);
+    b.setAttribute('aria-checked', String(a.id === modalIcono));
+    b.setAttribute('aria-label', `Elegir icono: ${a.nombre}`);
     b.addEventListener('click', () => {
-      modalIcono = icono;
+      modalIcono = a.id;
       const prev = $('#profileIconPreview');
-      if (prev) prev.textContent = icono;
-      $$('.icon-opt', grid).forEach((x) => x.setAttribute('aria-checked', String(x.textContent === icono)));
+      if (prev) prev.innerHTML = avatar(a.id, 32);
+      $$('.icon-opt', grid).forEach((x) => x.setAttribute('aria-checked', String(x.dataset.id === a.id)));
     });
     grid.append(b);
   });
 }
 
 function abrirPerfil() {
-  modalIcono = state.perfil.icono || '👤';
+  modalIcono = state.perfil.icono || 'viajero';
   ultimoFoco = document.activeElement;
   const input = $('#profileName');
   if (input) input.value = state.perfil.nombre || state.jugador || '';
   const prev = $('#profileIconPreview');
-  if (prev) prev.textContent = modalIcono;
+  if (prev) prev.innerHTML = avatar(modalIcono, 32);
   const err = $('#profileNameError');
   if (err) err.hidden = true;
   pintarIconos();

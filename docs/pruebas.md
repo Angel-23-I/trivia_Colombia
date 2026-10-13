@@ -9,7 +9,7 @@
 
 | Script | Qué verifica | Resultado |
 |---|---|---|
-| `check_preguntas.mjs` | 150 preguntas, 10 por cada combinación categoría×dificultad, 4 opciones distintas, `correcta` 0-3, IDs únicos, 0 enunciados duplicados, explicación presente | ✅ 150 OK, pools ≥ 10 |
+| `check_preguntas.mjs` | 225 preguntas, 15 por cada combinación categoría×dificultad, 4 opciones distintas, `correcta` 0-3, IDs únicos, 0 enunciados duplicados, explicación presente | ✅ 225 OK, pools ≥ 15 |
 | `test_fase3.mjs` (42) | Puntuación §7 (200/300/400, rapidez 225, racha 375, −30/−60, fallo 0, sin decimales), selección 10 únicas con filtro, pool insuficiente, racha/reset, doble respuesta nula, comodines 1 uso, timeout, resumen, timer (activo/reinicio/detener/+10s/`onFin` ×1) | ✅ 42/42 |
 | `test_fase4.mjs` (16) | Validación de registros, orden puntos→tiempo→fecha, tope 10, agregados (partidas, %, por categoría/dificultad, mejor categoría, vacío) | ✅ 16/16 |
 | `test_tiempo.mjs` (4) | Respuesta rápida cuenta ≥ 1 s (fix 0:00), fallback intacto, `transcurrido()` real ≈ 0.35 s, total > 0 | ✅ 4/4 |
@@ -27,7 +27,7 @@
 | 1 | Iniciar sin nombre | Bloquea con error | `validateName` + `test_perfil` (lógica); falta clic real | ⏳ NAVEGADOR |
 | 2 | Partida 1 categoría + dificultad | Entra a juego | `seleccionarPreguntas` 10 únicas + pool ≥ 10 verificado | ✅ LÓGICA |
 | 3 | 10 sin repetición | 10 IDs únicos | `new Set(...) === 10` en 3 filtros | ✅ LÓGICA |
-| 4 | 4 opciones | 4 botones | Banco validado (150×4) + render con 4 `.opt` (código) | ✅ LÓGICA |
+| 4 | 4 opciones | 4 botones | Banco validado (225×4) + render con 4 `.opt` (código) | ✅ LÓGICA |
 | 5 | Acierto y puntos | Fórmula §7 | 200/300/400, 225, 270/240, 375 verificados | ✅ LÓGICA |
 | 6 | Fallo | 0 + feedback rojo | `responder` 0 pts, racha 0; pantalla existe | ✅ LÓGICA |
 | 7 | Timeout a cero | No respondida + feedback | `onFin` ×1, registro `timeout`, `tiempoUsado` completo | ✅ LÓGICA |
