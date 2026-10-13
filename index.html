@@ -17,7 +17,7 @@
 
   <header class="topbar" role="banner">
     <div class="container topbar-inner">
-      <button class="brand" data-nav="inicio" aria-label="Trivia Colombia — ir al inicio">
+      <button type="button" class="brand" data-nav="inicio" aria-label="Trivia Colombia — ir al inicio">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 40 40" width="32" height="32" role="img" aria-label="Logo Trivia Colombia">
             <rect x="1" y="1" width="38" height="38" rx="10" fill="#FFBE2E"/>
@@ -64,7 +64,7 @@
             </div>
             <p class="field-error" id="nameError" role="alert" hidden>Escribe tu nombre para continuar (sin espacios vacíos).</p>
           </form>
-          <button class="link-btn" data-nav="instrucciones">ⓘ ¿Cómo se juega?</button>
+          <button type="button" class="link-btn" data-nav="instrucciones">ⓘ ¿Cómo se juega?</button>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="co-circle">
@@ -89,7 +89,7 @@
 
     <!-- ============ INSTRUCCIONES ============ -->
     <section class="screen" id="screen-instrucciones" data-screen="instrucciones" aria-labelledby="inst-title" hidden>
-      <button class="back-link" data-nav="inicio">‹ Volver al inicio</button>
+      <button type="button" class="back-link" data-nav="inicio">‹ Volver al inicio</button>
       <p class="eyebrow">ANTES DE EMPEZAR</p>
       <div class="title-row">
         <span class="title-icon">ⓘ</span>
@@ -119,14 +119,14 @@
         <div class="streak-demo"><small>RACHA</small><strong>× 3</strong></div>
       </div>
       <div class="actions-end">
-        <button class="btn btn-ghost" data-nav="inicio">Volver al inicio</button>
-        <button class="btn btn-primary" data-nav="config">Configurar partida <span aria-hidden="true">›</span></button>
+        <button type="button" class="btn btn-ghost" data-nav="inicio">Volver al inicio</button>
+        <button type="button" class="btn btn-primary" data-nav="config">Configurar partida <span aria-hidden="true">›</span></button>
       </div>
     </section>
 
     <!-- ============ CONFIGURACIÓN ============ -->
     <section class="screen" id="screen-config" data-screen="config" aria-labelledby="cfg-title" hidden>
-      <button class="back-link" data-nav="inicio">‹ Volver al inicio</button>
+      <button type="button" class="back-link" data-nav="inicio">‹ Volver al inicio</button>
       <p class="eyebrow">PERSONALIZA TU RETO</p>
       <div class="title-row space">
         <div><h2 id="cfg-title">Configura tu partida</h2>
@@ -202,8 +202,9 @@
       </div>
     </section>
 
-    <!-- ============ RESULTADOS (placeholder; lógica Fase 4) ============ -->
+    <!-- ============ RESULTADOS ============ -->
     <section class="screen" id="screen-resultados" data-screen="resultados" aria-labelledby="res-title" hidden>
+      <button type="button" class="back-link" data-nav="inicio">‹ Volver al inicio</button>
       <div class="dark-banner hero-res">
         <span class="trophy">🏆</span>
         <small>PARTIDA COMPLETADA</small>
@@ -222,18 +223,18 @@
       <h3 class="review-title"><span>REPASA Y APRENDE</span>Preguntas para mejorar</h3>
       <div id="reviewList" class="review-list"></div>
       <div class="actions-end">
-        <button class="btn btn-ghost" data-nav="config">Jugar de nuevo ↻</button>
-        <button class="btn btn-primary" data-nav="ranking">Ver ranking 🏆</button>
+        <button type="button" class="btn btn-ghost" data-nav="config">Jugar de nuevo ↻</button>
+        <button type="button" class="btn btn-primary" data-nav="ranking">Ver ranking 🏆</button>
       </div>
     </section>
 
     <!-- ============ RANKING (placeholder; lógica Fase 4) ============ -->
     <section class="screen" id="screen-ranking" data-screen="ranking" aria-labelledby="rank-title" hidden>
-      <button class="back-link" data-nav="resultados">‹ Volver a resultados</button>
+      <button type="button" class="back-link" data-nav="resultados">‹ Volver a resultados</button>
       <p class="eyebrow">TU PROGRESO</p>
       <div class="title-row space"><div><h2 id="rank-title">Ranking y estadísticas</h2>
         <p class="muted">Cada partida te acerca un poco más al primer lugar.</p></div>
-        <button class="btn btn-primary" data-nav="config">Nueva partida ▷</button></div>
+        <button type="button" class="btn btn-primary" data-nav="config">Nueva partida ▷</button></div>
       <div class="grid-3">
         <div class="card stat"><span class="stat-ico blue">▷</span><div><small>PARTIDAS JUGADAS</small><strong id="stGames">0</strong></div></div>
         <div class="card stat"><span class="stat-ico green">◎</span><div><small>PORCENTAJE DE ACIERTOS</small><strong id="stAcc">—</strong></div></div>

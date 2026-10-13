@@ -1,8 +1,12 @@
-// Trivia Colombia — Fase 3: estado global, router SPA, tema y PARTIDA completa.
-// Flujo: inicio (nombre) → config (categorías/dificultad) → juego (10 preguntas,
-// 20 s, racha, 50/50, +10 s) → feedback → resultados. Persistencia en Fase 4.
+// Trivia Colombia — Fase 4: SPA completa con ranking y persistencia.
+// Flujo: inicio → config → juego (10 preguntas, 20 s, racha, comodines) →
+// feedback → resultados (guardado único) → ranking y estadísticas.
 import { $, $$, showScreen, toast, validateName, setUserChip } from './ui.js';
-import { KEYS, storageOK } from './almacenamiento.js';
+import {
+  KEYS, storageOK, guardarPartida, cargarRanking, cargarHistorial,
+  cargarBest, borrarDatos,
+} from './almacenamiento.js';
+import { calcularStats } from './estadisticas.js';
 import {
   contarDisponibles, crearPartida, preguntaActual, esUltima,
   usar5050, usarExtra, responder, siguiente, resumen,
@@ -55,16 +59,17 @@ function loadTheme() {
 }
 
 function loadBest() {
-  try {
-    const raw = localStorage.getItem(KEYS.best);
-    if (!raw) return;
-    const b = JSON.parse(raw);
-    if (typeof b?.pts === 'number') {
-      const pts = $('#heroBestPts'); if (pts) pts.textContent = `${fmtPts(b.pts)} pts`;
-      const n = $('#bestCardName'); if (n) n.textContent = b.nombre || '—';
-      const p = $('#bestCardPts'); if (p) p.textContent = fmtPts(b.pts);
-    }
-  } catch { /* datos inválidos: se ignoran */ }
+  const b = cargarBest();
+  if (!b) return;
+  const pts = $('#heroBestPts'); if (pts) pts.textContent = `${fmtPts(b.pts)} pts`;
+  const n = $('#bestCardName'); if (n) n.textContent = b.nombre || '—';
+  const p = $('#bestCardPts'); if (p) p.textContent = fmtPts(b.pts);
+}
+
+function resetBestCard() {
+  const pts = $('#heroBestPts'); if (pts) pts.textContent = '— pts';
+  const n = $('#bestCardName'); if (n) n.textContent = 'Sin partidas aún';
+  const p = $('#bestCardPts'); if (p) p.textContent = '—';
 }
 
 function checkStorage() {
@@ -351,7 +356,26 @@ function finalizar() {
   clearTimeout(state.pending);
   p.terminada = true;
   const r = resumen(p);
-  // Fase 4: persistir en ranking/localStorage (pendiente).
+  // Guardado único: aunque se re-renderice o se pulse "Ver resultados" otra
+  // vez, la partida solo entra al ranking una vez (flag en memoria).
+  if (!p.guardada) {
+    p.guardada = true;
+    const registro = {
+      nombre: r.jugador,
+      puntos: r.puntos,
+      categorias: r.categorias,
+      dificultad: r.dificultad,
+      fecha: new Date().toISOString(),
+      aciertos: r.aciertos,
+      errores: r.errores,
+      noRespondidas: r.noRespondidas,
+      tiempo: r.tiempoTotal,
+      total: r.total,
+      detalleCategoria: r.porCategoria,
+    };
+    if (guardarPartida(registro)) loadBest();
+    else if (storageOK()) toast('No se pudo guardar la partida.');
+  }
   renderResultados(r);
   const pill = $('#scorePill');
   if (pill) pill.hidden = true;
@@ -394,14 +418,164 @@ function iniciarJuego() {
   showScreen('juego');
 }
 
+/* ---------- ranking y estadísticas ---------- */
+
+const BAR_COLORS = { geografia: '#1f5cff', historia: '#ffbe2e', cultura: '#7c5cff', deportes: '#e5484d', ciencia: '#1aa65c' };
+const DIFF_COLORS = { facil: '#1aa65c', medio: '#1f5cff', dificil: '#e5484d' };
+const CATS_ORDER = ['geografia', 'historia', 'cultura', 'deportes', 'ciencia'];
+const DIFFS_ORDER = ['facil', 'medio', 'dificil'];
+
+function setText(sel, t) {
+  const el = $(sel);
+  if (el) el.textContent = t;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function fechaRelativa(iso) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '—';
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const dia = new Date(d); dia.setHours(0, 0, 0, 0);
+  const diff = Math.round((hoy - dia) / 86400000);
+  if (diff <= 0) return 'Hoy';
+  if (diff === 1) return 'Ayer';
+  return d.toLocaleDateString('es-CO', { day: 'numeric', month: 'short' });
+}
+
+function etiquetaCats(cats) {
+  if (!cats || !cats.length || cats.includes('todas')) return 'Todas';
+  if (cats.length <= 2) return cats.map((c) => CAT_LABEL[c] || c).join(' + ');
+  return `${cats.length} temas`;
+}
+
+function renderRanking() {
+  const ranking = cargarRanking();
+  const stats = calcularStats(cargarHistorial());
+
+  setText('#stGames', String(stats.partidas));
+  setText('#stAcc', stats.partidas ? `${stats.porcentaje}%` : '—');
+  setText('#stBest', stats.mejorCategoria ? CAT_LABEL[stats.mejorCategoria] : '—');
+
+  const bc = $('#barsCat');
+  if (bc) {
+    bc.innerHTML = '';
+    bc.setAttribute('role', 'img');
+    bc.setAttribute('aria-label', 'Porcentaje de aciertos por categoría');
+    for (const c of CATS_ORDER) {
+      const v = stats.porCategoria[c];
+      const wrap = document.createElement('div');
+      wrap.className = 'bar';
+      wrap.title = `${CAT_LABEL[c]}: ${v.ok}/${v.total} (${v.pct}%)`;
+      const pct = document.createElement('small');
+      pct.textContent = `${v.pct}%`;
+      const col = document.createElement('i');
+      col.style.height = `${Math.max(6, Math.round((v.pct / 100) * 120))}px`;
+      col.style.background = BAR_COLORS[c];
+      const lab = document.createElement('span');
+      lab.textContent = CAT_LABEL[c].split(' ')[0];
+      wrap.append(pct, col, lab);
+      bc.append(wrap);
+    }
+  }
+
+  const bd = $('#barsDiff');
+  if (bd) {
+    bd.innerHTML = '';
+    for (const d of DIFFS_ORDER) {
+      const v = stats.porDificultad[d];
+      const row = document.createElement('div');
+      const head = document.createElement('div');
+      head.style.cssText = 'display:flex;justify-content:space-between;margin-bottom:4px';
+      const lab = document.createElement('span');
+      lab.textContent = DIFF_LABEL[d];
+      const pct = document.createElement('strong');
+      pct.textContent = `${v.pct}%`;
+      head.append(lab, pct);
+      const track = document.createElement('div');
+      track.className = 'hbar';
+      const fill = document.createElement('span');
+      fill.style.width = `${v.pct}%`;
+      fill.style.background = DIFF_COLORS[d];
+      track.append(fill);
+      row.append(head, track);
+      row.title = `${DIFF_LABEL[d]}: ${v.ok}/${v.total}`;
+      bd.append(row);
+    }
+  }
+
+  const tb = document.querySelector('#rankTable tbody');
+  if (tb) {
+    tb.innerHTML = '';
+    if (!ranking.length) {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = 6;
+      td.className = 'muted';
+      td.textContent = 'Juega tu primera partida y aparecerá aquí.';
+      tr.append(td);
+      tb.append(tr);
+    }
+    ranking.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      const inicial = escapeHtml((r.nombre.trim()[0] || '?').toUpperCase());
+      const pillCls = r.dificultad === 'dificil' ? 'red' : (r.dificultad === 'facil' ? 'green' : 'yellow');
+      tr.innerHTML = `<td><span class="pos${i === 0 ? ' gold' : ''}">${i + 1}</span></td>`
+        + `<td><span class="user-avatar" aria-hidden="true">${inicial}</span> ${escapeHtml(r.nombre)}</td>`
+        + `<td><strong>${fmtPts(r.puntos)}</strong> <small class="muted">${r.aciertos}✓ ${r.errores}✕</small></td>`
+        + `<td>${escapeHtml(etiquetaCats(r.categorias))}</td>`
+        + `<td><span class="pill ${pillCls}">${DIFF_LABEL[r.dificultad]}</span></td>`
+        + `<td class="muted">${fechaRelativa(r.fecha)}</td>`;
+      tb.append(tr);
+    });
+  }
+}
+
+let clearArmed = false;
+let clearTimer = null;
+
+function bindRanking() {
+  $('#btnClearRank')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    if (!clearArmed) {
+      // Confirmación explícita en dos pasos (sin diálogos nativos).
+      clearArmed = true;
+      btn.dataset.label = btn.textContent;
+      btn.textContent = '¿Seguro? Clic de nuevo para borrar todo';
+      clearTimeout(clearTimer);
+      clearTimer = setTimeout(() => {
+        clearArmed = false;
+        btn.textContent = btn.dataset.label || '🗑 Borrar ranking';
+      }, 4000);
+      toast('Se borrarán ranking, estadísticas y mejor puntuación.');
+      return;
+    }
+    clearTimeout(clearTimer);
+    clearArmed = false;
+    btn.textContent = btn.dataset.label || '🗑 Borrar ranking';
+    if (borrarDatos()) {
+      resetBestCard();
+      renderRanking();
+      toast('Ranking borrado.');
+    } else {
+      toast('No se pudo borrar (storage no disponible).');
+    }
+  });
+}
+
 /* ---------- bindings ---------- */
 
 function bindNav() {
   $$('[data-nav]').forEach((el) => {
     el.addEventListener('click', (e) => {
-      if (el.tagName === 'BUTTON' && el.type === 'submit') return;
+      // Ojo: un <button> sin type declara .type === 'submit' en el DOM por
+      // defecto. Solo se omite si el botón enviaría realmente un formulario.
+      if (el.tagName === 'BUTTON' && el.type !== 'button' && el.form) return;
       e.preventDefault();
       showScreen(el.dataset.nav);
+      if (el.dataset.nav === 'ranking') renderRanking();
     });
   });
 }
@@ -523,6 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindStart();
   bindConfig();
   bindGame();
+  bindRanking();
   bindTheme();
   checkStorage();
   updateSummary();
