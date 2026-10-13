@@ -18,6 +18,8 @@
   .game-top{grid-template-columns:70px 1fr 70px;gap:10px}
   .actions-end{flex-direction:column-reverse}
   .actions-end .btn{width:100%}
+  /* Fase 5: el temporizador queda fijo arriba al desplazar la pregunta. */
+  .game-side{position:sticky;top:74px;z-index:5;background:var(--bg);padding:6px;border-radius:14px}
 }
 @media (max-width:480px){
   .container{padding:0 14px}
@@ -35,6 +37,21 @@
   .summary-end .btn{width:100%}
   .footer{flex-direction:column;gap:4px;text-align:center}
   .co-circle{width:min(280px,86vw)}
+  /* Fase 5: 360 px — cabecera compacta, feedback en 1 columna, táctil amplio. */
+  .topbar-actions{gap:6px}
+  .score-pill{padding:5px 10px}
+  .score-pill .muted{display:none}
+  /* En móvil los puntos ya se ven en la pantalla de juego: se oculta la píldora
+     para que quepan ranking, tema y perfil en 360 px. */
+  #scorePill{display:none}
+  .topbar .icon-btn{width:34px;height:34px}
+  #userChipName{max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .game-top{gap:8px}
+  .progress-meta{flex-wrap:wrap;gap:4px}
+  .fb-cols{grid-template-columns:1fr}
+  .btn-small{padding:12px 14px;font-size:13px}
+  .table-wrap{-webkit-overflow-scrolling:touch}
+  .toast{max-width:calc(100vw - 32px);text-align:center}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}

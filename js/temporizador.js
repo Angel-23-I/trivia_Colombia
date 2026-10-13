@@ -7,6 +7,7 @@ export function crearTemporizador({ duracion = 20, onTick = null, onFin = null }
   let restante = duracion;
   let gen = 0; // generación: invalida ticks de inicios anteriores
   let finished = false;
+  let inicioTs = 0; // marca real de inicio: mide tiempo con precisión < 1 s
 
   function limpiar() {
     if (id !== null) { clearInterval(id); id = null; }
@@ -33,6 +34,7 @@ export function crearTemporizador({ duracion = 20, onTick = null, onFin = null }
       limpiar();
       finished = false;
       restante = Math.max(0, Math.floor(segundos));
+      inicioTs = Date.now();
       try { onTick?.(restante); } catch { /* noop */ }
       if (restante <= 0) {
         finished = true;
@@ -57,5 +59,10 @@ export function crearTemporizador({ duracion = 20, onTick = null, onFin = null }
     },
     get restante() { return restante; },
     get activo() { return id !== null && !finished; },
+    /** Segundos reales (decimales) desde `iniciar()`. Para medir tiempo usado. */
+    transcurrido() {
+      if (!inicioTs) return 0;
+      return Math.max(0, (Date.now() - inicioTs) / 1000);
+    },
   };
 }

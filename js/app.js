@@ -1,7 +1,8 @@
 // Trivia Colombia — Fase 4: SPA completa con ranking y persistencia.
 // Flujo: inicio → config → juego (10 preguntas, 20 s, racha, comodines) →
 // feedback → resultados (guardado único) → ranking y estadísticas.
-import { $, $$, showScreen, toast, validateName, setUserChip } from './ui.js';
+import { $, $$, showScreen, toast, validateName } from './ui.js';
+import { ICONOS, cargarPerfil, guardarPerfil, nombreValido } from './perfil.js';
 import {
   KEYS, storageOK, guardarPartida, cargarRanking, cargarHistorial,
   cargarBest, borrarDatos,
@@ -19,6 +20,7 @@ export const state = {
   categorias: ['todas'],
   dificultad: 'medio',
   tema: 'light',
+  perfil: { nombre: '', icono: '👤' },
   partida: null,
   timer: null,
   gen: 0, // generación UI: invalida timeouts/timers de preguntas anteriores
@@ -222,8 +224,12 @@ function elegir(i) {
   const p = state.partida;
   if (!p || p.terminada || p.actual.respondida) return; // anticoncurrencia
   const restantes = state.timer?.restante ?? 0;
+  // Tiempo real con precisión < 1 s (el contador visible va de segundo en
+  // segundo, pero aquí medimos el instante exacto; mínimo 1 s por respuesta).
+  const real = state.timer?.transcurrido?.() ?? (TIEMPO_POR_PREGUNTA - restantes);
+  const usado = Math.max(1, Math.round(real));
   state.timer?.detener();
-  const res = responder(p, { elegido: i, segundosRestantes: restantes });
+  const res = responder(p, { elegido: i, segundosRestantes: restantes, tiempoUsado: usado });
   if (!res) return;
   bloquearOpciones(res);
   programarFeedback(res);
@@ -565,6 +571,136 @@ function bindRanking() {
   });
 }
 
+/* ---------- perfil ---------- */
+
+let modalIcono = '👤';
+let ultimoFoco = null;
+
+function pintarChip() {
+  const chip = $('#userChip');
+  const nombre = state.perfil.nombre || state.jugador;
+  if (!nombre) { if (chip) chip.hidden = true; return; }
+  if (chip) chip.hidden = false;
+  const n = $('#userChipName');
+  if (n) n.textContent = nombre;
+  const ic = $('#userChipIcon');
+  if (ic) ic.textContent = state.perfil.icono || '👤';
+}
+
+function pintarRecientes() {
+  const ul = $('#profileRecent');
+  if (!ul) return;
+  ul.innerHTML = '';
+  const nombre = state.perfil.nombre || state.jugador;
+  const juegos = cargarHistorial()
+    .filter((r) => !nombre || r.nombre === nombre)
+    .slice(-5)
+    .reverse();
+  if (!juegos.length) {
+    const li = document.createElement('li');
+    li.className = 'muted';
+    li.textContent = 'Aún no tienes puntajes. ¡Juega tu primera partida!';
+    ul.append(li);
+    return;
+  }
+  juegos.forEach((r) => {
+    const li = document.createElement('li');
+    const a = document.createElement('span');
+    const b = document.createElement('span');
+    b.className = 'muted';
+    a.innerHTML = `<strong>${fmtPts(r.puntos)}</strong> pts · ${r.aciertos}/${r.total} aciertos`;
+    b.textContent = `${DIFF_LABEL[r.dificultad] || r.dificultad} · ${fechaRelativa(r.fecha)}`;
+    li.append(a, b);
+    ul.append(li);
+  });
+}
+
+function pintarIconos() {
+  const grid = $('#profileIconGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  ICONOS.forEach((icono) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'icon-opt';
+    b.textContent = icono;
+    b.setAttribute('role', 'radio');
+    b.setAttribute('aria-checked', String(icono === modalIcono));
+    b.setAttribute('aria-label', `Elegir icono ${icono}`);
+    b.addEventListener('click', () => {
+      modalIcono = icono;
+      const prev = $('#profileIconPreview');
+      if (prev) prev.textContent = icono;
+      $$('.icon-opt', grid).forEach((x) => x.setAttribute('aria-checked', String(x.textContent === icono)));
+    });
+    grid.append(b);
+  });
+}
+
+function abrirPerfil() {
+  modalIcono = state.perfil.icono || '👤';
+  ultimoFoco = document.activeElement;
+  const input = $('#profileName');
+  if (input) input.value = state.perfil.nombre || state.jugador || '';
+  const prev = $('#profileIconPreview');
+  if (prev) prev.textContent = modalIcono;
+  const err = $('#profileNameError');
+  if (err) err.hidden = true;
+  pintarIconos();
+  pintarRecientes();
+  const m = $('#profileModal');
+  if (m) m.hidden = false;
+  setTimeout(() => input?.focus(), 50);
+}
+
+function cerrarPerfil() {
+  const m = $('#profileModal');
+  if (m) m.hidden = true;
+  if (ultimoFoco && document.contains(ultimoFoco)) ultimoFoco.focus();
+}
+
+function guardarDesdePerfil() {
+  const input = $('#profileName');
+  const nombre = nombreValido(input?.value);
+  const err = $('#profileNameError');
+  if (!nombre) {
+    if (err) err.hidden = false;
+    input?.focus();
+    return;
+  }
+  if (err) err.hidden = true;
+  state.jugador = nombre;
+  state.perfil = { nombre, icono: modalIcono };
+  guardarPerfil(state.perfil);
+  pintarChip();
+  toast('Perfil actualizado.');
+  cerrarPerfil();
+}
+
+function bindProfile() {
+  $('#userChip')?.addEventListener('click', abrirPerfil);
+  $('#btnCloseProfile')?.addEventListener('click', cerrarPerfil);
+  $('#btnCancelProfile')?.addEventListener('click', cerrarPerfil);
+  $('#btnSaveProfile')?.addEventListener('click', guardarDesdePerfil);
+  $('#profileModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'profileModal') cerrarPerfil();
+  });
+  document.addEventListener('keydown', (e) => {
+    const m = $('#profileModal');
+    if (e.key === 'Escape' && m && !m.hidden) cerrarPerfil();
+  });
+}
+
+function initPerfil() {
+  state.perfil = cargarPerfil();
+  if (state.perfil.nombre) {
+    state.jugador = state.perfil.nombre;
+    const input = $('#playerName');
+    if (input && !input.value) input.value = state.perfil.nombre;
+    pintarChip();
+  }
+}
+
 /* ---------- bindings ---------- */
 
 function bindNav() {
@@ -596,7 +732,9 @@ function bindStart() {
     if (err) err.hidden = true;
     input?.removeAttribute('aria-invalid');
     state.jugador = name;
-    setUserChip(name);
+    state.perfil.nombre = name;
+    guardarPerfil(state.perfil);
+    pintarChip();
     toast(`¡Hola, ${name}! Configura tu partida.`);
     showScreen('config');
   });
@@ -693,11 +831,13 @@ function bindTheme() {
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   loadBest();
+  initPerfil();
   bindNav();
   bindStart();
   bindConfig();
   bindGame();
   bindRanking();
+  bindProfile();
   bindTheme();
   checkStorage();
   updateSummary();

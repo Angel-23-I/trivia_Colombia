@@ -115,9 +115,11 @@ export function tiempoAsignado(partida) {
 
 /**
  * Registra la respuesta. `elegido`: índice 0-3 o null (timeout).
+ * `tiempoUsado`: segundos reales empleados (medidos por la UI); si se omite
+ * se estima como asignado − restantes (resolución de 1 s).
  * Idempotente: si la pregunta ya se respondió, devuelve null (anticoncurrencia).
  */
-export function responder(partida, { elegido = null, segundosRestantes = 0 } = {}) {
+export function responder(partida, { elegido = null, segundosRestantes = 0, tiempoUsado = null } = {}) {
   const act = partida.actual;
   if (partida.terminada || act.respondida) return null;
   act.respondida = true;
@@ -150,7 +152,9 @@ export function responder(partida, { elegido = null, segundosRestantes = 0 } = {
     puntos,
     rachaCompleta,
     segundosRestantes: Math.max(0, segundosRestantes),
-    tiempoUsado: tiempoAsignado(partida) - Math.max(0, segundosRestantes),
+    tiempoUsado: Number.isFinite(tiempoUsado) && tiempoUsado >= 0
+      ? tiempoUsado
+      : tiempoAsignado(partida) - Math.max(0, segundosRestantes),
     comodines,
   };
   partida.resultados.push(res);

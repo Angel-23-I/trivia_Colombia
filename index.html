@@ -33,11 +33,12 @@
           <span aria-hidden="true">⚡</span>
           <strong id="scorePillValue">0</strong><span class="muted">puntos</span>
         </div>
+        <button class="icon-btn" type="button" data-nav="ranking" aria-label="Ver ranking y estadísticas" title="Ranking">🏆</button>
         <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false" title="Cambiar tema">🌙</button>
-        <div class="user-chip" id="userChip" hidden>
-          <span class="user-avatar" aria-hidden="true">👤</span>
+        <button class="user-chip" id="userChip" type="button" aria-haspopup="dialog" title="Abrir tu perfil" hidden>
+          <span class="user-avatar" id="userChipIcon" aria-hidden="true">👤</span>
           <span id="userChipName">jugador</span>
-        </div>
+        </button>
       </div>
     </div>
   </header>
@@ -248,7 +249,8 @@
         <div class="table-head"><h3>🏆 Mejores puntuaciones <small>Top 10 de este dispositivo</small></h3>
         <button class="link-danger" id="btnClearRank" type="button">🗑 Borrar ranking</button></div>
         <div class="table-wrap"><table id="rankTable">
-          <thead><tr><th>POS.</th><th>JUGADOR</th><th>PUNTUACIÓN</th><th>CATEGORÍA</th><th>DIFICULTAD</th><th>FECHA</th></tr></thead>
+          <caption class="sr-only">Mejores 10 puntuaciones locales</caption>
+          <thead><tr><th scope="col">POS.</th><th scope="col">JUGADOR</th><th scope="col">PUNTUACIÓN</th><th scope="col">CATEGORÍA</th><th scope="col">DIFICULTAD</th><th scope="col">FECHA</th></tr></thead>
           <tbody><tr><td colspan="6" class="muted">Sin partidas registradas (Fase 4).</td></tr></tbody>
         </table></div>
       </div>
@@ -259,6 +261,32 @@
     <small>Hecho para aprender y disfrutar de Colombia</small>
     <small>Trivia Colombia · 2025</small>
   </footer>
+
+  <!-- ============ PERFIL ============ -->
+  <div class="modal-backdrop" id="profileModal" hidden>
+    <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+      <div class="modal-head">
+        <h2 id="profileTitle">Tu perfil</h2>
+        <button class="icon-btn" type="button" id="btnCloseProfile" aria-label="Cerrar perfil">✕</button>
+      </div>
+      <div class="profile-hero">
+        <span class="profile-icon" id="profileIconPreview" aria-hidden="true">👤</span>
+        <div class="profile-name-wrap">
+          <label class="field-label" for="profileName">Nombre</label>
+          <input class="text-input" id="profileName" type="text" maxlength="24" autocomplete="nickname" />
+        </div>
+      </div>
+      <p class="field-error" id="profileNameError" role="alert" hidden>Escribe un nombre de 2 a 24 letras.</p>
+      <h3>Icono</h3>
+      <div class="icon-grid" id="profileIconGrid" role="radiogroup" aria-label="Icono de perfil"></div>
+      <h3>Tus puntajes recientes</h3>
+      <ul class="recent-list" id="profileRecent"></ul>
+      <div class="actions-end">
+        <button class="btn btn-ghost" type="button" id="btnCancelProfile">Cancelar</button>
+        <button class="btn btn-primary" type="button" id="btnSaveProfile">Guardar</button>
+      </div>
+    </div>
+  </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
