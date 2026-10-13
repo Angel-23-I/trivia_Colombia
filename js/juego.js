@@ -141,7 +141,7 @@ export function responder(partida, { elegido = null, segundosRestantes = 0, tiem
     comodines,
   });
 
-  partida.puntos += puntos;
+  partida.puntos += puntos; // puntos ≥ 0 siempre: el total nunca baja ni es negativo
   partida.racha = nuevaRacha;
 
   const res = {

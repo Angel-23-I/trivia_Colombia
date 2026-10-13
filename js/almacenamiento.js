@@ -9,6 +9,7 @@ export const KEYS = {
   best: 'tc_best_v1',
   theme: 'tc_theme_v1',
   perfil: 'tc_perfil_v1',
+  sonido: 'tc_sonido_v1',
 };
 export const MAX_RANKING = 10;
 export const MAX_HISTORIAL = 100;

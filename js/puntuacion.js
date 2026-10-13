@@ -4,7 +4,8 @@
 //   Puntos = max(0, [(100 + rapidez + racha) × multiplicador − penalización])
 // - Base acierto: 100 · Rapidez: +5 por segundo restante (máx +100)
 // - Racha: +50 al completar 3 aciertos seguidos (3.º, 6.º, 9.º…)
-// - Fallo o timeout: 0 · Comodín válido: −30 c/u
+// - Fallo o timeout: 0 puntos base (la penalización no resta del acumulado
+//   ni puede dejar negativos: el suelo max(0, …) aplica en todos los caminos).
 // - Multiplicador: facil ×1, medio ×1.5, dificil ×2. Siempre entero (sin decimales).
 export const PTS_BASE = 100;
 export const PTS_POR_SEGUNDO = 5;
@@ -31,10 +32,12 @@ export function multiplicador(dificultad) {
  * @param {boolean} p.rachaCompleta — ¿esta respuesta completa una racha de 3?
  * @param {string} p.dificultad — 'facil' | 'medio' | 'dificil'
  * @param {number} p.comodines — n.º de comodines usados en esta pregunta (0-2)
- * @returns {number} entero ≥ 0
+ * @returns {number} entero ≥ 0 (nunca negativo, aun con penalización)
  */
 export function calcularPuntos({ correcta, segundosRestantes = 0, rachaCompleta = false, dificultad = 'medio', comodines = 0 } = {}) {
-  if (!correcta) return 0;
-  const bruto = (PTS_BASE + bonusRapidez(segundosRestantes) + (rachaCompleta ? PTS_RACHA : 0)) * multiplicador(dificultad);
-  return Math.max(0, Math.round(bruto - Math.max(0, comodines) * PTS_COMODIN));
+  const nCom = Number.isInteger(comodines) && comodines > 0 ? comodines : 0;
+  const bruto = correcta
+    ? (PTS_BASE + bonusRapidez(segundosRestantes) + (rachaCompleta ? PTS_RACHA : 0)) * multiplicador(dificultad)
+    : 0; // §7: incorrecta o no respondida = 0 puntos base
+  return Math.max(0, Math.round(bruto - nCom * PTS_COMODIN));
 }

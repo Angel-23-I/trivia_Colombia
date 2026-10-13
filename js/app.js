@@ -3,6 +3,7 @@
 // feedback → resultados (guardado único) → ranking y estadísticas.
 import { $, $$, showScreen, toast, validateName } from './ui.js';
 import { cargarPerfil, guardarPerfil, nombreValido } from './perfil.js';
+import { sonidoHabilitado, fijarSonido, reproducir } from './sonido.js';
 import { icon, avatar, AVATARES } from './iconos.js';
 import {
   KEYS, storageOK, guardarPartida, cargarRanking, cargarHistorial,
@@ -296,6 +297,7 @@ function mostrarFeedback(res) {
   if (next) next.textContent = p && esUltima(p) ? 'Ver resultados ›' : 'Siguiente pregunta ›';
 
   actualizarMarcador();
+  reproducir(res.acierto ? 'ok' : 'bad');
   showScreen('feedback');
 }
 
@@ -384,6 +386,7 @@ function finalizar() {
     else if (storageOK()) toast('No se pudo guardar la partida.');
   }
   renderResultados(r);
+  reproducir('fin');
   const pill = $('#scorePill');
   if (pill) pill.hidden = true;
   showScreen('resultados');
@@ -427,6 +430,7 @@ function iniciarJuego() {
   state.partida = sel.partida;
   clearTimeout(state.pending);
   mostrarPregunta();
+  reproducir('clic');
   toast(`¡Suerte, ${state.jugador}!`);
   showScreen('juego');
 }
@@ -709,6 +713,23 @@ function initPerfil() {
   }
 }
 
+/* ---------- sonido ---------- */
+
+function syncSound() {
+  const sw = $('#soundToggle');
+  if (sw) sw.setAttribute('aria-checked', String(sonidoHabilitado()));
+}
+
+function bindSound() {
+  syncSound();
+  $('#soundToggle')?.addEventListener('click', () => {
+    const on = fijarSonido(!sonidoHabilitado());
+    syncSound();
+    if (on) reproducir('clic');
+    toast(on ? 'Sonido activado.' : 'Sonido desactivado.');
+  });
+}
+
 /* ---------- bindings ---------- */
 
 function bindNav() {
@@ -809,6 +830,7 @@ function bindGame() {
       }
     });
     syncComodines();
+    reproducir('clic');
     toast('50/50 aplicado: quedan dos opciones (−30 pts).');
   });
 
@@ -818,6 +840,7 @@ function bindGame() {
     const r = usarExtra(p, state.timer);
     if (!r.ok) { toast('El tiempo extra ya se usó en esta partida.'); return; }
     syncComodines();
+    reproducir('clic');
     toast('+10 segundos (−30 pts).');
   });
 
@@ -852,6 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindGame();
   bindRanking();
   bindProfile();
+  bindSound();
   bindTheme();
   checkStorage();
   updateSummary();

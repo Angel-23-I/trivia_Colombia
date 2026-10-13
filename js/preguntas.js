@@ -1,5 +1,8 @@
-// Trivia Colombia — Banco de preguntas (Fase 2, ampliado).
-// 225 preguntas originales: 5 categorías × 3 dificultades × 15 por combinación.
+// Trivia Colombia — Banco de preguntas.
+// 225 preguntas originales y verificables sobre Colombia: 5 categorías ×
+// 3 dificultades × 15 por combinación (IDs `{cat}-{f|m|d}-01…15`).
+// Cada una: exactamente 4 opciones, `correcta` 0-3 y explicación breve.
+// Validado por tests/banco.mjs (sin duplicados, pools ≥ 15).
 // Forma canónica: { id, categoria, dificultad, enunciado, opciones[4], correcta (0-3), explicacion }
 export const CATEGORIAS = ['geografia', 'historia', 'cultura', 'deportes', 'ciencia'];
 export const DIFICULTADES = ['facil', 'medio', 'dificil'];
