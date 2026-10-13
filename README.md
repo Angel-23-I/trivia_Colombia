@@ -1,5 +1,7 @@
 # Trivia Colombia
 
+##Estudiante: Angel David Infante Espinel - 01220371056
+
 Juego web de preguntas sobre Colombia: 10 preguntas por partida, 20 segundos
 por pregunta, 5 categorías, 3 dificultades, comodines, rachas, ranking local
 y estadísticas. Fiel a los diseños Figma aprobados y a los wireframes MockFlow.
