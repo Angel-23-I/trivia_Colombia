@@ -388,13 +388,19 @@ function finalizar() {
   showScreen('resultados');
 }
 
-function salirPartida() {
+/** Limpia una partida en curso: detiene el timer, invalida pendientes y
+ *  oculta el marcador. Evita pantallas fantasma si se navega fuera del juego. */
+function abandonarPartida() {
   state.timer?.detener();
   clearTimeout(state.pending);
   state.gen += 1;
   state.partida = null;
   const pill = $('#scorePill');
   if (pill) pill.hidden = true;
+}
+
+function salirPartida() {
+  abandonarPartida();
   toast('Partida cancelada.');
   showScreen('inicio');
 }
@@ -710,8 +716,14 @@ function bindNav() {
       // defecto. Solo se omite si el botón enviaría realmente un formulario.
       if (el.tagName === 'BUTTON' && el.type !== 'button' && el.form) return;
       e.preventDefault();
-      showScreen(el.dataset.nav);
-      if (el.dataset.nav === 'ranking') renderRanking();
+      const destino = el.dataset.nav;
+      const actual = document.querySelector('.screen.is-active')?.dataset.screen;
+      if (actual === 'juego' && destino !== 'juego' && state.partida && !state.partida.terminada) {
+        abandonarPartida();
+        toast('Partida cancelada.');
+      }
+      showScreen(destino);
+      if (destino === 'ranking') renderRanking();
     });
   });
 }
