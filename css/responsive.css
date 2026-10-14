@@ -1,62 +1,89 @@
-/* Trivia Colombia — responsive */
-@media (max-width:1024px){
-  .grid-cats{grid-template-columns:repeat(3,1fr)}
-  .grid-4{grid-template-columns:repeat(2,1fr)}
-  .rank-grid{grid-template-columns:1fr}
+/* Trivia Colombia — responsive adaptativo moderno */
+@media (max-width: 1024px) {
+  .grid-cats { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .rank-grid { grid-template-columns: 1fr; }
 }
-@media (max-width:768px){
-  .hero-grid{grid-template-columns:1fr;gap:20px}
-  .hero-art{order:-1}
-  .float-record{left:0} .float-meta{right:0}
-  .game-grid{grid-template-columns:1fr}
-  .game-side{display:flex;gap:12px;align-items:center;justify-content:center}
-  .streak-card{flex:1;margin-top:0}
-  .timer-ring{width:110px;height:110px;margin:0}
-  .opts{grid-template-columns:1fr}
-  .grid-diff{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .game-top{grid-template-columns:70px 1fr 70px;gap:10px}
-  .actions-end{flex-direction:column-reverse}
-  .actions-end .btn{width:100%}
-  /* Fase 5: el temporizador queda fijo arriba al desplazar la pregunta. */
-  .game-side{position:sticky;top:74px;z-index:5;background:var(--bg);padding:6px;border-radius:14px}
+
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-art { order: -1; }
+  .float-record { left: 0; }
+  .float-meta { right: 0; }
+  .game-grid { grid-template-columns: 1fr; }
+  .game-side {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 74px;
+    z-index: 5;
+    background: var(--bg);
+    padding: 8px 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(16, 30, 60, 0.06);
+  }
+  .streak-card { flex: 1; margin-top: 0; }
+  .timer-ring { width: 112px; height: 112px; margin: 0; }
+  .timer-ring strong { font-size: 30px; }
+  .timer-ring small { font-size: 9px; }
+  .opts { grid-template-columns: 1fr; }
+  .grid-diff { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .game-top { grid-template-columns: 70px 1fr 70px; gap: 10px; }
+  .actions-end { flex-direction: column-reverse; }
+  .actions-end .btn { width: 100%; }
 }
-@media (max-width:480px){
-  .container{padding:0 14px}
-  .screen{padding:18px 0 30px}
-  .start-row{flex-direction:column}
-  .start-row .btn{width:100%}
-  .grid-cats{grid-template-columns:repeat(2,1fr)}
-  .grid-4{grid-template-columns:1fr}
-  .q-card h2{font-size:18px}
-  .opt{min-height:56px;font-size:15px} /* táctil cómodo */
-  .q-foot{flex-direction:column;gap:10px;align-items:stretch}
-  .dark-banner{flex-direction:column;align-items:flex-start}
-  .streak-demo{border-left:0;padding-left:0;margin-left:0}
-  .summary-end{width:100%;flex-direction:column;align-items:stretch}
-  .summary-end .btn{width:100%}
-  .footer{flex-direction:column;gap:4px;text-align:center}
-  .co-circle{width:min(280px,86vw)}
-  /* Fase 5: 360 px — cabecera compacta, feedback en 1 columna, táctil amplio. */
-  .topbar-actions{gap:6px}
-  .score-pill{padding:5px 10px}
-  .score-pill .muted{display:none}
-  /* En móvil los puntos ya se ven en la pantalla de juego: se oculta la píldora
-     para que quepan ranking, tema y perfil en 360 px. */
-  #scorePill{display:none}
-  .topbar .icon-btn{width:34px;height:34px}
-  #userChipName{max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .game-top{gap:8px}
-  .progress-meta{flex-wrap:wrap;gap:4px}
-  .fb-cols{grid-template-columns:1fr}
-  .btn-small{padding:12px 14px;font-size:13px}
-  .table-wrap{-webkit-overflow-scrolling:touch}
-  .toast{max-width:calc(100vw - 32px);text-align:center}
-  .podium{gap:6px}
-  .podium-step{padding:10px 4px}
-  .podium-step strong{font-size:15px}
-  .podium-step.first strong{font-size:17px}
+
+@media (max-width: 480px) {
+  .container { padding: 0 14px; }
+  .screen { padding: 20px 0 32px; }
+  .start-row { flex-direction: column; }
+  .start-row .btn { width: 100%; }
+  .grid-cats { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: 1fr; }
+  .q-card { padding: 18px 14px; }
+  .q-card h2 { font-size: 19px; }
+  .opt {
+    min-height: 58px;
+    font-size: 14px;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .opt-key { width: 30px; height: 30px; font-size: 13px; }
+  .q-foot { flex-direction: column; gap: 12px; align-items: stretch; }
+  .dark-banner { flex-direction: column; align-items: flex-start; }
+  .streak-demo { border-left: 0; padding-left: 0; margin-left: 0; }
+  .summary-end { width: 100%; flex-direction: column; align-items: stretch; }
+  .summary-end .btn { width: 100%; }
+  .footer { flex-direction: column; gap: 6px; text-align: center; }
+  .co-circle { width: min(280px, 86vw); }
+
+  /* Ajustes para pantallas pequeñas (360 px) */
+  .topbar-actions { gap: 6px; }
+  .score-pill { padding: 5px 10px; }
+  .score-pill .muted { display: none; }
+  #scorePill { display: none; }
+  .topbar .icon-btn { width: 36px; height: 36px; }
+  #userChipName { max-width: 64px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .game-top { gap: 8px; }
+  .progress-meta { flex-wrap: wrap; gap: 4px; }
+  .fb-cols { grid-template-columns: 1fr; }
+  .btn-small { padding: 10px 14px; font-size: 13px; }
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .toast { max-width: calc(100vw - 32px); text-align: center; }
+  .podium { gap: 8px; }
+  .podium-step { padding: 10px 6px; min-height: 96px; }
+  .podium-step strong { font-size: 16px; }
+  .podium-step.first strong { font-size: 18px; }
+  .podium-step.first { min-height: 120px; }
 }
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

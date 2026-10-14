@@ -161,14 +161,22 @@ function actualizarMarcador() {
     pill.hidden = false;
     const v = $('#scorePillValue'); if (v) v.textContent = fmtPts(pts);
   }
-  const st = $('#streakNum'); if (st) st.textContent = `× ${p ? p.racha : 0}`;
+  const racha = p ? p.racha : 0;
+  const st = $('#streakNum'); if (st) st.textContent = `× ${racha}`;
+  const sc = $('.streak-card');
+  if (sc) sc.classList.toggle('is-on-fire', racha >= 3);
 }
 
 function pintarTiempo(s) {
   const num = $('#timerNum');
   if (num) num.textContent = String(s);
   const ring = num?.closest('.timer-ring');
-  if (ring) ring.classList.toggle('danger', s <= 5);
+  if (ring) {
+    const pct = Math.max(0, Math.min(1, s / TIEMPO_POR_PREGUNTA));
+    ring.style.setProperty('--timer-deg', `${(pct * 360).toFixed(1)}deg`);
+    ring.classList.toggle('warning', s > 5 && s <= 10);
+    ring.classList.toggle('danger', s <= 5);
+  }
   const timerSec = $('#screen-juego');
   if (timerSec) timerSec.setAttribute('aria-label', `Tiempo restante: ${s} segundos`);
 }
