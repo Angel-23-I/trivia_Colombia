@@ -6,6 +6,9 @@ Juego web de preguntas sobre Colombia: 10 preguntas por partida, 20 segundos
 por pregunta, 5 categorías, 3 dificultades, comodines, rachas, ranking local
 y estadísticas. Fiel a los diseños Figma aprobados y a los wireframes MockFlow.
 
+**Juego en línea:** https://trivia-colombia-eight.vercel.app/
+**Prototipo Figma:** https://www.figma.com/make/dtbKMg1NeM5ctTYJnAN7hk/High-Fidelity-UI-UX-Design?t=ETDDTfi4wFthykDd-1
+
 ## Vista previa
 
 ![Pantalla de inicio de Trivia Colombia](assets/img/inicio.png)
@@ -126,7 +129,9 @@ corruptos o storage bloqueado, el juego sigue funcionando sin persistencia.
 
 ## Despliegue
 
-**Vercel** (sin compilación):
+**Producción:** https://trivia-colombia-eight.vercel.app/ (Vercel, sin compilación).
+
+Para republicar:
 
 1. Sube el repo a GitHub (público).
 2. En Vercel: *Add New → Project → Import* el repo.
