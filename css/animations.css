@@ -1,0 +1,89 @@
+/* Trivia Colombia — sistema de movimiento (mejora visual).
+   CSS puro, GPU-amable (transform/opacity). Todo se desactiva con
+   prefers-reduced-motion (ver bloque final). Carga después de styles.css. */
+
+/* --- transiciones de pantalla --- */
+@keyframes screenIn{from{opacity:0;transform:translateY(14px) scale(.995)}to{opacity:1;transform:none}}
+.screen.is-active{animation:screenIn .32s ease both}
+
+/* --- entrada escalonada: añade data-anim a tarjetas y --d:1..6 --- */
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+[data-anim]{animation:riseIn .45s ease both;animation-delay:calc(var(--d,1)*70ms)}
+
+/* --- botones con vida --- */
+.btn{transition:transform .15s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(31,92,255,.42)}
+.btn-ghost:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.opt{transition:transform .12s ease,border-color .15s ease,background-color .15s ease,box-shadow .15s ease}
+.opt:hover:not(:disabled){transform:translateY(-2px);box-shadow:var(--shadow)}
+.cat-card,.diff-card{transition:transform .15s ease,border-color .15s ease,box-shadow .2s ease}
+.cat-card:hover,.diff-card:hover{transform:translateY(-3px)}
+.cat-card.is-selected,.diff-card.is-selected{box-shadow:0 10px 26px rgba(31,92,255,.22)}
+
+/* --- temporizador en peligro --- */
+@keyframes pulseRing{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.timer-ring.danger{animation:pulseRing 1s ease-in-out infinite}
+
+/* --- brillo deslizante en progreso --- */
+.progress{position:relative}
+.progress span{position:relative;overflow:hidden}
+.progress span::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-100%);animation:shimmer 2.2s ease-in-out infinite}
+@keyframes shimmer{60%,100%{transform:translateX(100%)}}
+
+/* --- flotación del hero --- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float-card{animation:floatY 5s ease-in-out infinite}
+.float-meta{animation-delay:2.5s}
+.co-map{filter:drop-shadow(0 14px 22px rgba(16,30,60,.22))}
+
+/* --- feedback: icono con pop --- */
+@keyframes popIn{0%{opacity:0;transform:scale(.4)}60%{transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+.fb-icon{animation:popIn .38s ease both}
+
+/* --- barras que crecen al entrar --- */
+.bars .bar i{transform:scaleY(0);transform-origin:bottom;animation:growY .6s ease both;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes growY{to{transform:scaleY(1)}}
+.hbar span{transform:scaleX(0);transform-origin:left;animation:growX .6s ease both;animation-delay:calc(var(--i,0)*120ms)}
+@keyframes growX{to{transform:scaleX(1)}}
+
+/* --- confeti de resultados --- */
+.confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:inherit}
+.confetti i{position:absolute;top:-12px;width:8px;height:12px;border-radius:2px;opacity:.95;animation:fall linear both}
+@keyframes fall{to{transform:translateY(110%) rotate(540deg);opacity:.7}}
+
+/* --- podio --- */
+@keyframes podiumIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.podium-step{animation:podiumIn .45s ease both;animation-delay:calc(var(--i,0)*110ms)}
+
+/* --- entrada escalonada automática (sin atributos extra) --- */
+.grid-cats>*{animation:riseIn .4s ease both}
+.grid-cats>*:nth-child(2){animation-delay:70ms}
+.grid-cats>*:nth-child(3){animation-delay:140ms}
+.grid-cats>*:nth-child(4){animation-delay:210ms}
+.grid-cats>*:nth-child(5){animation-delay:280ms}
+.grid-cats>*:nth-child(6){animation-delay:350ms}
+.grid-diff>*{animation:riseIn .4s ease both}
+.grid-diff>*:nth-child(2){animation-delay:90ms}
+.grid-diff>*:nth-child(3){animation-delay:180ms}
+.grid-4>*{animation:riseIn .4s ease both}
+.grid-4>*:nth-child(2){animation-delay:80ms}
+.grid-4>*:nth-child(3){animation-delay:160ms}
+.grid-4>*:nth-child(4){animation-delay:240ms}
+.grid-3>*{animation:riseIn .4s ease both}
+.grid-3>*:nth-child(2){animation-delay:90ms}
+.grid-3>*:nth-child(3){animation-delay:180ms}
+.opts .opt{animation:riseIn .28s ease both}
+.opts .opt:nth-child(2){animation-delay:60ms}
+.opts .opt:nth-child(3){animation-delay:120ms}
+.opts .opt:nth-child(4){animation-delay:180ms}
+.review-item{animation:riseIn .35s ease both}
+#rankTable tbody tr{animation:riseIn .3s ease both}
+
+/* --- respeta movimiento reducido: todo estático --- */
+@media (prefers-reduced-motion:reduce){
+  .screen.is-active,[data-anim],.fb-icon,.bars .bar i,.hbar span,.podium-step{animation:none!important}
+  .progress span::after,.float-card,.timer-ring.danger{animation:none!important}
+  .btn:hover,.btn-ghost:hover,.opt:hover:not(:disabled),.cat-card:hover,.diff-card:hover{transform:none}
+  .btn:active{transform:none}
+}

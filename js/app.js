@@ -45,6 +45,47 @@ function fmtPts(n) {
   return Number(n || 0).toLocaleString('es-CO');
 }
 
+function movimientoReducido() {
+  try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  catch { return false; }
+}
+
+/** Anima un número hasta su valor final; sin motion va directo. */
+function animarNumero(el, valor, fmt = (n) => String(Math.round(n))) {
+  if (!el) return;
+  const final = Number(valor) || 0;
+  if (movimientoReducido()) { el.textContent = fmt(final); return; }
+  const t0 = performance.now();
+  const dur = 700;
+  function paso(t) {
+    const k = Math.min(1, (t - t0) / dur);
+    el.textContent = fmt(final * (1 - Math.pow(1 - k, 3)));
+    if (k < 1) requestAnimationFrame(paso);
+  }
+  requestAnimationFrame(paso);
+}
+
+/** Confeti tricolor en un contenedor (respeta movimiento reducido). */
+function lanzarConfeti(contenedor) {
+  if (!contenedor || movimientoReducido()) return;
+  contenedor.querySelector('.confetti')?.remove();
+  const box = document.createElement('div');
+  box.className = 'confetti';
+  box.setAttribute('aria-hidden', 'true');
+  const colores = ['#FFBE2E', '#1F5CFF', '#E5484D', '#1aa65c', '#7c5cff'];
+  for (let i = 0; i < 48; i += 1) {
+    const p = document.createElement('i');
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.background = colores[i % colores.length];
+    p.style.animationDuration = `${1.6 + Math.random() * 1.6}s`;
+    p.style.animationDelay = `${Math.random() * 0.9}s`;
+    if (i % 3 === 0) p.style.borderRadius = '50%';
+    box.append(p);
+  }
+  contenedor.append(box);
+  setTimeout(() => box.remove(), 4200);
+}
+
 /* ---------- tema / mejor puntuación / storage ---------- */
 
 function applyTheme(t) {
@@ -314,7 +355,7 @@ function renderResultados(r) {
   const title = $('#res-title');
   if (title) title.textContent = `¡Gran partida, ${r.jugador}!`;
   const score = $('#resScore');
-  if (score) score.textContent = fmtPts(r.puntos);
+  if (score) animarNumero(score, r.puntos, fmtPts);
   const pct = $('#resPct');
   if (pct) pct.textContent = `${r.porcentaje}% de aciertos · ${fmtTiempo(r.tiempoTotal)} de juego`;
   const ok = $('#resOk');
@@ -387,6 +428,7 @@ function finalizar() {
   }
   renderResultados(r);
   reproducir('fin');
+  lanzarConfeti(document.querySelector('#screen-resultados .hero-res'));
   const pill = $('#scorePill');
   if (pill) pill.hidden = true;
   showScreen('resultados');
@@ -481,10 +523,11 @@ function renderRanking() {
     bc.innerHTML = '';
     bc.setAttribute('role', 'img');
     bc.setAttribute('aria-label', 'Porcentaje de aciertos por categoría');
-    for (const c of CATS_ORDER) {
+    for (const [i, c] of CATS_ORDER.entries()) {
       const v = stats.porCategoria[c];
       const wrap = document.createElement('div');
       wrap.className = 'bar';
+      wrap.style.setProperty('--i', i);
       wrap.title = `${CAT_LABEL[c]}: ${v.ok}/${v.total} (${v.pct}%)`;
       const pct = document.createElement('small');
       pct.textContent = `${v.pct}%`;
@@ -501,9 +544,10 @@ function renderRanking() {
   const bd = $('#barsDiff');
   if (bd) {
     bd.innerHTML = '';
-    for (const d of DIFFS_ORDER) {
+    for (const [i, d] of DIFFS_ORDER.entries()) {
       const v = stats.porDificultad[d];
       const row = document.createElement('div');
+      row.style.setProperty('--i', i);
       const head = document.createElement('div');
       head.style.cssText = 'display:flex;justify-content:space-between;margin-bottom:4px';
       const lab = document.createElement('span');
@@ -521,6 +565,23 @@ function renderRanking() {
       row.title = `${DIFF_LABEL[d]}: ${v.ok}/${v.total}`;
       bd.append(row);
     }
+  }
+
+  const pod = $('#podiumRow');
+  if (pod) {
+    pod.innerHTML = '';
+    const top3 = ranking.slice(0, 3);
+    [1, 0, 2].filter((k) => k < top3.length).forEach((k, j) => {
+      const r = top3[k];
+      const d = document.createElement('div');
+      d.className = `podium-step${k === 0 ? ' first' : ''}`;
+      d.style.setProperty('--i', j);
+      const inicial = escapeHtml((r.nombre.trim()[0] || '?').toUpperCase());
+      d.innerHTML = `<span class="pos${k === 0 ? ' gold' : ''}">${k + 1}</span>`
+        + `<strong>${fmtPts(r.puntos)}</strong><small>${inicial} · ${escapeHtml(r.nombre)}</small>`;
+      pod.append(d);
+    });
+    pod.hidden = top3.length === 0;
   }
 
   const tb = document.querySelector('#rankTable tbody');
