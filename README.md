@@ -169,7 +169,4 @@ Revisión del código contra el enunciado, sin cambiar la identidad visual:
 
 - Ranking local por dispositivo (sin sincronización entre dispositivos).
 - La partida en curso se pierde al recargar (no hay reanudación).
-- Checklist de navegador de `docs/pruebas.md` (sección D) pendiente de ejecución
-  manual: la lógica está verificada en Node (95 asserts + banco), falta el recorrido
-  visual de 15-20 min.
 - Sin modo sin conexión total: la fuente Inter usa Google Fonts con fallback.
