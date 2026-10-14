@@ -311,9 +311,17 @@ function mostrarFeedback(res) {
   if (pts) pts.textContent = `+${fmtPts(res.puntos)}`;
   const note = $('#fbNote');
   if (note) {
-    note.textContent = res.rachaCompleta
-      ? 'Incluye +50 de racha ×3'
-      : (res.puntos > 0 ? 'Bono por rapidez incluido' : (res.timeout ? 'Tiempo agotado · sin puntos' : 'Sin puntos en esta pregunta'));
+    // Desglose visible: la penalización de −30 c/u ya viene descontada en
+    // res.puntos; aquí se muestra para que el descuento no pase inadvertido.
+    const pen = res.comodines > 0 ? ` · −${res.comodines * 30} por comodín (−30 c/u)` : '';
+    const sinEfecto = res.comodines > 0 ? ' (comodín usado, sin efecto sobre 0 pts)' : '';
+    if (res.puntos > 0) {
+      note.textContent = (res.rachaCompleta ? 'Incluye +50 de racha ×3' : 'Bono por rapidez incluido') + pen;
+    } else if (res.timeout) {
+      note.textContent = 'Tiempo agotado · sin puntos' + sinEfecto;
+    } else {
+      note.textContent = 'Sin puntos en esta pregunta' + sinEfecto;
+    }
   }
 
   const mine = $('#fbMine');

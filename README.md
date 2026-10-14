@@ -6,6 +6,10 @@ Juego web de preguntas sobre Colombia: 10 preguntas por partida, 20 segundos
 por pregunta, 5 categorías, 3 dificultades, comodines, rachas, ranking local
 y estadísticas. Fiel a los diseños Figma aprobados y a los wireframes MockFlow.
 
+## Vista previa
+
+![Pantalla de inicio de Trivia Colombia](assets/img/inicio.png)
+
 ## Objetivo académico
 
 Parcial de **Desarrollo Full Stack**: transformar los diseños en una aplicación

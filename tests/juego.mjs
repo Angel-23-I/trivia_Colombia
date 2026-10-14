@@ -99,6 +99,15 @@ function partidaRapida(dificultad = 'medio') {
   t('solo 50/50: 300-30=270', res.puntos === 270, `obtenido ${res.puntos}`);
 }
 {
+  // Comparativa directa: misma respuesta y tiempo, con y sin comodín.
+  const a = partidaRapida();
+  const ra = responder(a, { elegido: preguntaActual(a).correcta, segundosRestantes: 20 });
+  const b = partidaRapida();
+  usar5050(b);
+  const rb = responder(b, { elegido: preguntaActual(b).correcta, segundosRestantes: 20 });
+  t('comodín resta 30 frente a no usarlo (300→270)', ra.puntos === 300 && rb.puntos === 270 && ra.puntos - rb.puntos === 30, `${ra.puntos} vs ${rb.puntos}`);
+}
+{
   // timeout
   const p = partidaRapida();
   const res = responder(p, { elegido: null, segundosRestantes: 0 });
