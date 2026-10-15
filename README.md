@@ -98,6 +98,20 @@ python -m http.server 8000
 
 Abre `http://localhost:8000` (o el puerto indicado) y juega.
 
+## Pruebas
+
+Batería automatizada sin dependencias (Node.js 18+), desde la raíz del proyecto:
+
+```powershell
+node tests/run.mjs        # batería completa
+node tests/juego.mjs      # una suite (igual con las demás)
+```
+
+Suites: `banco` (225 preguntas), `juego` (puntuación/motor/timer),
+`ranking` (orden top-10/estadísticas), `tiempo` (fix 0:00), `perfil`,
+`sonido` y `estructura` (pantallas, categorías, niveles).
+Detalle y guía manual de navegador en `docs/pruebas.md`.
+
 ## Reglas de puntuación (§7)
 
 `Puntos = max(0, [(100 + rapidez + racha) × multiplicador − penalización])`
