@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trivia Colombia — ¿Cuánto sabes de Colombia? Juego de 10 preguntas de geografía, historia, cultura, deportes y ciencia." />
+  <meta name="description"
+    content="Trivia Colombia — ¿Cuánto sabes de Colombia? Juego de 10 preguntas de geografía, historia, cultura, deportes y ciencia." />
   <title>Trivia Colombia — ¿Cuánto sabes de Colombia?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +15,7 @@
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg" />
 </head>
+
 <body>
   <a class="skip-link" href="#app">Saltar al contenido</a>
 
@@ -21,23 +24,46 @@
       <button type="button" class="brand" data-nav="inicio" aria-label="Trivia Colombia — ir al inicio">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 40 40" width="32" height="32" role="img" aria-label="Logo Trivia Colombia">
-            <rect x="1" y="1" width="38" height="38" rx="10" fill="#FFBE2E"/>
-            <path d="M1 26h38v3a10 10 0 0 1-10 10H11A10 10 0 0 1 1 29v-3z" fill="#E5484D"/>
-            <path d="M1 22h38v5H1z" fill="#1F5CFF"/>
-            <path d="M22.5 8 14 22h6l-1.5 9L27 17h-6l1.5-9z" fill="#101E3C"/>
+            <rect x="1" y="1" width="38" height="38" rx="10" fill="#FFBE2E" />
+            <path d="M1 26h38v3a10 10 0 0 1-10 10H11A10 10 0 0 1 1 29v-3z" fill="#E5484D" />
+            <path d="M1 22h38v5H1z" fill="#1F5CFF" />
+            <path d="M22.5 8 14 22h6l-1.5 9L27 17h-6l1.5-9z" fill="#101E3C" />
           </svg>
         </span>
         <span class="brand-text"><strong>TRIVIA</strong><small>COLOMBIA</small></span>
       </button>
       <div class="topbar-actions">
         <div class="score-pill" id="scorePill" hidden>
-          <span aria-hidden="true"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <span aria-hidden="true"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              focusable="false">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg></span>
           <strong id="scorePillValue">0</strong><span class="muted">puntos</span>
         </div>
-        <button class="icon-btn" type="button" data-nav="ranking" aria-label="Ver ranking y estadísticas" title="Ranking"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></button>
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false" title="Cambiar tema"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+        <button class="icon-btn" type="button" data-nav="ranking" aria-label="Ver ranking y estadísticas"
+          title="Ranking"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+            <path d="M4 22h16" />
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+          </svg></button>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar entre modo claro y oscuro"
+          aria-pressed="false" title="Cambiar tema"><svg class="ic" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg></button>
         <button class="user-chip" id="userChip" type="button" aria-haspopup="dialog" title="Abrir tu perfil" hidden>
-          <span class="user-avatar" id="userChipIcon" aria-hidden="true"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <span class="user-avatar" id="userChipIcon" aria-hidden="true"><svg class="ic" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg></span>
           <span id="userChipName">jugador</span>
         </button>
       </div>
@@ -53,30 +79,61 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="flag-dots" aria-hidden="true"></span> PON A PRUEBA LO QUE SABES</p>
           <h1 id="inicio-title">¿Cuánto sabes de <span class="accent-blue">Colombia?</span></h1>
-          <p class="lead">Recorre su historia, cultura y lugares increíbles. Responde, suma puntos y llega a lo más alto.</p>
+          <p class="lead">Recorre su historia, cultura y lugares increíbles. Responde, suma puntos y llega a lo más
+            alto.</p>
           <form id="startForm" class="card start-card" novalidate>
             <label class="field-label" for="playerName">¿Cómo te llamas?</label>
             <div class="start-row">
               <div class="input-wrap">
-                <span aria-hidden="true"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <span aria-hidden="true"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true" focusable="false">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg></span>
                 <input id="playerName" name="playerName" type="text" maxlength="24" autocomplete="nickname"
                   placeholder="Escribe tu nombre" aria-describedby="nameError" required />
               </div>
               <button class="btn btn-primary" type="submit">Empezar a jugar <span aria-hidden="true">›</span></button>
             </div>
-            <p class="field-error" id="nameError" role="alert" hidden>Escribe tu nombre para continuar (sin espacios vacíos).</p>
+            <p class="field-error" id="nameError" role="alert" hidden>Escribe tu nombre para continuar (sin espacios
+              vacíos).</p>
           </form>
           <button type="button" class="link-btn" data-nav="instrucciones">ⓘ ¿Cómo se juega?</button>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="co-circle">
-            <img class="co-map" src="assets/img/colombian-flag-in-map-free-vector.jpg" alt="Mapa de Colombia con los colores de la bandera" width="400" height="400" />
-            <div class="float-card float-record"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> <span><small>Récord local</small><strong id="heroBestPts">— pts</strong></span></div>
-            <div class="float-card float-meta"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span><small>Tu próxima meta</small><strong>Top 10</strong></span></div>
+            <img class="co-map" src="assets/img/colombian-flag-in-map-free-vector.jpg"
+              alt="Mapa de Colombia con los colores de la bandera" width="400" height="400" />
+            <div class="float-card float-record"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                focusable="false">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+              </svg> <span><small>Récord local</small><strong id="heroBestPts">— pts</strong></span></div>
+            <div class="float-card float-meta"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                focusable="false">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg> <span><small>Tu próxima meta</small><strong>Top 10</strong></span></div>
           </div>
           <div class="best-card" id="bestCard">
-            <span class="best-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.3l4.27-3.37a.5.5 0 0 1 .8.52l-2.83 10.24a1 1 0 0 1-.96.74H5.81a1 1 0 0 1-.96-.74L2.02 6.32a.5.5 0 0 1 .8-.52l4.27 3.66a1 1 0 0 0 1.52-.3z"/><path d="M5 21h14"/></svg></span>
-            <span class="best-text"><small>MEJOR PUNTUACIÓN LOCAL</small><strong id="bestCardName">Sin partidas aún</strong></span>
+            <span class="best-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                focusable="false">
+                <path
+                  d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.3l4.27-3.37a.5.5 0 0 1 .8.52l-2.83 10.24a1 1 0 0 1-.96.74H5.81a1 1 0 0 1-.96-.74L2.02 6.32a.5.5 0 0 1 .8-.52l4.27 3.66a1 1 0 0 0 1.52-.3z" />
+                <path d="M5 21h14" />
+              </svg></span>
+            <span class="best-text"><small>MEJOR PUNTUACIÓN LOCAL</small><strong id="bestCardName">Sin partidas
+                aún</strong></span>
             <strong class="best-pts" id="bestCardPts">—</strong>
           </div>
         </div>
@@ -90,14 +147,28 @@
       <p class="eyebrow">ANTES DE EMPEZAR</p>
       <div class="title-row">
         <span class="title-icon">ⓘ</span>
-        <div><h2 id="inst-title">¿Cómo se juega?</h2>
-        <p class="muted">Todo lo que necesitas para convertirte en experto de Colombia.</p></div>
+        <div>
+          <h2 id="inst-title">¿Cómo se juega?</h2>
+          <p class="muted">Todo lo que necesitas para convertirte en experto de Colombia.</p>
+        </div>
       </div>
       <div class="grid-4">
-        <article class="card rule-card"><span class="rule-num">01</span><span class="rule-ico blue">◎</span><h3>10 preguntas</h3><p>Completa una partida corta y dinámica.</p></article>
-        <article class="card rule-card"><span class="rule-num">02</span><span class="rule-ico yellow">◷</span><h3>20 segundos</h3><p>Responde antes de que termine el tiempo.</p></article>
-        <article class="card rule-card"><span class="rule-num">03</span><span class="rule-ico green">✦</span><h3>Suma puntos</h3><p>La rapidez y las rachas aumentan tu puntaje.</p></article>
-        <article class="card rule-card"><span class="rule-num">04</span><span class="rule-ico red">◷</span><h3>Usa comodines</h3><p>Tienes un 50/50 y tiempo extra por partida.</p></article>
+        <article class="card rule-card"><span class="rule-num">01</span><span class="rule-ico blue">◎</span>
+          <h3>10 preguntas</h3>
+          <p>Completa una partida corta y dinámica.</p>
+        </article>
+        <article class="card rule-card"><span class="rule-num">02</span><span class="rule-ico yellow">◷</span>
+          <h3>20 segundos</h3>
+          <p>Responde antes de que termine el tiempo.</p>
+        </article>
+        <article class="card rule-card"><span class="rule-num">03</span><span class="rule-ico green">✦</span>
+          <h3>Suma puntos</h3>
+          <p>La rapidez y las rachas aumentan tu puntaje.</p>
+        </article>
+        <article class="card rule-card"><span class="rule-num">04</span><span class="rule-ico red">◷</span>
+          <h3>Usa comodines</h3>
+          <p>Tienes un 50/50 y tiempo extra por partida.</p>
+        </article>
       </div>
       <div class="card scoring-card">
         <h3>Puntuación</h3>
@@ -111,13 +182,20 @@
         <p class="formula">Puntos = max(0, [(100 + rapidez + racha) × multiplicador − penalización])</p>
       </div>
       <div class="dark-banner">
-        <span class="banner-ico"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-        <div><strong>Consejo de experto</strong><p>Responde varias preguntas correctas seguidas para activar una racha. ¡Cada 3 seguidas suman +50!</p></div>
+        <span class="banner-ico"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+            focusable="false">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg></span>
+        <div><strong>Consejo de experto</strong>
+          <p>Responde varias preguntas correctas seguidas para activar una racha. ¡Cada 3 seguidas suman +50!</p>
+        </div>
         <div class="streak-demo"><small>RACHA</small><strong>× 3</strong></div>
       </div>
       <div class="actions-end">
         <button type="button" class="btn btn-ghost" data-nav="inicio">Volver al inicio</button>
-        <button type="button" class="btn btn-primary" data-nav="config">Configurar partida <span aria-hidden="true">›</span></button>
+        <button type="button" class="btn btn-primary" data-nav="config">Configurar partida <span
+            aria-hidden="true">›</span></button>
       </div>
     </section>
 
@@ -126,37 +204,93 @@
       <button type="button" class="back-link" data-nav="inicio">‹ Volver al inicio</button>
       <p class="eyebrow">PERSONALIZA TU RETO</p>
       <div class="title-row space">
-        <div><h2 id="cfg-title">Configura tu partida</h2>
-        <p class="muted">Elige los temas que más te gustan y qué tan difícil será el desafío.</p></div>
-        <ol class="steps" aria-label="Pasos"><li class="on">1 Configuración</li><li>2 ¡A jugar!</li></ol>
+        <div>
+          <h2 id="cfg-title">Configura tu partida</h2>
+          <p class="muted">Elige los temas que más te gustan y qué tan difícil será el desafío.</p>
+        </div>
+        <ol class="steps" aria-label="Pasos">
+          <li class="on">1 Configuración</li>
+          <li>2 ¡A jugar!</li>
+        </ol>
       </div>
-      <h3 class="step-title"><span class="step-n">1</span> Elige una categoría <small>Puedes mezclar todos los temas o enfocarte en uno.</small></h3>
+      <h3 class="step-title"><span class="step-n">1</span> Elige una categoría <small>Puedes mezclar todos los temas o
+          enfocarte en uno.</small></h3>
       <div class="grid-cats" role="group" aria-label="Categorías" id="catGroup">
-        <button class="cat-card is-selected" data-cat="todas" aria-pressed="true"><span class="cat-ico yellow"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span><strong>Todas las categorías</strong><span class="check">✓</span></button>
-        <button class="cat-card" data-cat="geografia" aria-pressed="false"><span class="cat-ico blue"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><strong>Geografía</strong><span class="check">✓</span></button>
-        <button class="cat-card" data-cat="historia" aria-pressed="false"><span class="cat-ico red"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span><strong>Historia</strong><span class="check">✓</span></button>
-        <button class="cat-card" data-cat="cultura" aria-pressed="false"><span class="cat-ico purple"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><strong>Cultura y tradiciones</strong><span class="check">✓</span></button>
-        <button class="cat-card" data-cat="deportes" aria-pressed="false"><span class="cat-ico green"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><strong>Deportes</strong><span class="check">✓</span></button>
-        <button class="cat-card" data-cat="ciencia" aria-pressed="false"><span class="cat-ico teal"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><strong>Ciencia y naturaleza</strong><span class="check">✓</span></button>
+        <button class="cat-card is-selected" data-cat="todas" aria-pressed="true"><span class="cat-ico yellow"><svg
+              class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+            </svg></span><strong>Todas las categorías</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="geografia" aria-pressed="false"><span class="cat-ico blue"><svg class="ic"
+              width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg></span><strong>Geografía</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="historia" aria-pressed="false"><span class="cat-ico red"><svg class="ic"
+              width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <line x1="3" x2="21" y1="22" y2="22" />
+              <line x1="6" x2="6" y1="18" y2="11" />
+              <line x1="10" x2="10" y1="18" y2="11" />
+              <line x1="14" x2="14" y1="18" y2="11" />
+              <line x1="18" x2="18" y1="18" y2="11" />
+              <polygon points="12 2 20 7 4 7" />
+            </svg></span><strong>Historia</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="cultura" aria-pressed="false"><span class="cat-ico purple"><svg class="ic"
+              width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" />
+            </svg></span><strong>Cultura y tradiciones</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="deportes" aria-pressed="false"><span class="cat-ico green"><svg class="ic"
+              width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+              <path d="M4 22h16" />
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </svg></span><strong>Deportes</strong><span class="check">✓</span></button>
+        <button class="cat-card" data-cat="ciencia" aria-pressed="false"><span class="cat-ico teal"><svg class="ic"
+              width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg></span><strong>Ciencia y naturaleza</strong><span class="check">✓</span></button>
       </div>
       <p class="field-error" id="catError" role="alert" hidden>Elige al menos una categoría.</p>
-      <h3 class="step-title"><span class="step-n">2</span> Selecciona la dificultad <small>Podrás cambiarla en tu próxima partida.</small></h3>
+      <h3 class="step-title"><span class="step-n">2</span> Selecciona la dificultad <small>Podrás cambiarla en tu
+          próxima partida.</small></h3>
       <div class="grid-diff" role="radiogroup" aria-label="Dificultad" id="diffGroup">
-        <button class="diff-card" data-diff="facil" role="radio" aria-checked="false"><span class="diff-ico green">▂</span><span><strong>Fácil</strong><small>Para empezar con calma · ×1</small></span><span class="check">✓</span></button>
-        <button class="diff-card is-selected" data-diff="medio" role="radio" aria-checked="true"><span class="diff-ico yellow">▃</span><span><strong>Medio</strong><small>Un reto equilibrado · ×1.5</small></span><span class="check">✓</span></button>
-        <button class="diff-card" data-diff="dificil" role="radio" aria-checked="false"><span class="diff-ico red">▅</span><span><strong>Difícil</strong><small>Solo para expertos · ×2</small></span><span class="check">✓</span></button>
+        <button class="diff-card" data-diff="facil" role="radio" aria-checked="false"><span
+            class="diff-ico green">▂</span><span><strong>Fácil</strong><small>Para empezar con calma ·
+              ×1</small></span><span class="check">✓</span></button>
+        <button class="diff-card is-selected" data-diff="medio" role="radio" aria-checked="true"><span
+            class="diff-ico yellow">▃</span><span><strong>Medio</strong><small>Un reto equilibrado ·
+              ×1.5</small></span><span class="check">✓</span></button>
+        <button class="diff-card" data-diff="dificil" role="radio" aria-checked="false"><span
+            class="diff-ico red">▅</span><span><strong>Difícil</strong><small>Solo para expertos ·
+              ×2</small></span><span class="check">✓</span></button>
       </div>
       <div class="card options-card">
         <h3>Opciones de partida</h3>
         <div class="option-row">
           <div><strong>Sonido</strong><small>Efectos al responder, usar comodines y terminar la partida</small></div>
-          <button id="soundToggle" class="switch" type="button" role="switch" aria-checked="true" aria-label="Activar o desactivar el sonido"><span class="knob" aria-hidden="true"></span></button>
+          <button id="soundToggle" class="switch" type="button" role="switch" aria-checked="true"
+            aria-label="Activar o desactivar el sonido"><span class="knob" aria-hidden="true"></span></button>
         </div>
       </div>
       <div class="dark-banner summary-bar">
         <div><small>TU PARTIDA</small><strong id="configSummary">Todas las categorías · Medio</strong></div>
         <div class="summary-end"><span>◎ <strong id="configCount">10</strong> preguntas</span>
-        <button class="btn btn-primary" id="btnStartGame" type="button">Comenzar partida ▷</button></div>
+          <button class="btn btn-primary" id="btnStartGame" type="button">Comenzar partida ▷</button>
+        </div>
       </div>
       <p class="field-error" id="configError" role="alert" hidden></p>
     </section>
@@ -165,17 +299,27 @@
     <section class="screen" id="screen-juego" data-screen="juego" aria-labelledby="game-q" hidden>
       <div class="game-top">
         <button class="back-link" type="button" id="btnQuit">✕ Salir</button>
-        <div class="progress-wrap"><div class="progress-meta"><small id="qCounter">Pregunta 1 de 10</small><small id="qPct">10% completado</small></div>
-          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1" id="qProgress"><span style="width:10%"></span></div></div>
+        <div class="progress-wrap">
+          <div class="progress-meta"><small id="qCounter">Pregunta 1 de 10</small><small id="qPct">10%
+              completado</small></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1"
+            id="qProgress"><span style="width:10%"></span></div>
+        </div>
         <div class="pts-mini"><small>PUNTOS</small><strong id="gamePts">0</strong></div>
       </div>
       <div class="game-grid">
         <div class="game-side">
-          <div class="timer-ring" role="timer" aria-live="off" aria-label="Tiempo restante"><strong id="timerNum">20</strong><small>SEGUNDOS</small></div>
-          <div class="card streak-card"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> RACHA<strong id="streakNum">× 0</strong><small>Acierta para sumar</small></div>
+          <div class="timer-ring" role="timer" aria-live="off" aria-label="Tiempo restante"><strong
+              id="timerNum">20</strong><small>SEGUNDOS</small></div>
+          <div class="card streak-card"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              focusable="false">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg> RACHA<strong id="streakNum">× 0</strong><small>Acierta para sumar</small></div>
         </div>
         <article class="card q-card">
-          <div class="q-meta"><span class="badge" id="qCat">GEOGRAFÍA</span><small id="qDiff">DIFICULTAD MEDIA</small></div>
+          <div class="q-meta"><span class="badge" id="qCat">GEOGRAFÍA</span><small id="qDiff">DIFICULTAD MEDIA</small>
+          </div>
           <h2 id="game-q">Pregunta de ejemplo (la lógica llega en Fase 3)</h2>
           <div class="opts" id="optsGroup" role="group" aria-label="Opciones de respuesta">
             <button class="opt" data-opt="0"><span class="opt-key">A</span> Río Amazonas</button>
@@ -185,7 +329,8 @@
           </div>
           <div class="q-foot"><small>COMODINES</small>
             <div><button class="btn btn-small" id="btn5050" type="button">50-50 <small>Descartar dos</small></button>
-            <button class="btn btn-small" id="btnExtra" type="button">◷ +10 segundos</button></div>
+              <button class="btn btn-small" id="btnExtra" type="button">◷ +10 segundos</button>
+            </div>
           </div>
         </article>
       </div>
@@ -198,10 +343,21 @@
       <h2 class="center" id="fb-title">Respuesta correcta</h2>
       <p class="muted center" id="fbSub">Tu conocimiento de Colombia está creciendo.</p>
       <div class="card fb-card">
-        <div class="fb-pts"><small>PUNTOS OBTENIDOS</small><strong id="fbPts">+0</strong><small id="fbNote">Bono por rapidez incluido</small></div>
-        <div class="fb-cols"><div><small>TU RESPUESTA</small><p class="ok-text" id="fbMine">✓ —</p></div>
-        <div><small>RESPUESTA CORRECTA</small><p class="ok-text" id="fbRight">✓ —</p></div></div>
-        <div class="know"><span>✦</span><div><strong>¿Sabías que…?</strong><p id="fbWhy">Explicación breve (Fase 3).</p></div></div>
+        <div class="fb-pts"><small>PUNTOS OBTENIDOS</small><strong id="fbPts">+0</strong><small id="fbNote">Bono por
+            rapidez incluido</small></div>
+        <div class="fb-cols">
+          <div><small>TU RESPUESTA</small>
+            <p class="ok-text" id="fbMine">✓ —</p>
+          </div>
+          <div><small>RESPUESTA CORRECTA</small>
+            <p class="ok-text" id="fbRight">✓ —</p>
+          </div>
+        </div>
+        <div class="know"><span>✦</span>
+          <div><strong>¿Sabías que…?</strong>
+            <p id="fbWhy">Explicación breve (Fase 3).</p>
+          </div>
+        </div>
         <button class="btn btn-primary btn-block" id="btnNext" type="button">Siguiente pregunta ›</button>
       </div>
     </section>
@@ -210,7 +366,16 @@
     <section class="screen" id="screen-resultados" data-screen="resultados" aria-labelledby="res-title" hidden>
       <button type="button" class="back-link" data-nav="inicio">‹ Volver al inicio</button>
       <div class="dark-banner hero-res">
-        <span class="trophy"><svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+        <span class="trophy"><svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+            focusable="false">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+            <path d="M4 22h16" />
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+          </svg></span>
         <small>PARTIDA COMPLETADA</small>
         <h2 id="res-title">¡Gran partida!</h2>
         <p class="muted-light">Demostraste cuánto sabes de Colombia. Este es tu resultado:</p>
@@ -219,16 +384,42 @@
         <p class="muted-light" id="resPct"></p>
       </div>
       <div class="grid-4 stats">
-        <div class="card stat"><span class="stat-ico green">✓</span><div><small>ACIERTOS</small><strong id="resOk">0<small>/10</small></strong></div></div>
-        <div class="card stat"><span class="stat-ico red">✕</span><div><small>ERRORES</small><strong id="resBad">0<small>/10</small></strong></div></div>
-        <div class="card stat"><span class="stat-ico blue">◷</span><div><small>TIEMPO TOTAL</small><strong id="resTime">00:00</strong></div></div>
-        <div class="card stat"><span class="stat-ico yellow"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><div><small>MEJOR CATEGORÍA</small><strong id="resBest">—</strong></div></div>
+        <div class="card stat"><span class="stat-ico green">✓</span>
+          <div><small>ACIERTOS</small><strong id="resOk">0<small>/10</small></strong></div>
+        </div>
+        <div class="card stat"><span class="stat-ico red">✕</span>
+          <div><small>ERRORES</small><strong id="resBad">0<small>/10</small></strong></div>
+        </div>
+        <div class="card stat"><span class="stat-ico blue">◷</span>
+          <div><small>TIEMPO TOTAL</small><strong id="resTime">00:00</strong></div>
+        </div>
+        <div class="card stat"><span class="stat-ico yellow"><svg class="ic" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true" focusable="false">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+              <path d="M4 22h16" />
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </svg></span>
+          <div><small>MEJOR CATEGORÍA</small><strong id="resBest">—</strong></div>
+        </div>
       </div>
       <h3 class="review-title"><span>REPASA Y APRENDE</span>Preguntas para mejorar</h3>
       <div id="reviewList" class="review-list"></div>
       <div class="actions-end">
         <button type="button" class="btn btn-ghost" data-nav="config">Jugar de nuevo ↻</button>
-        <button type="button" class="btn btn-primary" data-nav="ranking">Ver ranking <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></button>
+        <button type="button" class="btn btn-primary" data-nav="ranking">Ver ranking <svg class="ic" width="16"
+            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+            <path d="M4 22h16" />
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+          </svg></button>
       </div>
     </section>
 
@@ -236,27 +427,83 @@
     <section class="screen" id="screen-ranking" data-screen="ranking" aria-labelledby="rank-title" hidden>
       <button type="button" class="back-link" data-nav="resultados">‹ Volver a resultados</button>
       <p class="eyebrow">TU PROGRESO</p>
-      <div class="title-row space"><div><h2 id="rank-title">Ranking y estadísticas</h2>
-        <p class="muted">Cada partida te acerca un poco más al primer lugar.</p></div>
-        <button type="button" class="btn btn-primary" data-nav="config">Nueva partida ▷</button></div>
+      <div class="title-row space">
+        <div>
+          <h2 id="rank-title">Ranking y estadísticas</h2>
+          <p class="muted">Cada partida te acerca un poco más al primer lugar.</p>
+        </div>
+        <button type="button" class="btn btn-primary" data-nav="config">Nueva partida ▷</button>
+      </div>
       <div class="grid-3">
-        <div class="card stat"><span class="stat-ico blue">▷</span><div><small>PARTIDAS JUGADAS</small><strong id="stGames">0</strong></div></div>
-        <div class="card stat"><span class="stat-ico green">◎</span><div><small>PORCENTAJE DE ACIERTOS</small><strong id="stAcc">—</strong></div></div>
-        <div class="card stat"><span class="stat-ico yellow"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><div><small>MEJOR CATEGORÍA</small><strong id="stBest">—</strong></div></div>
+        <div class="card stat"><span class="stat-ico blue">▷</span>
+          <div><small>PARTIDAS JUGADAS</small><strong id="stGames">0</strong></div>
+        </div>
+        <div class="card stat"><span class="stat-ico green">◎</span>
+          <div><small>PORCENTAJE DE ACIERTOS</small><strong id="stAcc">—</strong></div>
+        </div>
+        <div class="card stat"><span class="stat-ico yellow"><svg class="ic" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true" focusable="false">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+              <path d="M4 22h16" />
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </svg></span>
+          <div><small>MEJOR CATEGORÍA</small><strong id="stBest">—</strong></div>
+        </div>
       </div>
       <div class="rank-grid">
-        <div class="card"><h3>Desempeño por categoría</h3><div id="barsCat" class="bars"></div></div>
-        <div class="card"><h3>Por dificultad</h3><div id="barsDiff" class="hbars"></div></div>
+        <div class="card">
+          <h3>Desempeño por categoría</h3>
+          <div id="barsCat" class="bars"></div>
+        </div>
+        <div class="card">
+          <h3>Por dificultad</h3>
+          <div id="barsDiff" class="hbars"></div>
+        </div>
       </div>
       <div class="card table-card">
-        <div class="table-head"><h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg> Mejores puntuaciones <small>Top 10 de este dispositivo</small></h3>
-        <button class="link-danger" id="btnClearRank" type="button"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Borrar ranking</button></div>
+        <div class="table-head">
+          <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+              <path d="M4 22h16" />
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+            </svg> Mejores puntuaciones <small>Top 10 de este dispositivo</small></h3>
+          <button class="link-danger" id="btnClearRank" type="button"><svg class="ic" width="14" height="14"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M3 6h18" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg> Borrar ranking</button>
+        </div>
         <div class="podium" id="podiumRow" aria-label="Podio: tres mejores puntuaciones"></div>
-        <div class="table-wrap"><table id="rankTable">
-          <caption class="sr-only">Mejores 10 puntuaciones locales</caption>
-          <thead><tr><th scope="col">POS.</th><th scope="col">JUGADOR</th><th scope="col">PUNTUACIÓN</th><th scope="col">CATEGORÍA</th><th scope="col">DIFICULTAD</th><th scope="col">FECHA</th></tr></thead>
-          <tbody><tr><td colspan="6" class="muted">Sin partidas registradas (Fase 4).</td></tr></tbody>
-        </table></div>
+        <div class="table-wrap">
+          <table id="rankTable">
+            <caption class="sr-only">Mejores 10 puntuaciones locales</caption>
+            <thead>
+              <tr>
+                <th scope="col">POS.</th>
+                <th scope="col">JUGADOR</th>
+                <th scope="col">PUNTUACIÓN</th>
+                <th scope="col">CATEGORÍA</th>
+                <th scope="col">DIFICULTAD</th>
+                <th scope="col">FECHA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6" class="muted">Sin partidas registradas (Fase 4).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
@@ -274,7 +521,12 @@
         <button class="icon-btn" type="button" id="btnCloseProfile" aria-label="Cerrar perfil">✕</button>
       </div>
       <div class="profile-hero">
-        <span class="profile-icon" id="profileIconPreview" aria-hidden="true"><svg class="ic" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <span class="profile-icon" id="profileIconPreview" aria-hidden="true"><svg class="ic" width="36" height="36"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg></span>
         <div class="profile-name-wrap">
           <label class="field-label" for="profileName">Nombre</label>
           <input class="text-input" id="profileName" type="text" maxlength="24" autocomplete="nickname" />
@@ -296,4 +548,5 @@
 
   <script type="module" src="js/app.js"></script>
 </body>
+
 </html>

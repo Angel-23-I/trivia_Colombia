@@ -9,1177 +9,1627 @@ export const DIFICULTADES = ['facil', 'medio', 'dificil'];
 
 export const PREGUNTAS = [
   // ================= GEOGRAFÍA · FÁCIL =================
-  { id: 'geo-f-01', categoria: 'geografia', dificultad: 'facil',
+  {
+    id: 'geo-f-01', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Cuál es la capital de Colombia?',
     opciones: ['Medellín', 'Bogotá', 'Cali', 'Barranquilla'],
     correcta: 1,
-    explicacion: 'Bogotá, oficialmente Bogotá D. C., es la capital y la ciudad más poblada del país.' },
-  { id: 'geo-f-02', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Bogotá, oficialmente Bogotá D. C., es la capital y la ciudad más poblada del país.'
+  },
+  {
+    id: 'geo-f-02', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Cuál es el río que recorre gran parte del territorio colombiano de sur a norte?',
     opciones: ['Río Amazonas', 'Río Magdalena', 'Río Cauca', 'Río Orinoco'],
     correcta: 1,
-    explicacion: 'El río Magdalena es la principal arteria fluvial de Colombia y recorre más de 1.500 km.' },
-  { id: 'geo-f-03', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'El río Magdalena es la principal arteria fluvial de Colombia y recorre más de 1.500 km.'
+  },
+  {
+    id: 'geo-f-03', categoria: 'geografia', dificultad: 'facil',
     enunciado: 'Colombia es el único país de Sudamérica bañado por dos océanos. ¿Cuáles son?',
     opciones: ['Pacífico y Atlántico', 'Pacífico e Índico', 'Atlántico e Índico', 'Caribe y Mediterráneo'],
     correcta: 0,
-    explicacion: 'Colombia tiene costas en el océano Pacífico y en el mar Caribe (océano Atlántico).' },
-  { id: 'geo-f-04', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Colombia tiene costas en el océano Pacífico y en el mar Caribe (océano Atlántico).'
+  },
+  {
+    id: 'geo-f-04', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué departamento insular de Colombia está ubicado en el mar Caribe?',
     opciones: ['Chocó', 'La Guajira', 'San Andrés y Providencia', 'Atlántico'],
     correcta: 2,
-    explicacion: 'El archipiélago de San Andrés, Providencia y Santa Catalina forma ese departamento.' },
-  { id: 'geo-f-05', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'El archipiélago de San Andrés, Providencia y Santa Catalina forma ese departamento.'
+  },
+  {
+    id: 'geo-f-05', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué ciudad colombiana es conocida como “la ciudad de la eterna primavera”?',
     opciones: ['Medellín', 'Cali', 'Bucaramanga', 'Pereira'],
     correcta: 0,
-    explicacion: 'Medellín recibe ese nombre por su clima templado y estable durante todo el año.' },
+    explicacion: 'Medellín recibe ese nombre por su clima templado y estable durante todo el año.'
+  },
   // ================= GEOGRAFÍA · MEDIO =================
-  { id: 'geo-m-01', categoria: 'geografia', dificultad: 'medio',
+  {
+    id: 'geo-m-01', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cuál es el punto más alto del territorio colombiano?',
     opciones: ['Nevado del Ruiz', 'Pico Cristóbal Colón', 'Nevado del Huila', 'Pico Simón Bolívar'],
     correcta: 1,
-    explicacion: 'El Pico Cristóbal Colón, en la Sierra Nevada de Santa Marta, se eleva a unos 5.775 m.' },
-  { id: 'geo-m-02', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'El Pico Cristóbal Colón, en la Sierra Nevada de Santa Marta, se eleva a unos 5.775 m.'
+  },
+  {
+    id: 'geo-m-02', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cómo se llama el desierto ubicado en el departamento del Huila, famoso por su paisaje rojizo y su observatorio astronómico?',
     opciones: ['Desierto de la Tatacoa', 'Desierto de la Guajira', 'Desierto de la Candelaria', 'Desierto de Occidente'],
     correcta: 0,
-    explicacion: 'La Tatacoa, en el Huila, es en realidad un bosque seco tropical y un gran atractivo astronómico.' },
-  { id: 'geo-m-03', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'La Tatacoa, en el Huila, es en realidad un bosque seco tropical y un gran atractivo astronómico.'
+  },
+  {
+    id: 'geo-m-03', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cómo se llama el río del Meta famoso por sus colores y conocido como “el río de los cinco colores”?',
     opciones: ['Río Guaviare', 'Río Vaupés', 'Caño Cristales', 'Río Ariari'],
     correcta: 2,
-    explicacion: 'Caño Cristales, en la Sierra de la Macarena (Meta), debe sus colores a una planta acuática.' },
-  { id: 'geo-m-04', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Caño Cristales, en la Sierra de la Macarena (Meta), debe sus colores a una planta acuática.'
+  },
+  {
+    id: 'geo-m-04', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Colombia comparte frontera terrestre con cinco países. ¿Con cuál de estos NO tiene frontera?',
     opciones: ['Chile', 'Venezuela', 'Ecuador', 'Panamá'],
     correcta: 0,
-    explicacion: 'Las fronteras terrestres son con Venezuela, Brasil, Perú, Ecuador y Panamá; con Chile solo hay límite marítimo.' },
-  { id: 'geo-m-05', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Las fronteras terrestres son con Venezuela, Brasil, Perú, Ecuador y Panamá; con Chile solo hay límite marítimo.'
+  },
+  {
+    id: 'geo-m-05', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Punta Gallinas, el extremo norte de Colombia y de Sudamérica continental, está en…',
     opciones: ['La Guajira', 'Magdalena', 'Bolívar', 'Sucre'],
     correcta: 0,
-    explicacion: 'Punta Gallinas se ubica en el departamento de La Guajira, en la península del mismo nombre.' },
+    explicacion: 'Punta Gallinas se ubica en el departamento de La Guajira, en la península del mismo nombre.'
+  },
   // ================= GEOGRAFÍA · DIFÍCIL =================
-  { id: 'geo-d-01', categoria: 'geografia', dificultad: 'dificil',
+  {
+    id: 'geo-d-01', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Cuál es el departamento más extenso de Colombia?',
     opciones: ['Vichada', 'Amazonas', 'Caquetá', 'Meta'],
     correcta: 1,
-    explicacion: 'El departamento del Amazonas, con capital en Leticia, es el más grande del país.' },
-  { id: 'geo-d-02', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'El departamento del Amazonas, con capital en Leticia, es el más grande del país.'
+  },
+  {
+    id: 'geo-d-02', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'La erupción de qué nevado provocó la tragedia de Armero en 1985?',
     opciones: ['Nevado del Tolima', 'Nevado del Ruiz', 'Nevado Santa Isabel', 'Nevado del Huila'],
     correcta: 1,
-    explicacion: 'La erupción del Nevado del Ruiz generó el lahar que sepultó a Armero (Tolima) en 1985.' },
-  { id: 'geo-d-03', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'La erupción del Nevado del Ruiz generó el lahar que sepultó a Armero (Tolima) en 1985.'
+  },
+  {
+    id: 'geo-d-03', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Cómo se llama el golfo del mar Caribe ubicado entre Antioquia y Chocó?',
     opciones: ['Golfo de Morrosquillo', 'Golfo de Urabá', 'Golfo de Tribugá', 'Golfo de Salamanca'],
     correcta: 1,
-    explicacion: 'El Golfo de Urabá, en el noroccidente, es compartido por Antioquia y Chocó.' },
-  { id: 'geo-d-04', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'El Golfo de Urabá, en el noroccidente, es compartido por Antioquia y Chocó.'
+  },
+  {
+    id: 'geo-d-04', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'Leticia, a orillas del río Amazonas, es la capital de…',
     opciones: ['Vaupés', 'Amazonas', 'Putumayo', 'Guainía'],
     correcta: 1,
-    explicacion: 'Leticia es la capital del departamento del Amazonas, en el extremo sur del país.' },
-  { id: 'geo-d-05', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'Leticia es la capital del departamento del Amazonas, en el extremo sur del país.'
+  },
+  {
+    id: 'geo-d-05', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Cuántas cordilleras de los Andes atraviesan el territorio colombiano?',
     opciones: ['Dos', 'Cuatro', 'Tres', 'Cinco'],
     correcta: 2,
-    explicacion: 'Son tres: Occidental, Central y Oriental, que se desprenden del Nudo de los Pastos.' },
+    explicacion: 'Son tres: Occidental, Central y Oriental, que se desprenden del Nudo de los Pastos.'
+  },
 
   // ================= HISTORIA · FÁCIL =================
-  { id: 'his-f-01', categoria: 'historia', dificultad: 'facil',
+  {
+    id: 'his-f-01', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿En qué año se produjo la Batalla de Boyacá?',
     opciones: ['1810', '1819', '1821', '1830'],
     correcta: 1,
-    explicacion: 'La Batalla de Boyacá ocurrió el 7 de agosto de 1819 y selló la independencia de Colombia.' },
-  { id: 'his-f-02', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'La Batalla de Boyacá ocurrió el 7 de agosto de 1819 y selló la independencia de Colombia.'
+  },
+  {
+    id: 'his-f-02', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿Quién es conocido como el Libertador de Colombia?',
     opciones: ['Francisco de Paula Santander', 'Antonio Nariño', 'Simón Bolívar', 'José María Córdoba'],
     correcta: 2,
-    explicacion: 'Simón Bolívar lideró la campaña libertadora que culminó con la independencia.' },
-  { id: 'his-f-03', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Simón Bolívar lideró la campaña libertadora que culminó con la independencia.'
+  },
+  {
+    id: 'his-f-03', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿En qué fecha se celebra el Grito de Independencia de Colombia?',
     opciones: ['20 de julio', '7 de agosto', '11 de noviembre', '28 de julio'],
     correcta: 0,
-    explicacion: 'El 20 de julio de 1810 ocurrió el Grito de Independencia en Santa Fe de Bogotá.' },
-  { id: 'his-f-04', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'El 20 de julio de 1810 ocurrió el Grito de Independencia en Santa Fe de Bogotá.'
+  },
+  {
+    id: 'his-f-04', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿Quién fue “La Pola”, heroína de la independencia fusilada en 1817?',
     opciones: ['Manuela Beltrán', 'Policarpa Salavarrieta', 'Antonia Santos', 'Mercedes Abrego'],
     correcta: 1,
-    explicacion: 'Policarpa Salavarrieta, “La Pola”, fue espía patriota fusilada por los españoles en 1817.' },
-  { id: 'his-f-05', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Policarpa Salavarrieta, “La Pola”, fue espía patriota fusilada por los españoles en 1817.'
+  },
+  {
+    id: 'his-f-05', categoria: 'historia', dificultad: 'facil',
     enunciado: 'Gabriel García Márquez ganó el Premio Nobel de…',
     opciones: ['Paz (1982)', 'Literatura (1982)', 'Literatura (1967)', 'Paz (1992)'],
     correcta: 1,
-    explicacion: 'García Márquez recibió el Nobel de Literatura en 1982, autor de Cien años de soledad.' },
+    explicacion: 'García Márquez recibió el Nobel de Literatura en 1982, autor de Cien años de soledad.'
+  },
   // ================= HISTORIA · MEDIO =================
-  { id: 'his-m-01', categoria: 'historia', dificultad: 'medio',
+  {
+    id: 'his-m-01', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿En qué año se proclamó la independencia de Cartagena?',
     opciones: ['1810', '1811', '1819', '1821'],
     correcta: 1,
-    explicacion: 'Cartagena declaró su independencia absoluta el 11 de noviembre de 1811.' },
-  { id: 'his-m-02', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'Cartagena declaró su independencia absoluta el 11 de noviembre de 1811.'
+  },
+  {
+    id: 'his-m-02', categoria: 'historia', dificultad: 'medio',
     enunciado: 'El Bogotazo estalló tras el asesinato de Jorge Eliécer Gaitán. ¿En qué fecha ocurrió?',
     opciones: ['9 de abril de 1948', '20 de julio de 1946', '13 de junio de 1953', '1 de mayo de 1949'],
     correcta: 0,
-    explicacion: 'Gaitán fue asesinado el 9 de abril de 1948 en Bogotá, lo que desató el Bogotazo.' },
-  { id: 'his-m-03', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'Gaitán fue asesinado el 9 de abril de 1948 en Bogotá, lo que desató el Bogotazo.'
+  },
+  {
+    id: 'his-m-03', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿En qué año se promulgó la Constitución que rige actualmente a Colombia?',
     opciones: ['1886', '1991', '2001', '1910'],
     correcta: 1,
-    explicacion: 'La Constitución Política de 1991, expedida por la Asamblea Constituyente, sigue vigente.' },
-  { id: 'his-m-04', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'La Constitución Política de 1991, expedida por la Asamblea Constituyente, sigue vigente.'
+  },
+  {
+    id: 'his-m-04', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿Por qué apodo es conocido Francisco de Paula Santander?',
     opciones: ['El Precursor', 'El Hombre de las Leyes', 'El Libertador', 'El Pacificador'],
     correcta: 1,
-    explicacion: 'Santander es llamado “El Hombre de las Leyes” por su defensa del orden constitucional.' },
-  { id: 'his-m-05', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'Santander es llamado “El Hombre de las Leyes” por su defensa del orden constitucional.'
+  },
+  {
+    id: 'his-m-05', categoria: 'historia', dificultad: 'medio',
     enunciado: 'La leyenda de El Dorado, que atrajo a los conquistadores, nació en la cultura…',
     opciones: ['Tayrona', 'Muisca', 'Quimbaya', 'Tierradentro'],
     correcta: 1,
-    explicacion: 'El rito muisca del cacique cubierto de oro en la laguna de Guatavita originó la leyenda.' },
+    explicacion: 'El rito muisca del cacique cubierto de oro en la laguna de Guatavita originó la leyenda.'
+  },
   // ================= HISTORIA · DIFÍCIL =================
-  { id: 'his-d-01', categoria: 'historia', dificultad: 'dificil',
+  {
+    id: 'his-d-01', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Antonio Nariño fue encarcelado por traducir y publicar…',
     opciones: ['La Declaración de los Derechos del Hombre', 'El Contrato Social', 'La Constitución de Cádiz', 'La Enciclopedia'],
     correcta: 0,
-    explicacion: 'Nariño tradujo la Declaración de los Derechos del Hombre y del Ciudadano (1793).' },
-  { id: 'his-d-02', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Nariño tradujo la Declaración de los Derechos del Hombre y del Ciudadano (1793).'
+  },
+  {
+    id: 'his-d-02', categoria: 'historia', dificultad: 'dificil',
     enunciado: '¿En qué fecha exacta se libró la Batalla de Boyacá?',
     opciones: ['20 de julio de 1819', '7 de agosto de 1819', '10 de agosto de 1819', '28 de julio de 1819'],
     correcta: 1,
-    explicacion: 'La batalla decisiva ocurrió el 7 de agosto de 1819 en el Puente de Boyacá.' },
-  { id: 'his-d-03', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'La batalla decisiva ocurrió el 7 de agosto de 1819 en el Puente de Boyacá.'
+  },
+  {
+    id: 'his-d-03', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Ciudad Perdida (Teyuna), en la Sierra Nevada de Santa Marta, fue construida por la cultura…',
     opciones: ['Muisca', 'Tayrona', 'Zenú', 'Calima'],
     correcta: 1,
-    explicacion: 'Teyuna fue un centro urbano tayrona fundado hacia el siglo VIII, anterior a Machu Picchu.' },
-  { id: 'his-d-04', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Teyuna fue un centro urbano tayrona fundado hacia el siglo VIII, anterior a Machu Picchu.'
+  },
+  {
+    id: 'his-d-04', categoria: 'historia', dificultad: 'dificil',
     enunciado: '¿En qué año se separó Panamá de Colombia?',
     opciones: ['1899', '1903', '1914', '1921'],
     correcta: 1,
-    explicacion: 'Panamá proclamó su separación el 3 de noviembre de 1903.' },
-  { id: 'his-d-05', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Panamá proclamó su separación el 3 de noviembre de 1903.'
+  },
+  {
+    id: 'his-d-05', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'La primera constitución de la Gran Colombia, que organizó la república libertada, se promulgó en Cúcuta en…',
     opciones: ['1819', '1821', '1826', '1830'],
     correcta: 1,
-    explicacion: 'La Constitución de Cúcuta de 1821 organizó políticamente a la Gran Colombia.' },
+    explicacion: 'La Constitución de Cúcuta de 1821 organizó políticamente a la Gran Colombia.'
+  },
 
   // ================= CULTURA · FÁCIL =================
-  { id: 'cul-f-01', categoria: 'cultura', dificultad: 'facil',
+  {
+    id: 'cul-f-01', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Qué ciudad es reconocida por su Carnaval, Patrimonio de la Humanidad?',
     opciones: ['Cali', 'Barranquilla', 'Pasto', 'Manizales'],
     correcta: 1,
-    explicacion: 'El Carnaval de Barranquilla fue reconocido por la UNESCO por su riqueza cultural.' },
-  { id: 'cul-f-02', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El Carnaval de Barranquilla fue reconocido por la UNESCO por su riqueza cultural.'
+  },
+  {
+    id: 'cul-f-02', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'La bandeja paisa es el plato típico de la región…',
     opciones: ['Caribe', 'Andina antioqueña', 'Pacífica', 'Orinoquía'],
     correcta: 1,
-    explicacion: 'La bandeja paisa (fríjoles, arroz, carne, chicharrón, huevo y más) es emblema antioqueño.' },
-  { id: 'cul-f-03', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'La bandeja paisa (fríjoles, arroz, carne, chicharrón, huevo y más) es emblema antioqueño.'
+  },
+  {
+    id: 'cul-f-03', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Cómo se llama la sopa típica de Bogotá hecha con tres clases de papa y guascas?',
     opciones: ['Sancocho', 'Ajiaco', 'Mondongo', 'Caldo de costilla'],
     correcta: 1,
-    explicacion: 'El ajiaco santafereño lleva papa criolla, sabanera y pastusa, pollo, mazorca y guascas.' },
-  { id: 'cul-f-04', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El ajiaco santafereño lleva papa criolla, sabanera y pastusa, pollo, mazorca y guascas.'
+  },
+  {
+    id: 'cul-f-04', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Qué ritmo musical costeño, tocado con acordeón, caja y guacharaca, es Patrimonio de la Humanidad?',
     opciones: ['Bambuco', 'Vallenato', 'Pasillo', 'Joropo'],
     correcta: 1,
-    explicacion: 'El vallenato, del Caribe colombiano, fue declarado Patrimonio Cultural Inmaterial por la UNESCO.' },
-  { id: 'cul-f-05', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El vallenato, del Caribe colombiano, fue declarado Patrimonio Cultural Inmaterial por la UNESCO.'
+  },
+  {
+    id: 'cul-f-05', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'El sombrero vueltiao, símbolo nacional, es originario de la cultura…',
     opciones: ['Wayú', 'Zenú', 'Embera', 'Nasa'],
     correcta: 1,
-    explicacion: 'El sombrero vueltiao, tejido en caña flecha, proviene de la cultura zenú (Córdoba y Sucre).' },
+    explicacion: 'El sombrero vueltiao, tejido en caña flecha, proviene de la cultura zenú (Córdoba y Sucre).'
+  },
   // ================= CULTURA · MEDIO =================
-  { id: 'cul-m-01', categoria: 'cultura', dificultad: 'medio',
+  {
+    id: 'cul-m-01', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Carnaval de Negros y Blancos, Patrimonio de la Humanidad, se celebra en…',
     opciones: ['Popayán', 'Pasto', 'Tunja', 'Ibagué'],
     correcta: 1,
-    explicacion: 'El Carnaval de Negros y Blancos se realiza cada enero en San Juan de Pasto (Nariño).' },
-  { id: 'cul-m-02', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'El Carnaval de Negros y Blancos se realiza cada enero en San Juan de Pasto (Nariño).'
+  },
+  {
+    id: 'cul-m-02', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'La Feria de Cali, famosa por la salsa y el desfile de Cali Viejo, se celebra en…',
     opciones: ['Junio', 'Agosto', 'Diciembre', 'Octubre'],
     correcta: 2,
-    explicacion: 'La Feria de Cali se celebra del 25 al 30 de diciembre de cada año.' },
-  { id: 'cul-m-03', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'La Feria de Cali se celebra del 25 al 30 de diciembre de cada año.'
+  },
+  {
+    id: 'cul-m-03', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Festival de la Leyenda Vallenata se realiza cada año en…',
     opciones: ['Sincelejo', 'Montería', 'Valledupar', 'Riohacha'],
     correcta: 2,
-    explicacion: 'Valledupar (Cesar) acoge el Festival de la Leyenda Vallenata, que corona al Rey Vallenato.' },
-  { id: 'cul-m-04', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Valledupar (Cesar) acoge el Festival de la Leyenda Vallenata, que corona al Rey Vallenato.'
+  },
+  {
+    id: 'cul-m-04', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'Macondo, el pueblo de “Cien años de soledad”, es…',
     opciones: ['Un municipio del Magdalena', 'Un pueblo ficticio creado por García Márquez', 'Un barrio de Aracataca', 'Una vereda de Sucre'],
     correcta: 1,
-    explicacion: 'Macondo es el pueblo ficticio donde transcurre la novela, inspirado en Aracataca.' },
-  { id: 'cul-m-05', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Macondo es el pueblo ficticio donde transcurre la novela, inspirado en Aracataca.'
+  },
+  {
+    id: 'cul-m-05', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Museo del Oro, que guarda la mayor colección de orfebrería prehispánica del mundo, está en…',
     opciones: ['Cartagena', 'Medellín', 'Bogotá', 'Cali'],
     correcta: 2,
-    explicacion: 'El Museo del Oro del Banco de la República está en Bogotá y exhibe unas 34.000 piezas.' },
+    explicacion: 'El Museo del Oro del Banco de la República está en Bogotá y exhibe unas 34.000 piezas.'
+  },
   // ================= CULTURA · DIFÍCIL =================
-  { id: 'cul-d-01', categoria: 'cultura', dificultad: 'dificil',
+  {
+    id: 'cul-d-01', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'La cumbia, ritmo emblemático de Colombia, nace de la mezcla de culturas…',
     opciones: ['Indígena y española solamente', 'Indígena, africana y española', 'Africana y árabe', 'Española y portuguesa'],
     correcta: 1,
-    explicacion: 'La cumbia fusiona la flauta indígena (gaita), los tambores africanos y la vestimenta española.' },
-  { id: 'cul-d-02', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'La cumbia fusiona la flauta indígena (gaita), los tambores africanos y la vestimenta española.'
+  },
+  {
+    id: 'cul-d-02', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'El maestro Fernando Botero, famoso por sus figuras voluminosas, nació en…',
     opciones: ['Bogotá', 'Cali', 'Medellín', 'Barranquilla'],
     correcta: 2,
-    explicacion: 'Botero (1932-2023) nació en Medellín; donó gran parte de su obra a museos del país.' },
-  { id: 'cul-d-03', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'Botero (1932-2023) nació en Medellín; donó gran parte de su obra a museos del país.'
+  },
+  {
+    id: 'cul-d-03', categoria: 'cultura', dificultad: 'dificil',
     enunciado: '¿Qué tres departamentos conforman el Eje Cafetero?',
     opciones: ['Caldas, Quindío y Risaralda', 'Antioquia, Caldas y Tolima', 'Huila, Cauca y Nariño', 'Tolima, Huila y Cundinamarca'],
     correcta: 0,
-    explicacion: 'El Eje Cafetero lo forman Caldas, Quindío y Risaralda, corazón de la cultura cafetera.' },
-  { id: 'cul-d-04', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El Eje Cafetero lo forman Caldas, Quindío y Risaralda, corazón de la cultura cafetera.'
+  },
+  {
+    id: 'cul-d-04', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'La champeta, ritmo afrocaribeño de gran popularidad, es originaria de…',
     opciones: ['Buenaventura', 'Cartagena', 'Tumaco', 'Quibdó'],
     correcta: 1,
-    explicacion: 'La champeta nació en los barrios populares de Cartagena y se extendió por el Caribe.' },
-  { id: 'cul-d-05', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'La champeta nació en los barrios populares de Cartagena y se extendió por el Caribe.'
+  },
+  {
+    id: 'cul-d-05', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'El Festival Iberoamericano de Teatro, uno de los más grandes del mundo, se celebra en…',
     opciones: ['Medellín', 'Bogotá', 'Cali', 'Manizales'],
     correcta: 1,
-    explicacion: 'Creado por Fanny Mikey, el Festival Iberoamericano de Teatro tiene sede en Bogotá.' },
+    explicacion: 'Creado por Fanny Mikey, el Festival Iberoamericano de Teatro tiene sede en Bogotá.'
+  },
 
   // ================= DEPORTES · FÁCIL =================
-  { id: 'dep-f-01', categoria: 'deportes', dificultad: 'facil',
+  {
+    id: 'dep-f-01', categoria: 'deportes', dificultad: 'facil',
     enunciado: '¿Cómo se conoce popularmente a la Selección Colombia de fútbol?',
     opciones: ['La Albiceleste', 'La Tricolor', 'La Roja', 'La Blanquirroja'],
     correcta: 1,
-    explicacion: 'A la selección se le llama “La Tricolor” o “Los Cafeteros”, por los colores de la bandera.' },
-  { id: 'dep-f-02', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'A la selección se le llama “La Tricolor” o “Los Cafeteros”, por los colores de la bandera.'
+  },
+  {
+    id: 'dep-f-02', categoria: 'deportes', dificultad: 'facil',
     enunciado: '¿Cuál es considerado el deporte nacional de Colombia?',
     opciones: ['El fútbol', 'El tejo', 'El ciclismo', 'El baloncesto'],
     correcta: 1,
-    explicacion: 'El tejo (o turmequé), de origen muisca, fue declarado deporte nacional por la Ley 613 de 2000.' },
-  { id: 'dep-f-03', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'El tejo (o turmequé), de origen muisca, fue declarado deporte nacional por la Ley 613 de 2000.'
+  },
+  {
+    id: 'dep-f-03', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'James Rodríguez fue el goleador del Mundial de fútbol de…',
     opciones: ['Sudáfrica 2010', 'Brasil 2014', 'Rusia 2018', 'Catar 2022'],
     correcta: 1,
-    explicacion: 'James marcó 6 goles en Brasil 2014 y ganó la Bota de Oro del torneo.' },
-  { id: 'dep-f-04', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'James marcó 6 goles en Brasil 2014 y ganó la Bota de Oro del torneo.'
+  },
+  {
+    id: 'dep-f-04', categoria: 'deportes', dificultad: 'facil',
     enunciado: '¿Quién es “El Pibe”, histórico capitán de la Selección Colombia?',
     opciones: ['Faustino Asprilla', 'Carlos Valderrama', 'René Higuita', 'Freddy Rincón'],
     correcta: 1,
-    explicacion: 'Carlos “El Pibe” Valderrama, de cabellera rubia inconfundible, es ídolo del fútbol colombiano.' },
-  { id: 'dep-f-05', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Carlos “El Pibe” Valderrama, de cabellera rubia inconfundible, es ídolo del fútbol colombiano.'
+  },
+  {
+    id: 'dep-f-05', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Mariana Pajón, doble campeona olímpica colombiana, compite en…',
     opciones: ['Ciclismo BMX', 'Patinaje', 'Atletismo', 'Natación'],
     correcta: 0,
-    explicacion: 'Mariana Pajón ganó el oro olímpico en BMX en Londres 2012 y Río 2016.' },
+    explicacion: 'Mariana Pajón ganó el oro olímpico en BMX en Londres 2012 y Río 2016.'
+  },
   // ================= DEPORTES · MEDIO =================
-  { id: 'dep-m-01', categoria: 'deportes', dificultad: 'medio',
+  {
+    id: 'dep-m-01', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Egan Bernal hizo historia en 2019 al convertirse en el primer colombiano en ganar…',
     opciones: ['El Giro de Italia', 'El Tour de Francia', 'La Vuelta a España', 'El Mundial de ruta'],
     correcta: 1,
-    explicacion: 'Egan Bernal ganó el Tour de Francia 2019 con solo 22 años; luego ganó el Giro 2021.' },
-  { id: 'dep-m-02', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Egan Bernal ganó el Tour de Francia 2019 con solo 22 años; luego ganó el Giro 2021.'
+  },
+  {
+    id: 'dep-m-02', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Nairo Quintana ganó su primera gran vuelta en…',
     opciones: ['El Tour de Francia 2016', 'El Giro de Italia 2014', 'La Vuelta a España 2019', 'El Giro de Italia 2016'],
     correcta: 1,
-    explicacion: 'Nairo ganó el Giro de Italia 2014 y después la Vuelta a España 2016.' },
-  { id: 'dep-m-03', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Nairo ganó el Giro de Italia 2014 y después la Vuelta a España 2016.'
+  },
+  {
+    id: 'dep-m-03', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Caterine Ibargüen ganó el oro olímpico en Río 2016 en la prueba de…',
     opciones: ['Salto largo', 'Triple salto', 'Salto alto', '400 metros'],
     correcta: 1,
-    explicacion: 'Caterine Ibargüen se impuso en el triple salto en Río 2016 con 15,17 metros.' },
-  { id: 'dep-m-04', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Caterine Ibargüen se impuso en el triple salto en Río 2016 con 15,17 metros.'
+  },
+  {
+    id: 'dep-m-04', categoria: 'deportes', dificultad: 'medio',
     enunciado: '¿Cuántas Copas Libertadores ha ganado Atlético Nacional?',
     opciones: ['Una', 'Dos', 'Tres', 'Ninguna'],
     correcta: 1,
-    explicacion: 'Atlético Nacional ganó la Libertadores en 1989 y en 2016.' },
-  { id: 'dep-m-05', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Atlético Nacional ganó la Libertadores en 1989 y en 2016.'
+  },
+  {
+    id: 'dep-m-05', categoria: 'deportes', dificultad: 'medio',
     enunciado: '¿Por qué apodo es conocido el goleador Radamel Falcao García?',
     opciones: ['El Loco', 'El Tigre', 'El Búfalo', 'El Tanque'],
     correcta: 1,
-    explicacion: 'A Falcao se le conoce como “El Tigre” por su instinto goleador en el área.' },
+    explicacion: 'A Falcao se le conoce como “El Tigre” por su instinto goleador en el área.'
+  },
   // ================= DEPORTES · DIFÍCIL =================
-  { id: 'dep-d-01', categoria: 'deportes', dificultad: 'dificil',
+  {
+    id: 'dep-d-01', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Antonio Cervantes, “Kid Pambelé”, fue campeón mundial de…',
     opciones: ['Boxeo', 'Lucha libre', 'Levantamiento de pesas', 'Ciclismo'],
     correcta: 0,
-    explicacion: 'Kid Pambelé fue campeón mundial de boxeo (welter junior) en los años setenta.' },
-  { id: 'dep-d-02', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Kid Pambelé fue campeón mundial de boxeo (welter junior) en los años setenta.'
+  },
+  {
+    id: 'dep-d-02', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿Cuántos goles marcó James Rodríguez en el Mundial de Brasil 2014?',
     opciones: ['4', '5', '6', '7'],
     correcta: 2,
-    explicacion: 'James marcó 6 goles en 5 partidos, incluido el recordado tanto ante Uruguay.' },
-  { id: 'dep-d-03', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'James marcó 6 goles en 5 partidos, incluido el recordado tanto ante Uruguay.'
+  },
+  {
+    id: 'dep-d-03', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿En qué Mundial debutó la Selección Colombia?',
     opciones: ['México 1970', 'Chile 1962', 'Argentina 1978', 'Italia 1990'],
     correcta: 1,
-    explicacion: 'Colombia debutó en Chile 1962, donde logró el recordado empate 4-4 con la URSS.' },
-  { id: 'dep-d-04', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Colombia debutó en Chile 1962, donde logró el recordado empate 4-4 con la URSS.'
+  },
+  {
+    id: 'dep-d-04', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'María Isabel Urrutia ganó en Sídney 2000 la primera medalla de oro olímpica de Colombia en…',
     opciones: ['Atletismo', 'Ciclismo', 'Halterofilia', 'Boxeo'],
     correcta: 2,
-    explicacion: 'Urrutia ganó el oro en halterofilia (75 kg) en Sídney 2000, el primero de la historia del país.' },
-  { id: 'dep-d-05', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Urrutia ganó el oro en halterofilia (75 kg) en Sídney 2000, el primero de la historia del país.'
+  },
+  {
+    id: 'dep-d-05', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Colombia ganó su única Copa América en…',
     opciones: ['1993', '2001', '2011', '1975'],
     correcta: 1,
-    explicacion: 'Colombia fue campeón invicto de la Copa América 2001 jugada en casa.' },
+    explicacion: 'Colombia fue campeón invicto de la Copa América 2001 jugada en casa.'
+  },
 
   // ================= CIENCIA · FÁCIL =================
-  { id: 'cie-f-01', categoria: 'ciencia', dificultad: 'facil',
+  {
+    id: 'cie-f-01', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Cuál es la flor nacional de Colombia?',
     opciones: ['La rosa', 'La orquídea', 'El girasol', 'La heliconia'],
     correcta: 1,
-    explicacion: 'La orquídea Cattleya trianae fue declarada flor nacional por su belleza y origen colombiano.' },
-  { id: 'cie-f-02', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'La orquídea Cattleya trianae fue declarada flor nacional por su belleza y origen colombiano.'
+  },
+  {
+    id: 'cie-f-02', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué ave, símbolo de libertad, aparece en el escudo de Colombia?',
     opciones: ['El águila', 'El cóndor andino', 'El guacamayo', 'El colibrí'],
     correcta: 1,
-    explicacion: 'El cóndor de los Andes corona el escudo nacional como símbolo de libertad y soberanía.' },
-  { id: 'cie-f-03', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El cóndor de los Andes corona el escudo nacional como símbolo de libertad y soberanía.'
+  },
+  {
+    id: 'cie-f-03', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Cuál es el árbol nacional de Colombia, que crece en el valle de Cocora?',
     opciones: ['El roble', 'La ceiba', 'La palma de cera', 'El caucho'],
     correcta: 2,
-    explicacion: 'La palma de cera del Quindío, que supera los 60 metros, es el árbol nacional.' },
-  { id: 'cie-f-04', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'La palma de cera del Quindío, que supera los 60 metros, es el árbol nacional.'
+  },
+  {
+    id: 'cie-f-04', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué delfín de color particular habita en los ríos de la Amazonía colombiana?',
     opciones: ['Delfín gris', 'Delfín rosado', 'Delfín blanco', 'Delfín azul'],
     correcta: 1,
-    explicacion: 'El delfín rosado (tonina) habita en el Amazonas y el Orinoco.' },
-  { id: 'cie-f-05', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El delfín rosado (tonina) habita en el Amazonas y el Orinoco.'
+  },
+  {
+    id: 'cie-f-05', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué oso de anteojos característicos habita en los Andes colombianos?',
     opciones: ['Oso pardo', 'Oso de anteojos', 'Oso polar', 'Oso panda'],
     correcta: 1,
-    explicacion: 'El oso de anteojos u oso andino es el único úrsido de Sudamérica.' },
+    explicacion: 'El oso de anteojos u oso andino es el único úrsido de Sudamérica.'
+  },
   // ================= CIENCIA · MEDIO =================
-  { id: 'cie-m-01', categoria: 'ciencia', dificultad: 'medio',
+  {
+    id: 'cie-m-01', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'Colombia es reconocida como potencia mundial en la producción de…',
     opciones: ['Diamantes', 'Esmeraldas', 'Oro negro', 'Litio'],
     correcta: 1,
-    explicacion: 'Colombia es el principal productor mundial de esmeraldas de alta calidad (Muzo, Chivor).' },
-  { id: 'cie-m-02', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'Colombia es el principal productor mundial de esmeraldas de alta calidad (Muzo, Chivor).'
+  },
+  {
+    id: 'cie-m-02', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El frailejón, planta que captura el agua de la niebla, es típico del ecosistema de…',
     opciones: ['Manglar', 'Páramo', 'Selva húmeda', 'Sabana'],
     correcta: 1,
-    explicacion: 'Los frailejones son emblemáticos de los páramos andinos, fábricas de agua del país.' },
-  { id: 'cie-m-03', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'Los frailejones son emblemáticos de los páramos andinos, fábricas de agua del país.'
+  },
+  {
+    id: 'cie-m-03', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El Parque Nacional Tayrona, famoso por sus bahías y la Ciudad Perdida cercana, está en el departamento de…',
     opciones: ['Bolívar', 'Magdalena', 'Atlántico', 'Cesar'],
     correcta: 1,
-    explicacion: 'El Tayrona se ubica en Santa Marta (Magdalena), entre la Sierra Nevada y el Caribe.' },
-  { id: 'cie-m-04', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'El Tayrona se ubica en Santa Marta (Magdalena), entre la Sierra Nevada y el Caribe.'
+  },
+  {
+    id: 'cie-m-04', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El Chocó biogeográfico es famoso mundialmente por…',
     opciones: ['Sus nevados', 'Su altísima biodiversidad y lluvias', 'Sus desiertos', 'Sus volcanes'],
     correcta: 1,
-    explicacion: 'El Chocó es uno de los lugares más biodiversos y lluviosos del planeta.' },
-  { id: 'cie-m-05', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'El Chocó es uno de los lugares más biodiversos y lluviosos del planeta.'
+  },
+  {
+    id: 'cie-m-05', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'La isla de Malpelo, en el Pacífico colombiano, es un santuario famoso para observar…',
     opciones: ['Ballenas jorobadas', 'Tiburones', 'Pingüinos', 'Tortugas gigantes'],
     correcta: 1,
-    explicacion: 'Malpelo, Patrimonio de la Humanidad, es célebre por sus escuelas de tiburones martillo.' },
+    explicacion: 'Malpelo, Patrimonio de la Humanidad, es célebre por sus escuelas de tiburones martillo.'
+  },
   // ================= CIENCIA · DIFÍCIL =================
-  { id: 'cie-d-01', categoria: 'ciencia', dificultad: 'dificil',
+  {
+    id: 'cie-d-01', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'Colombia es el país con mayor número de especies de… en el mundo.',
     opciones: ['Mamíferos', 'Aves', 'Reptiles', 'Peces de agua dulce'],
     correcta: 1,
-    explicacion: 'Colombia registra más de 1.900 especies de aves, la mayor diversidad del planeta.' },
-  { id: 'cie-d-02', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Colombia registra más de 1.900 especies de aves, la mayor diversidad del planeta.'
+  },
+  {
+    id: 'cie-d-02', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'Los colores de Caño Cristales se deben principalmente a…',
     opciones: ['Minerales de cobre', 'Una planta acuática (Macarenia clavigera)', 'Algas tóxicas', 'Reflejos del cielo'],
     correcta: 1,
-    explicacion: 'La Macarenia clavigera tiñe el río de rojo, amarillo y verde según la luz y el nivel del agua.' },
-  { id: 'cie-d-03', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'La Macarenia clavigera tiñe el río de rojo, amarillo y verde según la luz y el nivel del agua.'
+  },
+  {
+    id: 'cie-d-03', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El Instituto Humboldt de Colombia se dedica principalmente a investigar…',
     opciones: ['El espacio', 'La biodiversidad', 'La energía nuclear', 'Los sismos'],
     correcta: 1,
-    explicacion: 'El Instituto Humboldt es el centro de investigación de la biodiversidad del país.' },
-  { id: 'cie-d-04', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'El Instituto Humboldt es el centro de investigación de la biodiversidad del país.'
+  },
+  {
+    id: 'cie-d-04', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El páramo de Sumapaz, cercano a Bogotá, tiene la distinción de ser…',
     opciones: ['El más alto del mundo', 'El páramo más grande del mundo', 'El más seco del mundo', 'El más austral del mundo'],
     correcta: 1,
-    explicacion: 'Sumapaz es considerado el páramo más extenso del planeta y surte agua a Bogotá.' },
-  { id: 'cie-d-05', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Sumapaz es considerado el páramo más extenso del planeta y surte agua a Bogotá.'
+  },
+  {
+    id: 'cie-d-05', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'La isla Gorgona, en el Pacífico, funcionó como prisión y hoy es…',
     opciones: ['Base naval', 'Parque Nacional Natural', 'Zona minera', 'Puerto comercial'],
     correcta: 1,
-    explicacion: 'Gorgona cerró su prisión en 1984 y es Parque Nacional Natural de gran riqueza marina.' },
+    explicacion: 'Gorgona cerró su prisión en 1984 y es Parque Nacional Natural de gran riqueza marina.'
+  },
   // ================= GEOGRAFÍA · FÁCIL (2.ª serie) =================
-  { id: 'geo-f-06', categoria: 'geografia', dificultad: 'facil',
+  {
+    id: 'geo-f-06', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué ciudad del Caribe es conocida como “el corralito de piedra” por sus murallas coloniales?',
     opciones: ['Cartagena', 'Santa Marta', 'Tumaco', 'Tolú'],
     correcta: 0,
-    explicacion: 'Cartagena de Indias conserva las murallas coloniales más completas de América.' },
-  { id: 'geo-f-07', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Cartagena de Indias conserva las murallas coloniales más completas de América.'
+  },
+  {
+    id: 'geo-f-07', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Cuál es la capital del departamento del Valle del Cauca?',
     opciones: ['Palmira', 'Buga', 'Cali', 'Tuluá'],
     correcta: 2,
-    explicacion: 'Santiago de Cali es la capital del Valle del Cauca y la tercera ciudad del país.' },
-  { id: 'geo-f-08', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Santiago de Cali es la capital del Valle del Cauca y la tercera ciudad del país.'
+  },
+  {
+    id: 'geo-f-08', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué ciudad es conocida como “la sucursal del cielo”?',
     opciones: ['Barranquilla', 'Medellín', 'Cali', 'Bucaramanga'],
     correcta: 2,
-    explicacion: 'A Cali se le llama “la sucursal del cielo” por su clima, su alegría y su salsa.' },
-  { id: 'geo-f-09', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'A Cali se le llama “la sucursal del cielo” por su clima, su alegría y su salsa.'
+  },
+  {
+    id: 'geo-f-09', categoria: 'geografia', dificultad: 'facil',
     enunciado: 'Cúcuta, la principal ciudad fronteriza con Venezuela, es capital de…',
     opciones: ['Santander', 'Norte de Santander', 'Boyacá', 'Cesar'],
     correcta: 1,
-    explicacion: 'San José de Cúcuta es la capital del departamento de Norte de Santander.' },
-  { id: 'geo-f-10', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'San José de Cúcuta es la capital del departamento de Norte de Santander.'
+  },
+  {
+    id: 'geo-f-10', categoria: 'geografia', dificultad: 'facil',
     enunciado: 'La isla de Malpelo, santuario de fauna marina, se encuentra en el océano…',
     opciones: ['Pacífico', 'Índico', 'Glacial Ártico', 'Atlántico norte'],
     correcta: 0,
-    explicacion: 'Malpelo está en el Pacífico colombiano, a unos 500 km del continente.' },
+    explicacion: 'Malpelo está en el Pacífico colombiano, a unos 500 km del continente.'
+  },
   // ================= GEOGRAFÍA · MEDIO (2.ª serie) =================
-  { id: 'geo-m-06', categoria: 'geografia', dificultad: 'medio',
+  {
+    id: 'geo-m-06', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cuál es la ciudad más poblada de la costa Caribe colombiana?',
     opciones: ['Cartagena', 'Santa Marta', 'Barranquilla', 'Montería'],
     correcta: 2,
-    explicacion: 'Barranquilla (Atlántico) es la ciudad más poblada del Caribe colombiano.' },
-  { id: 'geo-m-07', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Barranquilla (Atlántico) es la ciudad más poblada del Caribe colombiano.'
+  },
+  {
+    id: 'geo-m-07', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cómo se llama la gran llanura del oriente colombiano, tierra del joropo y la ganadería?',
     opciones: ['La Amazonía', 'La Orinoquía o Llanos Orientales', 'El Catatumbo', 'La Mojana'],
     correcta: 1,
-    explicacion: 'La Orinoquía, conocida como los Llanos Orientales, ocupa casi una tercera parte del país.' },
-  { id: 'geo-m-08', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'La Orinoquía, conocida como los Llanos Orientales, ocupa casi una tercera parte del país.'
+  },
+  {
+    id: 'geo-m-08', categoria: 'geografia', dificultad: 'medio',
     enunciado: '¿Cuál es el principal puerto de Colombia sobre el océano Pacífico?',
     opciones: ['Tumaco', 'Quibdó', 'Nuquí', 'Buenaventura'],
     correcta: 3,
-    explicacion: 'Buenaventura (Valle del Cauca) es el puerto más importante del Pacífico colombiano.' },
-  { id: 'geo-m-09', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Buenaventura (Valle del Cauca) es el puerto más importante del Pacífico colombiano.'
+  },
+  {
+    id: 'geo-m-09', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'La Sierra Nevada de Santa Marta, con los picos más altos del país, se levanta junto al mar…',
     opciones: ['Pacífico', 'Caribe', 'De Cortés', 'Arábigo'],
     correcta: 1,
-    explicacion: 'Es la montaña costera más alta del mundo: pasa del mar Caribe a nieves perpetuas en 42 km.' },
-  { id: 'geo-m-10', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Es la montaña costera más alta del mundo: pasa del mar Caribe a nieves perpetuas en 42 km.'
+  },
+  {
+    id: 'geo-m-10', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Quibdó, una de las ciudades más lluviosas del mundo, es capital de…',
     opciones: ['Chocó', 'Cauca', 'Nariño', 'Valle del Cauca'],
     correcta: 0,
-    explicacion: 'Quibdó es la capital del Chocó, departamento del Pacífico biogeográfico.' },
+    explicacion: 'Quibdó es la capital del Chocó, departamento del Pacífico biogeográfico.'
+  },
   // ================= GEOGRAFÍA · DIFÍCIL (2.ª serie) =================
-  { id: 'geo-d-06', categoria: 'geografia', dificultad: 'dificil',
+  {
+    id: 'geo-d-06', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'El río Orinoco, que nace en Venezuela, forma parte de la frontera de Colombia con…',
     opciones: ['Ecuador', 'Perú', 'Venezuela', 'Brasil'],
     correcta: 2,
-    explicacion: 'El Orinoco marca un tramo de la frontera Colombo-Venezolana en Vichada y Guainía.' },
-  { id: 'geo-d-07', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'El Orinoco marca un tramo de la frontera Colombo-Venezolana en Vichada y Guainía.'
+  },
+  {
+    id: 'geo-d-07', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Qué ciudad es la capital del departamento de Nariño?',
     opciones: ['Popayán', 'Pasto', 'Neiva', 'Mocoa'],
     correcta: 1,
-    explicacion: 'San Juan de Pasto es la capital de Nariño, al sur del país, junto al volcán Galeras.' },
-  { id: 'geo-d-08', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'San Juan de Pasto es la capital de Nariño, al sur del país, junto al volcán Galeras.'
+  },
+  {
+    id: 'geo-d-08', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'La serranía del Darién, selva fronteriza de gran biodiversidad, separa a Colombia de…',
     opciones: ['Ecuador', 'Venezuela', 'Brasil', 'Panamá'],
     correcta: 3,
-    explicacion: 'El Tapón del Darién, entre Chocó y Panamá, es la única interrupción de la vía Panamericana.' },
-  { id: 'geo-d-09', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'El Tapón del Darién, entre Chocó y Panamá, es la única interrupción de la vía Panamericana.'
+  },
+  {
+    id: 'geo-d-09', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Cuál es la capital del departamento del Vichada?',
     opciones: ['Puerto Carreño', 'Mitú', 'San José del Guaviare', 'Inírida'],
     correcta: 0,
-    explicacion: 'Puerto Carreño, en la confluencia del Meta y el Orinoco, es la capital del Vichada.' },
-  { id: 'geo-d-10', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'Puerto Carreño, en la confluencia del Meta y el Orinoco, es la capital del Vichada.'
+  },
+  {
+    id: 'geo-d-10', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿Qué ciudad es la capital del departamento de Boyacá?',
     opciones: ['Duitama', 'Sogamoso', 'Tunja', 'Chiquinquirá'],
     correcta: 2,
-    explicacion: 'Tunja, fundada en 1539 sobre la capital muisca de Hunza, es la capital boyacense.' },
+    explicacion: 'Tunja, fundada en 1539 sobre la capital muisca de Hunza, es la capital boyacense.'
+  },
   // ================= HISTORIA · FÁCIL (2.ª serie) =================
-  { id: 'his-f-06', categoria: 'historia', dificultad: 'facil',
+  {
+    id: 'his-f-06', categoria: 'historia', dificultad: 'facil',
     enunciado: 'La Batalla de Boyacá se libró en el actual departamento de…',
     opciones: ['Cundinamarca', 'Boyacá', 'Santander', 'Tolima'],
     correcta: 1,
-    explicacion: 'El combate ocurrió en el Puente de Boyacá, sobre el río Teatinos, en Boyacá.' },
-  { id: 'his-f-07', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'El combate ocurrió en el Puente de Boyacá, sobre el río Teatinos, en Boyacá.'
+  },
+  {
+    id: 'his-f-07', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿Por qué apodo histórico se conoce a Cartagena de Indias?',
     opciones: ['La Ciudad Bonita', 'La Heroica', 'La Puerta de Oro', 'La Nevera'],
     correcta: 1,
-    explicacion: 'Cartagena es “La Heroica” por su resistencia durante la independencia y el sitio de 1815.' },
-  { id: 'his-f-08', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Cartagena es “La Heroica” por su resistencia durante la independencia y el sitio de 1815.'
+  },
+  {
+    id: 'his-f-08', categoria: 'historia', dificultad: 'facil',
     enunciado: 'Simón Bolívar, Libertador de Colombia, también libertó a…',
     opciones: ['Argentina', 'Venezuela', 'México', 'Chile'],
     correcta: 1,
-    explicacion: 'Bolívar lideró la liberación de Venezuela, Colombia, Ecuador, Perú y Bolivia.' },
-  { id: 'his-f-09', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Bolívar lideró la liberación de Venezuela, Colombia, Ecuador, Perú y Bolivia.'
+  },
+  {
+    id: 'his-f-09', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿De qué colores es la bandera de Colombia?',
     opciones: ['Rojo, blanco y azul', 'Amarillo, azul y rojo', 'Verde, amarillo y rojo', 'Azul, blanco y rojo'],
     correcta: 1,
-    explicacion: 'La tricolor lleva amarillo (riqueza), azul (mares y cielo) y rojo (sangre libertadora).' },
-  { id: 'his-f-10', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'La tricolor lleva amarillo (riqueza), azul (mares y cielo) y rojo (sangre libertadora).'
+  },
+  {
+    id: 'his-f-10', categoria: 'historia', dificultad: 'facil',
     enunciado: 'La independencia de Colombia ocurrió en el siglo…',
     opciones: ['XX', 'XVIII', 'XIX', 'XVII'],
     correcta: 2,
-    explicacion: 'El proceso de independencia se dio en el siglo XIX (1810-1819).' },
+    explicacion: 'El proceso de independencia se dio en el siglo XIX (1810-1819).'
+  },
   // ================= HISTORIA · MEDIO (2.ª serie) =================
-  { id: 'his-m-06', categoria: 'historia', dificultad: 'medio',
+  {
+    id: 'his-m-06', categoria: 'historia', dificultad: 'medio',
     enunciado: 'Rafael Núñez impulsó la Constitución centralista de…',
     opciones: ['1886', '1991', '1910', '1863'],
     correcta: 0,
-    explicacion: 'La Constitución de 1886, de la Regeneración, rigió al país durante más de un siglo.' },
-  { id: 'his-m-07', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'La Constitución de 1886, de la Regeneración, rigió al país durante más de un siglo.'
+  },
+  {
+    id: 'his-m-07', categoria: 'historia', dificultad: 'medio',
     enunciado: 'La Guerra de los Mil Días, el conflicto civil más largo del país, se libró entre…',
     opciones: ['1895 y 1898', '1899 y 1902', '1905 y 1908', '1885 y 1888'],
     correcta: 1,
-    explicacion: 'La guerra entre liberales y conservadores (1899-1902) dejó unas 100.000 víctimas.' },
-  { id: 'his-m-08', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'La guerra entre liberales y conservadores (1899-1902) dejó unas 100.000 víctimas.'
+  },
+  {
+    id: 'his-m-08', categoria: 'historia', dificultad: 'medio',
     enunciado: 'La toma del Palacio de Justicia por el M-19 ocurrió en…',
     opciones: ['1990', '1978', '1985', '1982'],
     correcta: 2,
-    explicacion: 'El 6 y 7 de noviembre de 1985 el M-19 se tomó el Palacio de Justicia en Bogotá.' },
-  { id: 'his-m-09', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'El 6 y 7 de noviembre de 1985 el M-19 se tomó el Palacio de Justicia en Bogotá.'
+  },
+  {
+    id: 'his-m-09', categoria: 'historia', dificultad: 'medio',
     enunciado: 'Francisco de Paula Santander nació en…',
     opciones: ['Bucaramanga', 'Socorro', 'Villa del Rosario', 'Pamplona'],
     correcta: 2,
-    explicacion: 'Santander nació en 1792 en Villa del Rosario, hoy Norte de Santander.' },
-  { id: 'his-m-10', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'Santander nació en 1792 en Villa del Rosario, hoy Norte de Santander.'
+  },
+  {
+    id: 'his-m-10', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿En qué año llegaron los europeos a América, hecho que inició la época colonial?',
     opciones: ['1502', '1492', '1488', '1510'],
     correcta: 1,
-    explicacion: 'El 12 de octubre de 1492 Colón arribó al continente, dando inicio a la conquista.' },
+    explicacion: 'El 12 de octubre de 1492 Colón arribó al continente, dando inicio a la conquista.'
+  },
   // ================= HISTORIA · DIFÍCIL (2.ª serie) =================
-  { id: 'his-d-06', categoria: 'historia', dificultad: 'dificil',
+  {
+    id: 'his-d-06', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'La Constitución de 1886 estuvo vigente hasta…',
     opciones: ['1958', '1910', '2001', '1991'],
     correcta: 3,
-    explicacion: 'La carta de 1886 rigió 105 años, hasta la Constitución de 1991.' },
-  { id: 'his-d-07', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'La carta de 1886 rigió 105 años, hasta la Constitución de 1991.'
+  },
+  {
+    id: 'his-d-07', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Manuela Beltrán pasó a la historia en 1781 por romper…',
     opciones: ['La Constitución de Cádiz', 'El edicto de los Comuneros de 1781', 'El resguardo de Zipaquirá', 'La real cédula de 1793'],
     correcta: 1,
-    explicacion: 'Manuela Beltrán rompió el edicto de nuevos impuestos, iniciando la revuelta Comunera.' },
-  { id: 'his-d-08', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Manuela Beltrán rompió el edicto de nuevos impuestos, iniciando la revuelta Comunera.'
+  },
+  {
+    id: 'his-d-08', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Entre 1863 y 1886 el país se llamó oficialmente…',
     opciones: ['La Gran Colombia', 'La Nueva Granada', 'Los Estados Unidos de Colombia', 'La República Liberal'],
     correcta: 2,
-    explicacion: 'La Constitución de Rionegro (1863) creó los Estados Unidos de Colombia, de corte federal.' },
-  { id: 'his-d-09', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'La Constitución de Rionegro (1863) creó los Estados Unidos de Colombia, de corte federal.'
+  },
+  {
+    id: 'his-d-09', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'La masacre de las Bananeras, contra trabajadores de la United Fruit, ocurrió en…',
     opciones: ['1918', '1928', '1938', '1925'],
     correcta: 1,
-    explicacion: 'En diciembre de 1928 el ejército reprimió la huelga en Ciénaga (Magdalena).' },
-  { id: 'his-d-10', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'En diciembre de 1928 el ejército reprimió la huelga en Ciénaga (Magdalena).'
+  },
+  {
+    id: 'his-d-10', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'El Frente Nacional, pacto que alternó el poder entre liberales y conservadores, comenzó en…',
     opciones: ['1958', '1968', '1948', '1974'],
     correcta: 0,
-    explicacion: 'El Frente Nacional rigió de 1958 a 1974 para poner fin a la Violencia bipartidista.' },
+    explicacion: 'El Frente Nacional rigió de 1958 a 1974 para poner fin a la Violencia bipartidista.'
+  },
   // ================= CULTURA · FÁCIL (2.ª serie) =================
-  { id: 'cul-f-06', categoria: 'cultura', dificultad: 'facil',
+  {
+    id: 'cul-f-06', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'Shakira, la artista colombiana más famosa del mundo, nació en…',
     opciones: ['Cali', 'Medellín', 'Barranquilla', 'Bogotá'],
     correcta: 2,
-    explicacion: 'Shakira Mebarak nació en Barranquilla en 1977.' },
-  { id: 'cul-f-07', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'Shakira Mebarak nació en Barranquilla en 1977.'
+  },
+  {
+    id: 'cul-f-07', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'Carlos Vives es el gran ídolo moderno de…',
     opciones: ['La salsa', 'El vallenato moderno', 'El reguetón', 'La carranga'],
     correcta: 1,
-    explicacion: 'El samario Carlos Vives llevó el vallenato a todo el mundo con clásicos como “La gota fría”.' },
-  { id: 'cul-f-08', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El samario Carlos Vives llevó el vallenato a todo el mundo con clásicos como “La gota fría”.'
+  },
+  {
+    id: 'cul-f-08', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Qué bebida caliente es símbolo de la hospitalidad colombiana?',
     opciones: ['La chicha', 'El guarapo', 'El chocolate', 'El café (tinto)'],
     correcta: 3,
-    explicacion: 'El “tinto”, café negro pequeño, se ofrece en casas y oficinas de todo el país.' },
-  { id: 'cul-f-09', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El “tinto”, café negro pequeño, se ofrece en casas y oficinas de todo el país.'
+  },
+  {
+    id: 'cul-f-09', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Cuál es el ritmo típico de los Llanos Orientales, bailado con arpa, cuatro y maracas?',
     opciones: ['El joropo', 'El bambuco', 'El mapalé', 'La guabina'],
     correcta: 0,
-    explicacion: 'El joropo, con arpa, cuatro, capachos y bandola, es el ritmo llanero por excelencia.' },
-  { id: 'cul-f-10', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El joropo, con arpa, cuatro, capachos y bandola, es el ritmo llanero por excelencia.'
+  },
+  {
+    id: 'cul-f-10', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'El currulao, con marimba y tambores, es el ritmo típico de la región…',
     opciones: ['Caribe', 'Andina', 'Pacífica', 'Llanera'],
     correcta: 2,
-    explicacion: 'El currulao es la máxima expresión musical del Pacífico colombiano.' },
+    explicacion: 'El currulao es la máxima expresión musical del Pacífico colombiano.'
+  },
   // ================= CULTURA · MEDIO (2.ª serie) =================
-  { id: 'cul-m-06', categoria: 'cultura', dificultad: 'medio',
+  {
+    id: 'cul-m-06', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'La Feria de las Flores, con su Desfile de Silleteros, se celebra en…',
     opciones: ['Cali en diciembre', 'Medellín en agosto', 'Barranquilla en febrero', 'Pasto en enero'],
     correcta: 1,
-    explicacion: 'Cada agosto Medellín celebra la Feria de las Flores y el desfile de silleteros de Santa Elena.' },
-  { id: 'cul-m-07', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Cada agosto Medellín celebra la Feria de las Flores y el desfile de silleteros de Santa Elena.'
+  },
+  {
+    id: 'cul-m-07', categoria: 'cultura', dificultad: 'medio',
     enunciado: '¿Qué ciudad es considerada la capital mundial de la salsa?',
     opciones: ['Barranquilla', 'Medellín', 'Cali', 'Cartagena'],
     correcta: 2,
-    explicacion: 'Cali, con sus orquestas, bailarines y la Feria de diciembre, es la capital de la salsa.' },
-  { id: 'cul-m-08', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Cali, con sus orquestas, bailarines y la Feria de diciembre, es la capital de la salsa.'
+  },
+  {
+    id: 'cul-m-08', categoria: 'cultura', dificultad: 'medio',
     enunciado: '¿Por qué apodo se conocía al cantante vallenato Diomedes Díaz?',
     opciones: ['El Cacique de La Junta', 'El Rey del Acordeón', 'El Ídolo de Multitudes', 'El Cantor del Pueblo'],
     correcta: 0,
-    explicacion: 'Diomedes Díaz, “El Cacique de La Junta” (La Guajira), es leyenda del vallenato.' },
-  { id: 'cul-m-09', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Diomedes Díaz, “El Cacique de La Junta” (La Guajira), es leyenda del vallenato.'
+  },
+  {
+    id: 'cul-m-09', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'La Catedral de Sal, templo subterráneo considerado maravilla del país, está en…',
     opciones: ['Nemocón', 'Zipaquirá', 'Tunja', 'Villa de Leyva'],
     correcta: 1,
-    explicacion: 'La Catedral de Sal de Zipaquirá (Cundinamarca) fue tallada dentro de una mina de sal.' },
-  { id: 'cul-m-10', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'La Catedral de Sal de Zipaquirá (Cundinamarca) fue tallada dentro de una mina de sal.'
+  },
+  {
+    id: 'cul-m-10', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'Gabriel García Márquez nació en…',
     opciones: ['Valledupar', 'Ciénaga', 'Santa Marta', 'Aracataca (Magdalena)'],
     correcta: 3,
-    explicacion: 'Gabo nació en Aracataca (Magdalena) en 1927, pueblo que inspiró Macondo.' },
+    explicacion: 'Gabo nació en Aracataca (Magdalena) en 1927, pueblo que inspiró Macondo.'
+  },
   // ================= CULTURA · DIFÍCIL (2.ª serie) =================
-  { id: 'cul-d-06', categoria: 'cultura', dificultad: 'dificil',
+  {
+    id: 'cul-d-06', categoria: 'cultura', dificultad: 'dificil',
     enunciado: '¿En qué época del año se celebra el Carnaval de Barranquilla?',
     opciones: ['En diciembre', 'Entre febrero y marzo, antes de la Cuaresma', 'En junio', 'En octubre'],
     correcta: 1,
-    explicacion: 'Es una fiesta móvil de cuatro días previa a la Cuaresma cristiana.' },
-  { id: 'cul-d-07', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'Es una fiesta móvil de cuatro días previa a la Cuaresma cristiana.'
+  },
+  {
+    id: 'cul-d-07', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'La palabra “vallenato” significa originalmente…',
     opciones: ['Hijo del acordeón', 'Música del río', 'Canto de vaquería', 'Nacido en el valle'],
     correcta: 3,
-    explicacion: 'Vallenato es el gentilicio de Valledupar: nacido en el Valle de Upar.' },
-  { id: 'cul-d-08', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'Vallenato es el gentilicio de Valledupar: nacido en el Valle de Upar.'
+  },
+  {
+    id: 'cul-d-08', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'El porro, ritmo de bandas de viento del Caribe, es originario de…',
     opciones: ['Córdoba y Sucre', 'Atlántico y Bolívar', 'Cesar y La Guajira', 'Tolima y Huila'],
     correcta: 0,
-    explicacion: 'El porro palitiao y tapao nació en las sabanas de Córdoba y Sucre.' },
-  { id: 'cul-d-09', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El porro palitiao y tapao nació en las sabanas de Córdoba y Sucre.'
+  },
+  {
+    id: 'cul-d-09', categoria: 'cultura', dificultad: 'dificil',
     enunciado: '¿Qué museo del centro histórico de Bogotá exhibe la donación de obras de Fernando Botero?',
     opciones: ['Museo del Oro', 'Museo Botero en La Candelaria', 'Museo Nacional', 'Museo de Arte Moderno'],
     correcta: 1,
-    explicacion: 'El Museo Botero, en una casona de La Candelaria, exhibe 123 obras donadas por el maestro.' },
-  { id: 'cul-d-10', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El Museo Botero, en una casona de La Candelaria, exhibe 123 obras donadas por el maestro.'
+  },
+  {
+    id: 'cul-d-10', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'La leyenda del Mohán, ser que cuida los ríos y castiga a los pescadores, pertenece al folclor…',
     opciones: ['Del Tolima y el Huila, junto al Magdalena', 'De La Guajira', 'Del Chocó', 'De Nariño'],
     correcta: 0,
-    explicacion: 'El Mohán es el mito fluvial más famoso del alto y medio Magdalena.' },
+    explicacion: 'El Mohán es el mito fluvial más famoso del alto y medio Magdalena.'
+  },
   // ================= DEPORTES · FÁCIL (2.ª serie) =================
-  { id: 'dep-f-06', categoria: 'deportes', dificultad: 'facil',
+  {
+    id: 'dep-f-06', categoria: 'deportes', dificultad: 'facil',
     enunciado: '¿En qué deporte brilla el colombiano Nairo Quintana?',
     opciones: ['Atletismo', 'Boxeo', 'Ciclismo', 'Natación'],
     correcta: 2,
-    explicacion: 'Nairo Quintana, de Cómbita (Boyacá), es uno de los mejores escaladores del ciclismo mundial.' },
-  { id: 'dep-f-07', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Nairo Quintana, de Cómbita (Boyacá), es uno de los mejores escaladores del ciclismo mundial.'
+  },
+  {
+    id: 'dep-f-07', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Caterine Ibargüen, campeona olímpica de salto triple, nació en…',
     opciones: ['Valle del Cauca', 'Antioquia (Apartadó)', 'Bolívar', 'Atlántico'],
     correcta: 1,
-    explicacion: 'Caterine nació en Apartadó (Antioquia) y es doble medallista olímpica.' },
-  { id: 'dep-f-08', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Caterine nació en Apartadó (Antioquia) y es doble medallista olímpica.'
+  },
+  {
+    id: 'dep-f-08', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'René Higuita, famoso por el “escorpión”, jugaba como…',
     opciones: ['Volante', 'Delantero', 'Defensa', 'Portero'],
     correcta: 3,
-    explicacion: 'Higuita fue el arquero revolucionario que salía jugando con el balón.' },
-  { id: 'dep-f-09', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Higuita fue el arquero revolucionario que salía jugando con el balón.'
+  },
+  {
+    id: 'dep-f-09', categoria: 'deportes', dificultad: 'facil',
     enunciado: '¿De qué color es la camiseta principal de la Selección Colombia?',
     opciones: ['Azul', 'Roja', 'Amarilla', 'Verde'],
     correcta: 2,
-    explicacion: 'La Tricolor viste de amarillo, como la franja mayor de la bandera.' },
-  { id: 'dep-f-10', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'La Tricolor viste de amarillo, como la franja mayor de la bandera.'
+  },
+  {
+    id: 'dep-f-10', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Faustino Asprilla, “Tino”, brilló como…',
     opciones: ['Lateral', 'Arquero', 'Delantero', 'Volante de marca'],
     correcta: 2,
-    explicacion: 'El “Tino” Asprilla fue delantero del Parma, Newcastle y la Selección.' },
+    explicacion: 'El “Tino” Asprilla fue delantero del Parma, Newcastle y la Selección.'
+  },
   // ================= DEPORTES · MEDIO (2.ª serie) =================
-  { id: 'dep-m-06', categoria: 'deportes', dificultad: 'medio',
+  {
+    id: 'dep-m-06', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Once Caldas dio la sorpresa al ganar la Copa Libertadores en…',
     opciones: ['2000', '2004', '2010', '1998'],
     correcta: 1,
-    explicacion: 'El “Blanco Blanco” de Manizales venció a Boca Juniors en la final de 2004.' },
-  { id: 'dep-m-07', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'El “Blanco Blanco” de Manizales venció a Boca Juniors en la final de 2004.'
+  },
+  {
+    id: 'dep-m-07', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'El estadio Metropolitano, casa habitual de la Selección Colombia, está en…',
     opciones: ['Medellín', 'Bogotá', 'Barranquilla', 'Cali'],
     correcta: 2,
-    explicacion: 'El Metropolitano Roberto Meléndez de Barranquilla es el fortín de la Tricolor.' },
-  { id: 'dep-m-08', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'El Metropolitano Roberto Meléndez de Barranquilla es el fortín de la Tricolor.'
+  },
+  {
+    id: 'dep-m-08', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Rigoberto Urán ganó la medalla de plata olímpica en…',
     opciones: ['Beijing 2008', 'Londres 2012', 'Río 2016', 'Tokio 2020'],
     correcta: 1,
-    explicacion: '“Rigo” fue plata en la ruta de Londres 2012, detrás de Vinokúrov.' },
-  { id: 'dep-m-09', categoria: 'deportes', dificultad: 'medio',
+    explicacion: '“Rigo” fue plata en la ruta de Londres 2012, detrás de Vinokúrov.'
+  },
+  {
+    id: 'dep-m-09', categoria: 'deportes', dificultad: 'medio',
     enunciado: '¿Quién es el máximo goleador histórico de la Selección Colombia?',
     opciones: ['Teófilo Gutiérrez', 'Carlos Bacca', 'James Rodríguez', 'Radamel Falcao García'],
     correcta: 3,
-    explicacion: 'Falcao supera los 35 goles con la Tricolor y es su artillero histórico.' },
-  { id: 'dep-m-10', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Falcao supera los 35 goles con la Tricolor y es su artillero histórico.'
+  },
+  {
+    id: 'dep-m-10', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Antes del título de 2001, Colombia había sido subcampeona de Copa América en…',
     opciones: ['1975', '1987', '1993', '2019'],
     correcta: 0,
-    explicacion: 'En 1975 Colombia perdió la final ante Perú tras un partido de desempate.' },
+    explicacion: 'En 1975 Colombia perdió la final ante Perú tras un partido de desempate.'
+  },
   // ================= DEPORTES · DIFÍCIL (2.ª serie) =================
-  { id: 'dep-d-06', categoria: 'deportes', dificultad: 'dificil',
+  {
+    id: 'dep-d-06', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿En cuántos mundiales de fútbol ha participado Colombia hasta Catar 2022?',
     opciones: ['Cuatro', 'Cinco', 'Seis', 'Siete'],
     correcta: 2,
-    explicacion: 'Colombia jugó en 1962, 1990, 1994, 1998, 2014 y 2018: seis mundiales.' },
-  { id: 'dep-d-07', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Colombia jugó en 1962, 1990, 1994, 1998, 2014 y 2018: seis mundiales.'
+  },
+  {
+    id: 'dep-d-07', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Marcos Coll marcó el único gol olímpico en la historia de los mundiales en…',
     opciones: ['México 1970', 'Chile 1962', 'Italia 1990', 'EE. UU. 1994'],
     correcta: 1,
-    explicacion: 'El barranquillero Coll le marcó de tiro de esquina a la URSS en el 4-4 de 1962.' },
-  { id: 'dep-d-08', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'El barranquillero Coll le marcó de tiro de esquina a la URSS en el 4-4 de 1962.'
+  },
+  {
+    id: 'dep-d-08', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿Quién ganó la primera medalla olímpica de la historia de Colombia?',
     opciones: ['Helmut Bellingrodt en Múnich 1972', 'Marcos Coll en Chile 1962', 'Alfonso Pérez en Múnich 1972', 'Clemente Rojas en Montreal 1976'],
     correcta: 0,
-    explicacion: 'Bellingrodt ganó plata en tiro (jabalí) en Múnich 1972, la primera presea del país.' },
-  { id: 'dep-d-09', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Bellingrodt ganó plata en tiro (jabalí) en Múnich 1972, la primera presea del país.'
+  },
+  {
+    id: 'dep-d-09', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Martín “Cochise” Rodríguez fue campeón mundial en 1971 de…',
     opciones: ['Levantamiento de pesas', 'Ciclismo (persecución individual)', 'Boxeo', 'Atletismo'],
     correcta: 1,
-    explicacion: 'Cochise se coronó campeón mundial de persecución en Varese (Italia) 1971.' },
-  { id: 'dep-d-10', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Cochise se coronó campeón mundial de persecución en Varese (Italia) 1971.'
+  },
+  {
+    id: 'dep-d-10', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'La Dimayor, entidad que organiza el fútbol profesional colombiano, fue fundada en…',
     opciones: ['1938', '1948', '1958', '1968'],
     correcta: 1,
-    explicacion: 'La División Mayor del Fútbol Colombiano nació en 1948, año del primer torneo profesional.' },
+    explicacion: 'La División Mayor del Fútbol Colombiano nació en 1948, año del primer torneo profesional.'
+  },
   // ================= CIENCIA · FÁCIL (2.ª serie) =================
-  { id: 'cie-f-06', categoria: 'ciencia', dificultad: 'facil',
+  {
+    id: 'cie-f-06', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué gigante del mar visita cada año el Pacífico colombiano para tener sus crías?',
     opciones: ['El tiburón ballena', 'La ballena jorobada', 'El delfín gris', 'La orca'],
     correcta: 1,
-    explicacion: 'Las ballenas jorobadas llegan entre julio y octubre a Bahía Málaga y el Chocó.' },
-  { id: 'cie-f-07', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'Las ballenas jorobadas llegan entre julio y octubre a Bahía Málaga y el Chocó.'
+  },
+  {
+    id: 'cie-f-07', categoria: 'ciencia', dificultad: 'facil',
     enunciado: 'El café colombiano se cultiva principalmente…',
     opciones: ['En los manglares', 'En la nieve', 'En las montañas andinas', 'En los desiertos'],
     correcta: 2,
-    explicacion: 'El café crece entre 1.200 y 2.000 metros en las tres cordilleras andinas.' },
-  { id: 'cie-f-08', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El café crece entre 1.200 y 2.000 metros en las tres cordilleras andinas.'
+  },
+  {
+    id: 'cie-f-08', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué gran felino moteado, el mayor de América, habita en las selvas colombianas?',
     opciones: ['El león africano', 'El jaguar', 'El tigre de Bengala', 'El leopardo'],
     correcta: 1,
-    explicacion: 'El jaguar vive en la Amazonía, el Chocó y los Llanos del país.' },
-  { id: 'cie-f-09', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El jaguar vive en la Amazonía, el Chocó y los Llanos del país.'
+  },
+  {
+    id: 'cie-f-09', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿De qué se alimentan los colibríes, abundantes en Colombia?',
     opciones: ['Frutas caídas', 'Peces pequeños', 'Insectos grandes', 'Néctar de las flores'],
     correcta: 3,
-    explicacion: 'Los colibríes liban el néctar y polinizan las flores de los Andes y la selva.' },
-  { id: 'cie-f-10', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'Los colibríes liban el néctar y polinizan las flores de los Andes y la selva.'
+  },
+  {
+    id: 'cie-f-10', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué reptiles marinos llegan a desovar a las playas del Caribe y el Pacífico colombianos?',
     opciones: ['Tortugas marinas como la caguama y el carey', 'Tortugas de tierra', 'Galápagos gigantes', 'Cocodrilos marinos'],
     correcta: 0,
-    explicacion: 'Varias especies de tortugas marinas anidan en playas de ambos litorales.' },
+    explicacion: 'Varias especies de tortugas marinas anidan en playas de ambos litorales.'
+  },
   // ================= CIENCIA · MEDIO (2.ª serie) =================
-  { id: 'cie-m-06', categoria: 'ciencia', dificultad: 'medio',
+  {
+    id: 'cie-m-06', categoria: 'ciencia', dificultad: 'medio',
     enunciado: '¿Qué altura puede alcanzar la palma de cera, árbol nacional?',
     opciones: ['Unos 20 metros', 'Unos 40 metros', 'Más de 60 metros', 'Más de 100 metros'],
     correcta: 2,
-    explicacion: 'La palma de cera supera los 60 metros: es la palmera más alta del mundo.' },
-  { id: 'cie-m-07', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'La palma de cera supera los 60 metros: es la palmera más alta del mundo.'
+  },
+  {
+    id: 'cie-m-07', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El Parque Nacional Amacayacu, puerta del turismo amazónico, está en el departamento de…',
     opciones: ['Vichada', 'Amazonas', 'Guaviare', 'Caquetá'],
     correcta: 1,
-    explicacion: 'Amacayacu, a orillas del Amazonas, protege selva y cultura tikuna.' },
-  { id: 'cie-m-08', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'Amacayacu, a orillas del Amazonas, protege selva y cultura tikuna.'
+  },
+  {
+    id: 'cie-m-08', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El bocachico, el pez más consumido del interior del país, es típico…',
     opciones: ['Del río Magdalena', 'De la laguna de Tota', 'Del océano Pacífico', 'Del río Inírida'],
     correcta: 0,
-    explicacion: 'El bocachico del Magdalena sustenta a miles de pescadores ribereños.' },
-  { id: 'cie-m-09', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'El bocachico del Magdalena sustenta a miles de pescadores ribereños.'
+  },
+  {
+    id: 'cie-m-09', categoria: 'ciencia', dificultad: 'medio',
     enunciado: '¿Dónde se encuentra el santuario de fauna y flora Los Flamencos, hogar de flamencos rosados?',
     opciones: ['En el Tayrona', 'En Los Flamencos (La Guajira)', 'En el Cocuy', 'En Malpelo'],
     correcta: 1,
-    explicacion: 'El santuario, en Camarones (La Guajira), protege lagunas costeras y flamencos.' },
-  { id: 'cie-m-10', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'El santuario, en Camarones (La Guajira), protege lagunas costeras y flamencos.'
+  },
+  {
+    id: 'cie-m-10', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'La Cueva de los Guácharos (Huila), refugio del ave guácharo, fue en 1960…',
     opciones: ['Volcán activo', 'La primera área protegida declarada del país', 'Mina de sal', 'Zona de colonización'],
     correcta: 1,
-    explicacion: 'Fue la primera zona del sistema de parques nacionales, declarada en 1960.' },
+    explicacion: 'Fue la primera zona del sistema de parques nacionales, declarada en 1960.'
+  },
   // ================= CIENCIA · DIFÍCIL (2.ª serie) =================
-  { id: 'cie-d-06', categoria: 'ciencia', dificultad: 'dificil',
+  {
+    id: 'cie-d-06', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'La orquídea Cattleya trianae, flor nacional, honra en su nombre al botánico…',
     opciones: ['José Celestino Mutis', 'José Jerónimo Triana', 'Francisco José de Caldas', 'Alexander von Humboldt'],
     correcta: 1,
-    explicacion: 'Triana, botánico neogranadino del siglo XIX, da nombre a la especie.' },
-  { id: 'cie-d-07', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Triana, botánico neogranadino del siglo XIX, da nombre a la especie.'
+  },
+  {
+    id: 'cie-d-07', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El tití cabeciblanco, mono en peligro crítico que solo vive en Colombia, habita en…',
     opciones: ['El Chocó', 'Los Llanos', 'El Amazonas', 'El Caribe (Bolívar, Atlántico y Sucre)'],
     correcta: 3,
-    explicacion: 'Este primate endémico sobrevive en fragmentos de bosque seco del Caribe.' },
-  { id: 'cie-d-08', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Este primate endémico sobrevive en fragmentos de bosque seco del Caribe.'
+  },
+  {
+    id: 'cie-d-08', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El lago de Tota, el cuerpo de agua dulce más grande del país, está en…',
     opciones: ['Cundinamarca', 'Boyacá', 'Santander', 'Nariño'],
     correcta: 1,
-    explicacion: 'El lago de Tota (Boyacá), a 3.015 metros, es el lago más grande de Colombia.' },
-  { id: 'cie-d-09', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'El lago de Tota (Boyacá), a 3.015 metros, es el lago más grande de Colombia.'
+  },
+  {
+    id: 'cie-d-09', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El imponente cañón del Chicamocha, gran atractivo de aventura, se encuentra en…',
     opciones: ['Antioquia', 'Norte de Santander', 'Boyacá', 'Santander'],
     correcta: 3,
-    explicacion: 'El cañón del río Chicamocha, entre los más grandes del mundo, está en Santander.' },
-  { id: 'cie-d-10', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'El cañón del río Chicamocha, entre los más grandes del mundo, está en Santander.'
+  },
+  {
+    id: 'cie-d-10', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El Parque Chiribiquete, Patrimonio de la Humanidad desde 2018, es famoso por…',
     opciones: ['Sus nevados', 'Sus tepuyes y su arte rupestre milenario', 'Sus playas', 'Sus desiertos'],
     correcta: 1,
-    explicacion: 'Chiribiquete guarda decenas de miles de pictografías en sus tepuyes amazónicos.' },
+    explicacion: 'Chiribiquete guarda decenas de miles de pictografías en sus tepuyes amazónicos.'
+  },
   // ================= GEOGRAFÍA · FÁCIL (3.ª serie) =================
-  { id: 'geo-f-11', categoria: 'geografia', dificultad: 'facil',
+  {
+    id: 'geo-f-11', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué ciudad del Caribe es conocida como “la Puerta de Oro de Colombia”?',
     opciones: ['Santa Marta', 'Cartagena', 'Barranquilla', 'Montería'],
     correcta: 2,
-    explicacion: 'Barranquilla, puerto fluvial y marítimo, es llamada la Puerta de Oro.' },
-  { id: 'geo-f-12', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Barranquilla, puerto fluvial y marítimo, es llamada la Puerta de Oro.'
+  },
+  {
+    id: 'geo-f-12', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Cuál es la ciudad más antigua de Colombia, fundada en 1525?',
     opciones: ['Santa Marta', 'Cartagena', 'Popayán', 'Tunja'],
     correcta: 0,
-    explicacion: 'Santa Marta, fundada por Rodrigo de Bastidas en 1525, es la más antigua.' },
-  { id: 'geo-f-13', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Santa Marta, fundada por Rodrigo de Bastidas en 1525, es la más antigua.'
+  },
+  {
+    id: 'geo-f-13', categoria: 'geografia', dificultad: 'facil',
     enunciado: 'Bucaramanga, capital de Santander, es conocida como…',
     opciones: ['La Ciudad Bonita', 'La Ciudad Blanca', 'La Ciudad Musical', 'La Ciudad Heroica'],
     correcta: 0,
-    explicacion: 'A Bucaramanga se le dice la Ciudad Bonita y también la de los Parques.' },
-  { id: 'geo-f-14', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'A Bucaramanga se le dice la Ciudad Bonita y también la de los Parques.'
+  },
+  {
+    id: 'geo-f-14', categoria: 'geografia', dificultad: 'facil',
     enunciado: '¿Qué mar baña las playas de Cartagena, Santa Marta y Barranquilla?',
     opciones: ['El Pacífico', 'El mar Caribe', 'El Índico', 'El Mediterráneo'],
     correcta: 1,
-    explicacion: 'Las tres ciudades están a orillas del mar Caribe.' },
-  { id: 'geo-f-15', categoria: 'geografia', dificultad: 'facil',
+    explicacion: 'Las tres ciudades están a orillas del mar Caribe.'
+  },
+  {
+    id: 'geo-f-15', categoria: 'geografia', dificultad: 'facil',
     enunciado: 'Villavicencio, capital del Meta, es conocida como…',
     opciones: ['La Puerta del Llano', 'La Puerta de Oro', 'La Ciudad Bonita', 'La Nevera'],
     correcta: 0,
-    explicacion: 'Villavicencio es la Puerta del Llano, entrada a los Llanos Orientales.' },
+    explicacion: 'Villavicencio es la Puerta del Llano, entrada a los Llanos Orientales.'
+  },
   // ================= GEOGRAFÍA · MEDIO (3.ª serie) =================
-  { id: 'geo-m-11', categoria: 'geografia', dificultad: 'medio',
+  {
+    id: 'geo-m-11', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Ibagué, capital del Tolima, es conocida como…',
     opciones: ['La Ciudad Blanca', 'La Ciudad Musical', 'La Ciudad de las Flores', 'La Ciudad Perdida'],
     correcta: 1,
-    explicacion: 'Ibagué es la Ciudad Musical de Colombia por su tradición de conservatorios.' },
-  { id: 'geo-m-12', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Ibagué es la Ciudad Musical de Colombia por su tradición de conservatorios.'
+  },
+  {
+    id: 'geo-m-12', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Manizales, capital de Caldas, es conocida como…',
     opciones: ['La Ciudad de las Puertas Abiertas', 'La Ciudad de la Eterna Primavera', 'La Ciudad Bonita', 'La Ciudad Heroica'],
     correcta: 0,
-    explicacion: 'A Manizales se le llama la Ciudad de las Puertas Abiertas.' },
-  { id: 'geo-m-13', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'A Manizales se le llama la Ciudad de las Puertas Abiertas.'
+  },
+  {
+    id: 'geo-m-13', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Montería, a orillas del río Sinú, es la capital de…',
     opciones: ['Sucre', 'Córdoba', 'Bolívar', 'Atlántico'],
     correcta: 1,
-    explicacion: 'Montería es la capital del departamento de Córdoba.' },
-  { id: 'geo-m-14', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Montería es la capital del departamento de Córdoba.'
+  },
+  {
+    id: 'geo-m-14', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Popayán, capital del Cauca, es conocida como…',
     opciones: ['La Ciudad Blanca', 'La Ciudad Musical', 'La Ciudad Bonita', 'La Ciudad de las Flores'],
     correcta: 0,
-    explicacion: 'Popayán es la Ciudad Blanca por sus fachadas coloniales encaladas.' },
-  { id: 'geo-m-15', categoria: 'geografia', dificultad: 'medio',
+    explicacion: 'Popayán es la Ciudad Blanca por sus fachadas coloniales encaladas.'
+  },
+  {
+    id: 'geo-m-15', categoria: 'geografia', dificultad: 'medio',
     enunciado: 'Neiva, a orillas del Magdalena, es la capital de…',
     opciones: ['Tolima', 'Huila', 'Caquetá', 'Cauca'],
     correcta: 1,
-    explicacion: 'Neiva es la capital del Huila, departamento del desierto de la Tatacoa.' },
+    explicacion: 'Neiva es la capital del Huila, departamento del desierto de la Tatacoa.'
+  },
   // ================= GEOGRAFÍA · DIFÍCIL (3.ª serie) =================
-  { id: 'geo-d-11', categoria: 'geografia', dificultad: 'dificil',
+  {
+    id: 'geo-d-11', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'Mitú, a orillas del río Vaupés, es la capital de…',
     opciones: ['Guainía', 'Vaupés', 'Guaviare', 'Amazonas'],
     correcta: 1,
-    explicacion: 'Mitú es la capital del Vaupés, en la Amazonía oriental.' },
-  { id: 'geo-d-12', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'Mitú es la capital del Vaupés, en la Amazonía oriental.'
+  },
+  {
+    id: 'geo-d-12', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'Inírida, junto a los ríos Inírida y Guaviare, es la capital de…',
     opciones: ['Vichada', 'Guainía', 'Vaupés', 'Meta'],
     correcta: 1,
-    explicacion: 'Puerto Inírida es la capital del Guainía, tierra de los cerros de Mavicure.' },
-  { id: 'geo-d-13', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'Puerto Inírida es la capital del Guainía, tierra de los cerros de Mavicure.'
+  },
+  {
+    id: 'geo-d-13', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'San José del Guaviare es la capital de…',
     opciones: ['Guaviare', 'Caquetá', 'Meta', 'Vichada'],
     correcta: 0,
-    explicacion: 'San José es la capital del Guaviare, puerta de los tepuyes y el arte rupestre.' },
-  { id: 'geo-d-14', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'San José es la capital del Guaviare, puerta de los tepuyes y el arte rupestre.'
+  },
+  {
+    id: 'geo-d-14', categoria: 'geografia', dificultad: 'dificil',
     enunciado: '¿En qué departamento nace el río Magdalena, en el Macizo Colombiano?',
     opciones: ['Tolima', 'Huila', 'Cauca', 'Nariño'],
     correcta: 1,
-    explicacion: 'El Magdalena nace en el Macizo Colombiano, en el Huila, y cruza el país hasta Bocas de Ceniza.' },
-  { id: 'geo-d-15', categoria: 'geografia', dificultad: 'dificil',
+    explicacion: 'El Magdalena nace en el Macizo Colombiano, en el Huila, y cruza el país hasta Bocas de Ceniza.'
+  },
+  {
+    id: 'geo-d-15', categoria: 'geografia', dificultad: 'dificil',
     enunciado: 'El Cabo de la Vela, destino de playas y desierto, está en…',
     opciones: ['Magdalena', 'La Guajira', 'Atlántico', 'Bolívar'],
     correcta: 1,
-    explicacion: 'El Cabo de la Vela se ubica en la Alta Guajira, territorio wayú.' },
+    explicacion: 'El Cabo de la Vela se ubica en la Alta Guajira, territorio wayú.'
+  },
   // ================= HISTORIA · FÁCIL (3.ª serie) =================
-  { id: 'his-f-11', categoria: 'historia', dificultad: 'facil',
+  {
+    id: 'his-f-11', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿En qué ciudad nació Simón Bolívar?',
     opciones: ['Bogotá', 'Caracas', 'Quito', 'Lima'],
     correcta: 1,
-    explicacion: 'Bolívar nació en Caracas (Venezuela) en 1783 y libertó cinco naciones.' },
-  { id: 'his-f-12', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Bolívar nació en Caracas (Venezuela) en 1783 y libertó cinco naciones.'
+  },
+  {
+    id: 'his-f-12', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿Cómo se llama la fortaleza colonial más famosa de Cartagena?',
     opciones: ['Castillo de San Felipe de Barajas', 'Fuerte de Bocachica', 'Castillo del Morro', 'Fuerte de La Tenaza'],
     correcta: 0,
-    explicacion: 'El Castillo de San Felipe, del siglo XVII, es la fortaleza más grande de América.' },
-  { id: 'his-f-13', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'El Castillo de San Felipe, del siglo XVII, es la fortaleza más grande de América.'
+  },
+  {
+    id: 'his-f-13', categoria: 'historia', dificultad: 'facil',
     enunciado: '¿De qué país europeo se independizó Colombia?',
     opciones: ['Portugal', 'España', 'Francia', 'Inglaterra'],
     correcta: 1,
-    explicacion: 'Colombia se independizó del imperio español tras la campaña de 1819.' },
-  { id: 'his-f-14', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Colombia se independizó del imperio español tras la campaña de 1819.'
+  },
+  {
+    id: 'his-f-14', categoria: 'historia', dificultad: 'facil',
     enunciado: 'En la época colonial, Bogotá se llamaba Santa Fe y era capital del…',
     opciones: ['Virreinato del Perú', 'Virreinato de la Nueva Granada', 'Reino de Quito', 'Capitanía de Venezuela'],
     correcta: 1,
-    explicacion: 'Santa Fe de Bogotá fue capital del Virreinato de la Nueva Granada desde 1739.' },
-  { id: 'his-f-15', categoria: 'historia', dificultad: 'facil',
+    explicacion: 'Santa Fe de Bogotá fue capital del Virreinato de la Nueva Granada desde 1739.'
+  },
+  {
+    id: 'his-f-15', categoria: 'historia', dificultad: 'facil',
     enunciado: 'La Casa de Nariño, en Bogotá, es…',
     opciones: ['El Congreso', 'La sede de la presidencia', 'La Corte Suprema', 'La Alcaldía'],
     correcta: 1,
-    explicacion: 'La Casa de Nariño es el palacio presidencial de Colombia.' },
+    explicacion: 'La Casa de Nariño es el palacio presidencial de Colombia.'
+  },
   // ================= HISTORIA · MEDIO (3.ª serie) =================
-  { id: 'his-m-11', categoria: 'historia', dificultad: 'medio',
+  {
+    id: 'his-m-11', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿Quién dirigió la Expedición Botánica del Nuevo Reino de Granada?',
     opciones: ['Francisco José de Caldas', 'José Celestino Mutis', 'Alexander von Humboldt', 'José Jerónimo Triana'],
     correcta: 1,
-    explicacion: 'El sacerdote y botánico José Celestino Mutis dirigió la Expedición desde 1783.' },
-  { id: 'his-m-12', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'El sacerdote y botánico José Celestino Mutis dirigió la Expedición desde 1783.'
+  },
+  {
+    id: 'his-m-12', categoria: 'historia', dificultad: 'medio',
     enunciado: 'Francisco José de Caldas, el “Sabio Caldas”, fue fusilado en 1816 por…',
     opciones: ['Los realistas españoles', 'Los piratas ingleses', 'Sus rivales políticos criollos', 'Una epidemia'],
     correcta: 0,
-    explicacion: 'Caldas, científico y prócer payanés, fue fusilado durante la Reconquista española.' },
-  { id: 'his-m-13', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'Caldas, científico y prócer payanés, fue fusilado durante la Reconquista española.'
+  },
+  {
+    id: 'his-m-13', categoria: 'historia', dificultad: 'medio',
     enunciado: 'Días antes de Boyacá, la batalla que abrió el paso a Bogotá fue la del…',
     opciones: ['Pantano de Vargas', 'Palace', 'Calibío', 'Pichincha'],
     correcta: 0,
-    explicacion: 'El Pantano de Vargas (25 de julio de 1819) despejó el camino a Santa Fe.' },
-  { id: 'his-m-14', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'El Pantano de Vargas (25 de julio de 1819) despejó el camino a Santa Fe.'
+  },
+  {
+    id: 'his-m-14', categoria: 'historia', dificultad: 'medio',
     enunciado: 'Manuelita Sáenz es recordada como…',
     opciones: ['La primera presidenta', 'La Libertadora del Libertador', 'La fundadora de Quito', 'La esposa de Santander'],
     correcta: 1,
-    explicacion: 'La quiteña Manuelita Sáenz, compañera de Bolívar, es la Libertadora del Libertador.' },
-  { id: 'his-m-15', categoria: 'historia', dificultad: 'medio',
+    explicacion: 'La quiteña Manuelita Sáenz, compañera de Bolívar, es la Libertadora del Libertador.'
+  },
+  {
+    id: 'his-m-15', categoria: 'historia', dificultad: 'medio',
     enunciado: '¿En qué año se abolió definitivamente la esclavitud en Colombia?',
     opciones: ['1819', '1851', '1886', '1910'],
     correcta: 1,
-    explicacion: 'La ley del presidente José Hilario López abolió la esclavitud en 1851.' },
+    explicacion: 'La ley del presidente José Hilario López abolió la esclavitud en 1851.'
+  },
   // ================= HISTORIA · DIFÍCIL (3.ª serie) =================
-  { id: 'his-d-11', categoria: 'historia', dificultad: 'dificil',
+  {
+    id: 'his-d-11', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Rafael Uribe Uribe, asesinado en 1914, había sido general…',
     opciones: ['Conservador en la Regeneración', 'Liberal en la Guerra de los Mil Días', 'Realista en la Reconquista', 'Dictador en los años treinta'],
     correcta: 1,
-    explicacion: 'Uribe Uribe fue el gran jefe liberal de la Guerra de los Mil Días.' },
-  { id: 'his-d-12', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Uribe Uribe fue el gran jefe liberal de la Guerra de los Mil Días.'
+  },
+  {
+    id: 'his-d-12', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Luis Carlos Galán, candidato presidencial liberal, fue asesinado en 1989 en…',
     opciones: ['Medellín', 'Soacha', 'Cali', 'Barranquilla'],
     correcta: 1,
-    explicacion: 'Galán fue asesinado en Soacha (Cundinamarca) el 18 de agosto de 1989.' },
-  { id: 'his-d-13', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Galán fue asesinado en Soacha (Cundinamarca) el 18 de agosto de 1989.'
+  },
+  {
+    id: 'his-d-13', categoria: 'historia', dificultad: 'dificil',
     enunciado: 'Tras dejar las armas, el M-19 firmó la paz y participó en la Constituyente de…',
     opciones: ['1985', '1990', '1994', '1998'],
     correcta: 1,
-    explicacion: 'El M-19 se desmovilizó en 1990 y fue fuerza clave en la Constitución de 1991.' },
-  { id: 'his-d-14', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'El M-19 se desmovilizó en 1990 y fue fuerza clave en la Constitución de 1991.'
+  },
+  {
+    id: 'his-d-14', categoria: 'historia', dificultad: 'dificil',
     enunciado: '¿Qué movimiento estudiantil impulsó con una papeleta extra la Constituyente de 1991?',
     opciones: ['La Séptima Papeleta', 'La Marcha del Silencio', 'El Paro Cívico', 'La Toma Estudiantil'],
     correcta: 0,
-    explicacion: 'Los estudiantes promovieron la Séptima Papeleta en las elecciones de 1990.' },
-  { id: 'his-d-15', categoria: 'historia', dificultad: 'dificil',
+    explicacion: 'Los estudiantes promovieron la Séptima Papeleta en las elecciones de 1990.'
+  },
+  {
+    id: 'his-d-15', categoria: 'historia', dificultad: 'dificil',
     enunciado: '¿En qué año votaron por primera vez las mujeres en Colombia?',
     opciones: ['1948', '1957', '1968', '1974'],
     correcta: 1,
-    explicacion: 'Las mujeres votaron por primera vez en el plebiscito de 1957.' },
+    explicacion: 'Las mujeres votaron por primera vez en el plebiscito de 1957.'
+  },
   // ================= CULTURA · FÁCIL (3.ª serie) =================
-  { id: 'cul-f-11', categoria: 'cultura', dificultad: 'facil',
+  {
+    id: 'cul-f-11', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Qué plato de arroz con coco es típico de la costa Caribe?',
     opciones: ['Arroz con coco', 'Arroz atollado', 'Arroz paisa', 'Arroz con pollo andino'],
     correcta: 0,
-    explicacion: 'El arroz con coco, con patacón y pescado, es emblema de la cocina caribeña.' },
-  { id: 'cul-f-12', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El arroz con coco, con patacón y pescado, es emblema de la cocina caribeña.'
+  },
+  {
+    id: 'cul-f-12', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Qué es una arepa?',
     opciones: ['Un pan de trigo horneado', 'Una torta de maíz típica', 'Un tamal de plátano', 'Una sopa de papa'],
     correcta: 1,
-    explicacion: 'La arepa, de maíz, acompaña las mesas de casi todo el país.' },
-  { id: 'cul-f-13', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'La arepa, de maíz, acompaña las mesas de casi todo el país.'
+  },
+  {
+    id: 'cul-f-13', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'El mapalé, baile de gran energía afro, es ritmo de…',
     opciones: ['La costa Caribe', 'El altiplano', 'Los Llanos', 'El desierto'],
     correcta: 0,
-    explicacion: 'El mapalé nació en las comunidades afro del Caribe colombiano.' },
-  { id: 'cul-f-14', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El mapalé nació en las comunidades afro del Caribe colombiano.'
+  },
+  {
+    id: 'cul-f-14', categoria: 'cultura', dificultad: 'facil',
     enunciado: '¿Cómo se reconoce a simple vista una obra de Fernando Botero?',
     opciones: ['Por sus figuras voluminosas', 'Por sus colores oscuros', 'Por sus trazos invisibles', 'Por sus miniaturas'],
     correcta: 0,
-    explicacion: 'El “boterismo” se distingue por personajes y objetos voluminosos.' },
-  { id: 'cul-f-15', categoria: 'cultura', dificultad: 'facil',
+    explicacion: 'El “boterismo” se distingue por personajes y objetos voluminosos.'
+  },
+  {
+    id: 'cul-f-15', categoria: 'cultura', dificultad: 'facil',
     enunciado: 'La ruana, poncho grueso de lana, es prenda típica de…',
     opciones: ['La región andina', 'La costa Caribe', 'El Pacífico', 'La Amazonía'],
     correcta: 0,
-    explicacion: 'La ruana abriga en Boyacá, Cundinamarca y Nariño desde tiempos coloniales.' },
+    explicacion: 'La ruana abriga en Boyacá, Cundinamarca y Nariño desde tiempos coloniales.'
+  },
   // ================= CULTURA · MEDIO (3.ª serie) =================
-  { id: 'cul-m-11', categoria: 'cultura', dificultad: 'medio',
+  {
+    id: 'cul-m-11', categoria: 'cultura', dificultad: 'medio',
     enunciado: '¿En qué ciudad se celebra el Festival Folclórico del Bambuco y las fiestas de San Pedro?',
     opciones: ['Neiva', 'Ibagué', 'Villavicencio', 'Popayán'],
     correcta: 0,
-    explicacion: 'Neiva (Huila) celebra en junio el San Pedro con bambuco y rajaleñas.' },
-  { id: 'cul-m-12', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Neiva (Huila) celebra en junio el San Pedro con bambuco y rajaleñas.'
+  },
+  {
+    id: 'cul-m-12', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Reinado Nacional de Belleza se celebra cada noviembre en…',
     opciones: ['Barranquilla', 'Cartagena', 'Santa Marta', 'Medellín'],
     correcta: 1,
-    explicacion: 'Cartagena acoge el Reinado Nacional en el marco de sus fiestas de noviembre.' },
-  { id: 'cul-m-13', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Cartagena acoge el Reinado Nacional en el marco de sus fiestas de noviembre.'
+  },
+  {
+    id: 'cul-m-13', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Grupo Niche, leyenda de la salsa (“Cali Pachanguero”), es de…',
     opciones: ['Barranquilla', 'Cali', 'Medellín', 'Bogotá'],
     correcta: 1,
-    explicacion: 'El Niche, fundado por Jairo Varela, es orgullo salsero de Cali.' },
-  { id: 'cul-m-14', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'El Niche, fundado por Jairo Varela, es orgullo salsero de Cali.'
+  },
+  {
+    id: 'cul-m-14', categoria: 'cultura', dificultad: 'medio',
     enunciado: '¿Quién compuso el clásico vallenato “La gota fría”?',
     opciones: ['Diomedes Díaz', 'Emiliano Zuleta', 'Rafael Escalona', 'Alejo Durán'],
     correcta: 1,
-    explicacion: 'Emiliano Zuleta compuso “La gota fría”, inmortalizada por Carlos Vives.' },
-  { id: 'cul-m-15', categoria: 'cultura', dificultad: 'medio',
+    explicacion: 'Emiliano Zuleta compuso “La gota fría”, inmortalizada por Carlos Vives.'
+  },
+  {
+    id: 'cul-m-15', categoria: 'cultura', dificultad: 'medio',
     enunciado: 'El Festival Petronio Álvarez, el más grande de la música del Pacífico, se celebra en…',
     opciones: ['Quibdó', 'Buenaventura', 'Cali', 'Tumaco'],
     correcta: 2,
-    explicacion: 'El Petronio reúne cada año en Cali lo mejor de marimba y currulao.' },
+    explicacion: 'El Petronio reúne cada año en Cali lo mejor de marimba y currulao.'
+  },
   // ================= CULTURA · DIFÍCIL (3.ª serie) =================
-  { id: 'cul-d-11', categoria: 'cultura', dificultad: 'dificil',
+  {
+    id: 'cul-d-11', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'El Barniz de Pasto, declarado Patrimonio de la Humanidad, es…',
     opciones: ['Un baile típico', 'Una técnica artesanal con resina natural', 'Un plato nariñense', 'Un ritmo andino'],
     correcta: 1,
-    explicacion: 'El Barniz de Pasto decora madera con la resina del árbol mopa-mopa.' },
-  { id: 'cul-d-12', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El Barniz de Pasto decora madera con la resina del árbol mopa-mopa.'
+  },
+  {
+    id: 'cul-d-12', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'La bandola, de sonido agudo y brillante, es un instrumento de cuerda típico de…',
     opciones: ['Los Llanos', 'El Chocó', 'La Guajira', 'El Huila'],
     correcta: 0,
-    explicacion: 'La bandola llanera acompaña el joropo junto al arpa y el cuatro.' },
-  { id: 'cul-d-13', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'La bandola llanera acompaña el joropo junto al arpa y el cuatro.'
+  },
+  {
+    id: 'cul-d-13', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'Rafael Escalona, autor de “La casa en el aire”, fue un gran…',
     opciones: ['Cantante de champeta', 'Compositor vallenato', 'Trovador paisa', 'Sonero cubano'],
     correcta: 1,
-    explicacion: 'El maestro Escalona (1926-2009) es pilar de la composición vallenata.' },
-  { id: 'cul-d-14', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El maestro Escalona (1926-2009) es pilar de la composición vallenata.'
+  },
+  {
+    id: 'cul-d-14', categoria: 'cultura', dificultad: 'dificil',
     enunciado: 'El Sanjuanero, baile de parejas con sombrero, es el himno folclórico de…',
     opciones: ['El Tolima', 'El Huila', 'El Meta', 'El Cesar'],
     correcta: 1,
-    explicacion: 'El Sanjuanero huilense anima las fiestas de San Pedro en Neiva.' },
-  { id: 'cul-d-15', categoria: 'cultura', dificultad: 'dificil',
+    explicacion: 'El Sanjuanero huilense anima las fiestas de San Pedro en Neiva.'
+  },
+  {
+    id: 'cul-d-15', categoria: 'cultura', dificultad: 'dificil',
     enunciado: '¿Quién escribió “La vorágine”, novela de la selva y el caucho?',
     opciones: ['Gabriel García Márquez', 'José Eustasio Rivera', 'Álvaro Mutis', 'Jorge Isaacs'],
     correcta: 1,
-    explicacion: 'El huilense José Eustasio Rivera publicó “La vorágine” en 1924.' },
+    explicacion: 'El huilense José Eustasio Rivera publicó “La vorágine” en 1924.'
+  },
   // ================= DEPORTES · FÁCIL (3.ª serie) =================
-  { id: 'dep-f-11', categoria: 'deportes', dificultad: 'facil',
+  {
+    id: 'dep-f-11', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Anthony Zambrano, medallista olímpico colombiano, compite en…',
     opciones: ['Natación', 'Atletismo (400 m)', 'Boxeo', 'Ciclismo'],
     correcta: 1,
-    explicacion: 'Zambrano ganó plata en los 400 metros en Tokio 2020.' },
-  { id: 'dep-f-12', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Zambrano ganó plata en los 400 metros en Tokio 2020.'
+  },
+  {
+    id: 'dep-f-12', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Atlético Nacional, el club más ganador del país, es de…',
     opciones: ['Bogotá', 'Cali', 'Medellín', 'Barranquilla'],
     correcta: 2,
-    explicacion: 'El “Verdolaga” juega en el Atanasio Girardot de Medellín.' },
-  { id: 'dep-f-13', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'El “Verdolaga” juega en el Atanasio Girardot de Medellín.'
+  },
+  {
+    id: 'dep-f-13', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'Millonarios, el club “Embajador”, es de…',
     opciones: ['Medellín', 'Bogotá', 'Cali', 'Manizales'],
     correcta: 1,
-    explicacion: 'Millonarios juega en El Campín de Bogotá.' },
-  { id: 'dep-f-14', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Millonarios juega en El Campín de Bogotá.'
+  },
+  {
+    id: 'dep-f-14', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'El clásico paisa lo disputan Atlético Nacional y…',
     opciones: ['Millonarios', 'Independiente Medellín', 'Once Caldas', 'Envigado'],
     correcta: 1,
-    explicacion: 'Nacional y el DIM (“El Poderoso”) protagonizan el clásico paisa.' },
-  { id: 'dep-f-15', categoria: 'deportes', dificultad: 'facil',
+    explicacion: 'Nacional y el DIM (“El Poderoso”) protagonizan el clásico paisa.'
+  },
+  {
+    id: 'dep-f-15', categoria: 'deportes', dificultad: 'facil',
     enunciado: 'En el tejo, al dar en el blanco explotan unas cargas de pólvora llamadas…',
     opciones: ['Mechas', 'Totumas', 'Chispas', 'Voladores'],
     correcta: 0,
-    explicacion: 'Las mechas, con pólvora, estallan cuando el tejo da en el bocín.' },
+    explicacion: 'Las mechas, con pólvora, estallan cuando el tejo da en el bocín.'
+  },
   // ================= DEPORTES · MEDIO (3.ª serie) =================
-  { id: 'dep-m-11', categoria: 'deportes', dificultad: 'medio',
+  {
+    id: 'dep-m-11', categoria: 'deportes', dificultad: 'medio',
     enunciado: '¿En qué club español fue ídolo Falcao antes de jugar en Inglaterra y Francia?',
     opciones: ['Real Madrid', 'Atlético de Madrid', 'Valencia', 'Sevilla'],
     correcta: 1,
-    explicacion: 'Falcao brilló en el Atlético de Madrid (2011-2013), campeón de Europa League.' },
-  { id: 'dep-m-12', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Falcao brilló en el Atlético de Madrid (2011-2013), campeón de Europa League.'
+  },
+  {
+    id: 'dep-m-12', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Tras ser goleador del Mundial 2014, James Rodríguez fichó por el…',
     opciones: ['Barcelona', 'Real Madrid', 'Bayern Múnich', 'Porto'],
     correcta: 1,
-    explicacion: 'El Real Madrid pagó por James tras su Bota de Oro en Brasil 2014.' },
-  { id: 'dep-m-13', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'El Real Madrid pagó por James tras su Bota de Oro en Brasil 2014.'
+  },
+  {
+    id: 'dep-m-13', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'David Ospina es recordado como…',
     opciones: ['El máximo goleador', 'El arquero histórico de la selección', 'El DT del 5-0', 'El presidente de la Federación'],
     correcta: 1,
-    explicacion: 'Ospina es el jugador con más partidos en la historia de la Tricolor.' },
-  { id: 'dep-m-14', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Ospina es el jugador con más partidos en la historia de la Tricolor.'
+  },
+  {
+    id: 'dep-m-14', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'América de Cali es conocido como…',
     opciones: ['Los Diablos Rojos', 'Los Azucareros', 'Los Tiburones', 'Los Pijaos'],
     correcta: 0,
-    explicacion: 'Al América se le dice los Diablos Rojos; juega en el Pascual Guerrero.' },
-  { id: 'dep-m-15', categoria: 'deportes', dificultad: 'medio',
+    explicacion: 'Al América se le dice los Diablos Rojos; juega en el Pascual Guerrero.'
+  },
+  {
+    id: 'dep-m-15', categoria: 'deportes', dificultad: 'medio',
     enunciado: 'Santiago Botero fue campeón mundial de contrarreloj en 2002 en…',
     opciones: ['Zolder (Bélgica)', 'Madrid', 'Verona', 'Bogotá'],
     correcta: 0,
-    explicacion: 'El paisa Botero se coronó campeón del mundo contrarreloj en Zolder 2002.' },
+    explicacion: 'El paisa Botero se coronó campeón del mundo contrarreloj en Zolder 2002.'
+  },
   // ================= DEPORTES · DIFÍCIL (3.ª serie) =================
-  { id: 'dep-d-11', categoria: 'deportes', dificultad: 'dificil',
+  {
+    id: 'dep-d-11', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'En Italia 90, el recordado 1-1 de Colombia fue contra…',
     opciones: ['Alemania', 'Inglaterra', 'Italia', 'Holanda'],
     correcta: 0,
-    explicacion: 'Freddy Rincón empató ante Alemania al minuto 93 y clasificó a octavos.' },
-  { id: 'dep-d-12', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Freddy Rincón empató ante Alemania al minuto 93 y clasificó a octavos.'
+  },
+  {
+    id: 'dep-d-12', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿Quién dirigía a Colombia en los mundiales de Italia 90 y EE. UU. 94?',
     opciones: ['Hernán Darío Gómez', 'Francisco Maturana', 'Luis Augusto García', 'Reinaldo Rueda'],
     correcta: 1,
-    explicacion: '“Pacho” Maturana lideró la generación dorada de los noventa.' },
-  { id: 'dep-d-13', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: '“Pacho” Maturana lideró la generación dorada de los noventa.'
+  },
+  {
+    id: 'dep-d-13', categoria: 'deportes', dificultad: 'dificil',
     enunciado: '¿En qué año Colombia goleó 5-0 a Argentina en Buenos Aires?',
     opciones: ['1990', '1993', '1997', '2001'],
     correcta: 1,
-    explicacion: 'El 5-0 de 1993, en eliminatorias a EE. UU. 94, es hazaña histórica.' },
-  { id: 'dep-d-14', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'El 5-0 de 1993, en eliminatorias a EE. UU. 94, es hazaña histórica.'
+  },
+  {
+    id: 'dep-d-14', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Lucho Herrera, “El Jardinerito”, ganó la Vuelta a España en…',
     opciones: ['1984', '1987', '1990', '1982'],
     correcta: 1,
-    explicacion: 'Herrera ganó la Vuelta 1987, primer gran título de un colombiano.' },
-  { id: 'dep-d-15', categoria: 'deportes', dificultad: 'dificil',
+    explicacion: 'Herrera ganó la Vuelta 1987, primer gran título de un colombiano.'
+  },
+  {
+    id: 'dep-d-15', categoria: 'deportes', dificultad: 'dificil',
     enunciado: 'Miguel “Happy” Lora fue campeón mundial de boxeo en peso…',
     opciones: ['Pesado', 'Gallo', 'Pluma', 'Minimosca'],
     correcta: 1,
-    explicacion: 'El monteriano Lora reinó en el peso gallo a finales de los ochenta.' },
+    explicacion: 'El monteriano Lora reinó en el peso gallo a finales de los ochenta.'
+  },
   // ================= CIENCIA · FÁCIL (3.ª serie) =================
-  { id: 'cie-f-11', categoria: 'ciencia', dificultad: 'facil',
+  {
+    id: 'cie-f-11', categoria: 'ciencia', dificultad: 'facil',
     enunciado: 'Los guacamayos, loros grandes y coloridos, viven en…',
     opciones: ['Las selvas tropicales', 'Los nevados', 'Los desiertos', 'Las ciudades frías'],
     correcta: 0,
-    explicacion: 'Los guacamayos habitan las selvas de la Amazonía y el Chocó.' },
-  { id: 'cie-f-12', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'Los guacamayos habitan las selvas de la Amazonía y el Chocó.'
+  },
+  {
+    id: 'cie-f-12', categoria: 'ciencia', dificultad: 'facil',
     enunciado: 'La danta, mamífero de trompa corta que vive en los Andes y la selva, también se llama…',
     opciones: ['Tapir', 'Zorro', 'Ñeque', 'Armadillo'],
     correcta: 0,
-    explicacion: 'El tapir o danta es el mamífero terrestre más grande de Sudamérica.' },
-  { id: 'cie-f-13', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El tapir o danta es el mamífero terrestre más grande de Sudamérica.'
+  },
+  {
+    id: 'cie-f-13', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿Qué nos regalan principalmente los páramos?',
     opciones: ['Petróleo', 'Agua', 'Carbón', 'Sal'],
     correcta: 1,
-    explicacion: 'Los páramos capturan la niebla y surten de agua a millones de personas.' },
-  { id: 'cie-f-14', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'Los páramos capturan la niebla y surten de agua a millones de personas.'
+  },
+  {
+    id: 'cie-f-14', categoria: 'ciencia', dificultad: 'facil',
     enunciado: '¿De qué se alimenta principalmente el oso de anteojos?',
     opciones: ['Solo de carne', 'De frutas, plantas y miel', 'De peces', 'De insectos'],
     correcta: 1,
-    explicacion: 'El oso andino es omnívoro: come bromelias, frutos, miel y a veces carne.' },
-  { id: 'cie-f-15', categoria: 'ciencia', dificultad: 'facil',
+    explicacion: 'El oso andino es omnívoro: come bromelias, frutos, miel y a veces carne.'
+  },
+  {
+    id: 'cie-f-15', categoria: 'ciencia', dificultad: 'facil',
     enunciado: 'El mono aullador, común en las selvas colombianas, se reconoce por…',
     opciones: ['Su fuerte aullido', 'Su cola corta', 'Su pelaje blanco', 'Sus alas'],
     correcta: 0,
-    explicacion: 'Su aullido, de los más potentes del reino animal, se oye a kilómetros.' },
+    explicacion: 'Su aullido, de los más potentes del reino animal, se oye a kilómetros.'
+  },
   // ================= CIENCIA · MEDIO (3.ª serie) =================
-  { id: 'cie-m-11', categoria: 'ciencia', dificultad: 'medio',
+  {
+    id: 'cie-m-11', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'Las esmeraldas colombianas más famosas salen de las minas de…',
     opciones: ['Muzo y Chivor (Boyacá)', 'Segovia y Remedios', 'Nemocón y Zipaquirá', 'Cerrejón y Drummond'],
     correcta: 0,
-    explicacion: 'Muzo y Chivor, en Boyacá, dan las esmeraldas más cotizadas del mundo.' },
-  { id: 'cie-m-12', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'Muzo y Chivor, en Boyacá, dan las esmeraldas más cotizadas del mundo.'
+  },
+  {
+    id: 'cie-m-12', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El santuario de Iguaque (Boyacá) protege la laguna sagrada de la cultura…',
     opciones: ['Tayrona', 'Muisca', 'Zenú', 'Calima'],
     correcta: 1,
-    explicacion: 'De la laguna de Iguaque, según el mito muisca, nació la humanidad.' },
-  { id: 'cie-m-13', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'De la laguna de Iguaque, según el mito muisca, nació la humanidad.'
+  },
+  {
+    id: 'cie-m-13', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El águila arpía, una de las rapaces más grandes del mundo, vive en…',
     opciones: ['Las selvas del Darién y la Amazonía', 'Los páramos', 'Las playas', 'Los desiertos'],
     correcta: 0,
-    explicacion: 'La arpía caza monos y perezosos en las selvas del Darién y el Amazonas.' },
-  { id: 'cie-m-14', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'La arpía caza monos y perezosos en las selvas del Darién y el Amazonas.'
+  },
+  {
+    id: 'cie-m-14', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El Parque Nacional Los Nevados se ubica en…',
     opciones: ['La Sierra Nevada de Santa Marta', 'El Eje Cafetero', 'La Macarena', 'El Catatumbo'],
     correcta: 1,
-    explicacion: 'El Ruiz, el Tolima y Santa Isabel se alzan sobre Caldas, Tolima, Quindío y Risaralda.' },
-  { id: 'cie-m-15', categoria: 'ciencia', dificultad: 'medio',
+    explicacion: 'El Ruiz, el Tolima y Santa Isabel se alzan sobre Caldas, Tolima, Quindío y Risaralda.'
+  },
+  {
+    id: 'cie-m-15', categoria: 'ciencia', dificultad: 'medio',
     enunciado: 'El volcán Puracé, con sulfataras y cóndores, está en el departamento de…',
     opciones: ['Nariño', 'Cauca', 'Huila', 'Tolima'],
     correcta: 1,
-    explicacion: 'El Puracé corona la cordillera Central en el Cauca.' },
+    explicacion: 'El Puracé corona la cordillera Central en el Cauca.'
+  },
   // ================= CIENCIA · DIFÍCIL (3.ª serie) =================
-  { id: 'cie-d-11', categoria: 'ciencia', dificultad: 'dificil',
+  {
+    id: 'cie-d-11', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: '¿Qué cocodrilo gigante, en peligro crítico, habita la cuenca del Orinoco?',
     opciones: ['El caimán llanero', 'El cocodrilo americano', 'El yacaré', 'El gavial'],
     correcta: 0,
-    explicacion: 'El caimán llanero, endémico del Orinoco, es objeto de programas de rescate.' },
-  { id: 'cie-d-12', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'El caimán llanero, endémico del Orinoco, es objeto de programas de rescate.'
+  },
+  {
+    id: 'cie-d-12', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'La charapa, tortuga gigante de agua dulce, vive en…',
     opciones: ['El Amazonas', 'El lago de Tota', 'El río Bogotá', 'La Ciénaga Grande'],
     correcta: 0,
-    explicacion: 'La charapa amazónica llega a medir más de 80 centímetros de caparazón.' },
-  { id: 'cie-d-13', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'La charapa amazónica llega a medir más de 80 centímetros de caparazón.'
+  },
+  {
+    id: 'cie-d-13', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'El manatí del Caribe, mamífero acuático en peligro, aún sobrevive en…',
     opciones: ['Ciénagas y ríos del Magdalena', 'Los nevados', 'El desierto', 'Los páramos'],
     correcta: 0,
-    explicacion: 'Quedan pocos manatíes en ciénagas del bajo Magdalena y el Sinú.' },
-  { id: 'cie-d-14', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Quedan pocos manatíes en ciénagas del bajo Magdalena y el Sinú.'
+  },
+  {
+    id: 'cie-d-14', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'La Sierra de la Macarena, hogar de Caño Cristales, está en el departamento de…',
     opciones: ['Guaviare', 'Meta', 'Caquetá', 'Vichada'],
     correcta: 1,
-    explicacion: 'Esta serranía aislada, en el Meta, mezcla flora andina, amazónica y orinocense.' },
-  { id: 'cie-d-15', categoria: 'ciencia', dificultad: 'dificil',
+    explicacion: 'Esta serranía aislada, en el Meta, mezcla flora andina, amazónica y orinocense.'
+  },
+  {
+    id: 'cie-d-15', categoria: 'ciencia', dificultad: 'dificil',
     enunciado: 'Los Estoraques, área protegida de curiosas columnas de roca, están en…',
     opciones: ['Santander', 'Norte de Santander', 'Boyacá', 'Cesar'],
     correcta: 1,
-    explicacion: 'Los Estoraques, en Norte de Santander, esculpen el paisaje con cárcavas rojizas.' },
+    explicacion: 'Los Estoraques, en Norte de Santander, esculpen el paisaje con cárcavas rojizas.'
+  },
 ];
